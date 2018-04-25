@@ -9,12 +9,14 @@ import Home from './pages/Home/Home'
 import CV from './pages/CV/CV'
 import Refs from './pages/Refs/Refs'
 
+import Auxillery from './hoc/Auxillery/Auxillery'
+
 
 
 class App extends Component {
     render () {
         return (
-            <div>
+            <Auxillery>
                 <RegisterAframeComponents />
                 <Layout>
                     <Switch>
@@ -24,7 +26,7 @@ class App extends Component {
                         <Route render={() => <h1>Not found</h1>} />
                     </Switch>
                 </Layout>
-            </div>
+            </Auxillery>
         );
     }
 }

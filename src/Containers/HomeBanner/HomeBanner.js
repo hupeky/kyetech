@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import DrawerContents from './DrawerContents/DrawerContents'
 
 import 'typeface-roboto'
 
@@ -6,33 +7,25 @@ import {withStyles} from 'material-ui/styles'
 import Drawer from 'material-ui/Drawer'
 import Hidden from 'material-ui/Hidden'
 import MenuIcon from '@material-ui/icons/Menu'
-import Divider from 'material-ui/Divider'
 import IconButton from 'material-ui/IconButton'
-import Toolbar from 'material-ui/Toolbar'
-import Typography from 'material-ui/Typography'
-import List, {ListItem, ListItemSecondaryAction, ListItemText} from 'material-ui/List'
-import Avatar from 'material-ui/Avatar'
-import Checkbox from 'material-ui/Checkbox'
-
-import sonic from '../../assets/sonic-bg-final.png'
 
 import AScene from '../../stateless/AScene/AScene'
 
-const drawerWidth = 300;
+const drawerWidth = 320
 
 const styles = theme => ( {
     root: {
         flexGrow: 1,
-        height: '600px',
+        height: '800px',
         zIndex: 1,
         overflow: 'hidden',
         position: 'relative',
         display: 'flex',
-        width: '100%',
+        width: '100%'
     },
     navIconHide: {
         [theme.breakpoints.up( 'md' )]: {
-            display: 'none',
+            display: 'none'
         },
         zIndex: theme.zIndex.drawer + 10,
         position: 'absolute',
@@ -41,22 +34,19 @@ const styles = theme => ( {
     },
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
-        [theme.breakpoints.up( 'md' )]: {
-            position: 'relative',
+        [theme.breakpoints.up( 'xs' )]: {
+            position: 'relative'
         },
-        maxWidth: drawerWidth,
-        width: '100vw',
+        maxWidth: drawerWidth
     },
     drawerPaperTemp: {
-        maxWidth: drawerWidth,
-        width: '100%',
+        maxWidth: drawerWidth
 
     },
     content: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.default
-    },
-} );
+        flexGrow: 1
+    }
+} )
 
 class HomeBanner extends Component {
     state = {
@@ -65,33 +55,16 @@ class HomeBanner extends Component {
     }
 
     handleDrawerToggle = () => {
-        this.setState( {mobileOpen: !this.state.mobileOpen} );
+        this.setState( {mobileOpen: !this.state.mobileOpen} )
     }
 
 
     render () {
-        const {classes, theme} = this.props;
+        const {classes, theme} = this.props
         console.log( theme )
-        const drawer = (
-            <div>
-                <Toolbar>
-                    <Typography variant="headline">3D controls</Typography>
-                </Toolbar>
-                <Divider />
-                <List>
-                    {[0, 1, 2, 3].map( value => (
-                        <ListItem key={value} dense button className={classes.listItem}>
-                            <Avatar alt="Sonic" src={sonic} />
-                            <ListItemText primary={`Line item ${value + 1}`} />
-                        </ListItem>
-                    ) )}
-                </List>
-            </div>
-        )
-
         console.log( 'did render' )
         return (
-            <div className={classes.root}>
+            <section className={classes.root}>
                 <IconButton
                     color="inherit"
                     aria-label="open drawer"
@@ -108,7 +81,7 @@ class HomeBanner extends Component {
                         open={this.state.mobileOpen}
                         onClose={this.handleDrawerToggle}
                         classes={{
-                            paper: classes.drawerPaperTemp,
+                            paper: classes.drawerPaperTemp
                         }}
                     >
                         <IconButton
@@ -119,13 +92,13 @@ class HomeBanner extends Component {
                         >
                             <MenuIcon />
                         </IconButton>
-                        {drawer}
+                        <DrawerContents />
                     </Drawer>
                 </Hidden>
 
-                <main className={classes.content}>
+                <div className={classes.content}>
                     <AScene />
-                </main>
+                </div>
 
                 <Hidden smDown implementation="css">
                     <Drawer
@@ -134,17 +107,17 @@ class HomeBanner extends Component {
 
                         open
                         classes={{
-                            paper: classes.drawerPaper,
+                            paper: classes.drawerPaper
                         }}
                     >
-                        {drawer}
+                        <DrawerContents />
                     </Drawer>
                 </Hidden>
 
 
-            </div>
+            </section>
         )
     }
 }
 
-export default withStyles( styles, {withTheme: true} )( HomeBanner );
+export default withStyles( styles, {withTheme: true} )( HomeBanner )

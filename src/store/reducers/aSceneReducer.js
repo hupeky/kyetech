@@ -1,4 +1,5 @@
 import * as actionTypes from '../actions'
+import colours from './buildColourFrames'
 
 const initialState = {
     animationIndex: 0,
@@ -6,11 +7,21 @@ const initialState = {
         x: 25,
         z: 25
     },
-    selectType: 'pixel',
+    waveType: 'pixel',
+    waveShape: 'wave',
+    waveHeight: 4,
+    waveSpeed: 8,
+    bounceSpeed: 6,
     animCoords: null,
     stopAnim: false,
-    distanceLookUp: []
+    distanceLookUp: [],
+
+    colours: {},
+    colourIndex: 0,
+    colourSingleRef: null
 }
+
+console.log( initialState.colours )
 
 const calcualteDistanceLookup = ( newX, newZ ) => {
     // let selectType = ['pixel','diagonal1','diagonal2','vertical','horizontal']
@@ -44,21 +55,24 @@ const calcualteDistanceLookup = ( newX, newZ ) => {
             }
             updatedDistanceLookUpRow[z] = {}
             updatedDistanceLookUpRow[z].pixel = pixelDistanceArray
-            updatedDistanceLookUpRow[z].diagonal1 = diagonal1DistanceArray
-            updatedDistanceLookUpRow[z].diagonal2 = diagonal2DistanceArray
-            updatedDistanceLookUpRow[z].vertical = verticalDistanceArray
+            updatedDistanceLookUpRow[z].diag1 = diagonal1DistanceArray
+            updatedDistanceLookUpRow[z].diag2 = diagonal2DistanceArray
+            updatedDistanceLookUpRow[z].vert = verticalDistanceArray
             updatedDistanceLookUpRow[z].horizontal = horizontalDistanceArray
         }
         updatedDistanceLookUp.push( updatedDistanceLookUpRow )
     }
     return updatedDistanceLookUp
-} 
+}
 
+initialState.distanceLookUp = calcualteDistanceLookup( initialState.dimensions.x, initialState.dimensions.z )
+initialState.colours = colours
+
+console.log( initialState.colours.singles )
 
 const ASceneReducer = ( state = initialState, action ) => {
     switch ( action.type ) {
         case actionTypes.START_ANIMATION:
-            console.log( 'didm call the reducer', action.coords )
             return {
                 ...state,
                 animCoords: {...action.coords},
@@ -70,9 +84,40 @@ const ASceneReducer = ( state = initialState, action ) => {
                 dimensions: {...action.dimensions},
                 distanceLookUp: calcualteDistanceLookup( action.dimensions.x, action.dimensions.z )
             }
+        case actionTypes.SET_WAVE_TYPE:
+            return {
+                ...state,
+                waveType: action.waveType
+            }
+        case actionTypes.SET_WAVE_SHAPE:
+            return {
+                ...state,
+                waveShape: action.waveShape
+            }
+        case actionTypes.SET_WAVE_HEIGHT:
+            return {
+                ...state,
+                waveHeight: action.waveHeight
+            }
+        case actionTypes.SET_WAVE_SPEED:
+            return {
+                ...state,
+                waveSpeed: action.waveSpeed
+            }
+        case actionTypes.SET_BOUNCE_SPEED:
+            return {
+                ...state,
+                bounceSpeed: action.bounceSpeed
+            }
+        case actionTypes.START_COLOUR_SINGLE:
+            return {
+                ...state,
+                colourSingleRef: action.ref,
+                colourIndex: state.colourIndex + 1
+            }
         default:
-            return state;
+            return state
     }
 }
-
+export const START_COLOUR_SINGLE = 'START_COLOUR_SINGLE'
 export default ASceneReducer

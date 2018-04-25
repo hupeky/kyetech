@@ -10,12 +10,12 @@ const AScene = () => {
     return (
         <header>
             <section>
-                <a-scene  shadow  embedded vr-mode-ui="enabled: false" background="transparent: true" class={classes.Embedded}>
+                <a-scene  colour shadow  embedded vr-mode-ui="enabled: false" background="transparent: true" class={classes.Embedded}>
                     <Camera />
                     <a-entity light="type: hemisphere; color: #ffffff; groundColor: #a3a3a3; intensity: 1"></a-entity>
                     <a-entity light="
                         type: directional;
-                        intensity:0.8;
+                        intensity:0.3;
                         target:#directionaltarget;">
                         <a-entity
                             id="directionaltarget"

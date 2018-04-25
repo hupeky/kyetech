@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom'
 
-import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
+import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles'
 
 import './globalStyles.css'
 import App from './App'
@@ -21,21 +21,21 @@ const rootReducer = combineReducers( {
 
 const theme = createMuiTheme( {
     palette: {
-        type: 'dark', // Switching the dark mode on is a single property value change.
-    },
-} );
+        type: 'dark' // Switching the dark mode on is a single property value change.
+    }
+} )
 
 const store = createStore( rootReducer )
 
 const Component = (
     <Provider store={store}>
-        
+
             <MuiThemeProvider theme={theme}>
             <BrowserRouter>
                 <App />
                 </BrowserRouter>
             </MuiThemeProvider>
-        
+
     </Provider>
 )
 

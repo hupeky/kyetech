@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import {Component} from 'react'
 
 import {connect} from 'react-redux'
 
@@ -18,7 +18,6 @@ class CursorListener extends Component {
                 let data = this.data // Component property values.
                 let el = this.el // Reference to the component's entity.
                 el.addEventListener( 'click', () => {
-                    console.log( el.object3D, 'was clicked' )
                     let coords = {x: data.x, z: data.z}
                     thisClass.props.startAnimation( coords )
                 } )
@@ -27,13 +26,13 @@ class CursorListener extends Component {
     }
 
     render () {
-        return <div></div>
+        return null
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        startAnimation: ( coords ) => dispatch( {type: actionTypes.START_ANIMATION, coords: coords} ),
+        startAnimation: ( coords ) => dispatch( {type: actionTypes.START_ANIMATION, coords: coords} )
     }
 }
 

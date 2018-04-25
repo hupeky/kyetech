@@ -9,6 +9,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 import Navigation from '../../Navigation/Navigation'
 
+import Auxillery from '../../hoc/Auxillery/Auxillery'
+
 const styles = {
     root: {
      
@@ -44,10 +46,10 @@ class Layout extends Component {
         console.log (this.props)
         const {classes} = this.props;
         return (
-            <div>
+            <Auxillery>
                 <AppBar position="sticky">
                     <Toolbar>
-                        <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                        <IconButton>
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="title" color="inherit" className={classes.flex}>
@@ -57,8 +59,8 @@ class Layout extends Component {
                     </Toolbar>
                 </AppBar>
                 {this.props.children}
-                <div> Footer here </div>
-            </div>
+                <footer> Footer here </footer>
+            </Auxillery>
         )
     }
 }
