@@ -1,31 +1,32 @@
-import React from 'react';
-import {withStyles} from 'material-ui/styles';
-import ButtonBase from 'material-ui/ButtonBase';
+import React from 'react'
+import {withStyles} from 'material-ui/styles'
+import ButtonBase from 'material-ui/ButtonBase'
 
 const styles = theme => ( {
     root: {
         display: 'flex',
         flexWrap: 'wrap',
-        width: '100%',
+        width: '100%'
     },
     image: {
         position: 'relative',
-        height: 60,
+        height: 'auto',
         overflow: 'hidden',
         width:'100%',
         '&:hover': {
-            zIndex: 1,
+            zIndex: 1
         },
         '&:hover $imageBackdrop': {
-            opacity: 0.2,
+            opacity: 0.2
         },
         '&:hover $imageTitle': {
-            border: '1px solid currentColor',
-        },
+            border: '1px solid currentColor'
+        }
     },
     img: {
         height: '100%',
-        width: '100%'
+        width: '100%',
+        imageRendering: 'pixelated'
     },
     imageButton: {
         position: 'absolute',
@@ -36,8 +37,8 @@ const styles = theme => ( {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: theme.palette.common.white,
-        
+        color: theme.palette.common.white
+
     },
     imageSrc: {
         position: 'absolute',
@@ -46,7 +47,7 @@ const styles = theme => ( {
         top: 0,
         bottom: 0,
         backgroundSize: 'cover',
-        backgroundPosition: 'center 40%',
+        backgroundPosition: 'center 40%'
     },
     imageBackdrop: {
         position: 'absolute',
@@ -61,7 +62,7 @@ const styles = theme => ( {
     imageTitle: {
         position: 'absolute',
         bottom:0,
-        color:'#000',
+        color:'#000'
     },
     imageMarked: {
         height: 3,
@@ -70,14 +71,14 @@ const styles = theme => ( {
         position: 'absolute',
         bottom: -2,
         left: 'calc(50% - 9px)',
-        transition: theme.transitions.create( 'opacity' ),
-    },
-} );
+        transition: theme.transitions.create( 'opacity' )
+    }
+} )
 
 
 
 function imgButton ( props ) {
-    const {classes} = props;
+    const {classes} = props
 
     return (
         <div className={classes.root}>
@@ -91,7 +92,7 @@ function imgButton ( props ) {
                 <span className={classes.imageBackdrop} />
             </ButtonBase>
         </div>
-    );
+    )
 }
 
 export default withStyles( styles )( imgButton )

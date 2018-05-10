@@ -14,8 +14,8 @@ const camera = ( props ) => {
                 rotateSpeed:0.25;
                 minDistance:3;
                 maxDistance:100;"
-            position="-10 45 40"
-            camera="near:1; fov:19; far:4000;">
+            position="-10 30 40"
+            camera="near:1; fov:27; far:40000;">
                 <a-entity cursor="rayOrigin:mouse; fuse: false"></a-entity>
         </a-camera>
     )

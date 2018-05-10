@@ -25,6 +25,9 @@ const styles = theme => ( {
     },
     subheader: {
         width: '100%'
+    },
+    gridList: {
+        marginBottom: '20px !important'
     }
 } )
 
@@ -52,9 +55,7 @@ class MotionControls extends Component {
 
             <Auxillery>
                 <Typography variant="body1" gutterBottom={true}>Select wave type:</Typography>
-                <Divider />
-                <Typography gutterBottom={true}> </Typography>
-                <GridList className={classes.gridList} cellHeight={85} cols={4}>
+                <GridList className={classes.gridList}  cellHeight={90}  cols={4}>
                     {waveTypes.map( type => (
                         <GridListTile key={type.key} cols={1}>
                             <ImgButton click={() => this.props.setWaveType( type.key )} src={type.img} />
@@ -64,9 +65,7 @@ class MotionControls extends Component {
                     }
                 </GridList >
                 <Typography variant="body1" gutterBottom={true}>Select wave shape:</Typography>
-                <Divider />
-                <Typography gutterBottom={true}> </Typography>
-                <GridList className={classes.key} cellHeight={85} cols={4}>
+                <GridList className={classes.gridList}  cellHeight={90}  cols={4}>
                     {waveShapes.map( shape => (
                         <GridListTile key={shape.title} cols={1}>
                             <ImgButton click={() => this.props.setWaveShape( shape.key )} src={shape.img} />
@@ -76,18 +75,12 @@ class MotionControls extends Component {
                     }
                 </GridList >
                 <Typography variant="body1" gutterBottom={true}>Select wave height:</Typography>
-                <Divider />
-                <Typography gutterBottom={true}> </Typography>
                 <Slider min={1} max={20} step={1} default={this.props.waveHeight} onRelease={this.waveHeightHandler} />
 
                 <Typography variant="body1" gutterBottom={true}>Wave travel speed:</Typography>
-                <Divider />
-                <Typography gutterBottom={true}> </Typography>
                 <Slider min={5} max={35} step={3} default={this.props.waveSpeed} onRelease={this.waveSpeedHandler} />
 
                 <Typography variant="body1" gutterBottom={true}>Bounce speed:</Typography>
-                <Divider />
-                <Typography gutterBottom={true}> </Typography>
                 <Slider min={1} max={10} step={1} default={this.props.bounceSpeed} onRelease={this.bounceSpeedHandler} />
 
             </Auxillery>

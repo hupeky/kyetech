@@ -64,6 +64,7 @@ class ASceneDrawer extends React.Component {
                         onChange={this.handleChange}
                         indicatorColor="primary"
                         textColor="secondary"
+                        scrollable={false}
                     >
                         <Tab style={{minWidth: '50%'}} label="Colour" />
                         <Tab style={{minWidth: '50%'}} label="Motion" />
@@ -73,6 +74,7 @@ class ASceneDrawer extends React.Component {
                     axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                     index={this.state.value}
                     onChangeIndex={this.handleChangeIndex}
+                    disabled={true}
                 >
                     <TabContainer dir={theme.direction}>
                         <ColourControls />

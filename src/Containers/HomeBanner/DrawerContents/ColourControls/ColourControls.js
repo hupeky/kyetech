@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import Slider from '../../../../UI/Slider/Slider'
 import {connect} from 'react-redux'
 
 import * as actionTypes from '../../../../store/actions'
@@ -11,7 +10,6 @@ import GridList, {GridListTile} from 'material-ui/GridList'
 import {withStyles} from 'material-ui/styles'
 
 import Typography from 'material-ui/Typography'
-import Divider from 'material-ui/Divider'
 
 const styles = theme => ( {
     root: {
@@ -20,15 +18,23 @@ const styles = theme => ( {
         justifyContent: 'space-around',
         overflow: 'hidden',
         backgroundColor: theme.palette.background.paper
+
     },
     subheader: {
         width: '100%'
+    },
+    gridList: {
+        marginBottom: '20px !important'
     }
 } )
 
 class ColourControls extends Component {
     state = {
 
+    }
+
+    shouldComponentUpdate ( nextProps ) {
+        // this.props.startColourAnim('animBackdrops')
     }
 
     waveHeightHandler = ( value ) => {
@@ -46,21 +52,50 @@ class ColourControls extends Component {
 
     render () {
         const {classes} = this.props
+        let frames = {
+            single: [],
+            animation: [],
+            abstract: []
+        }
+        Object.keys( this.props.colours ).forEach( ( item, index ) => {
+            let itemJSX = (
+                <GridListTile key={this.props.colours[item][0].key} cols={1}>
+                    <ImgButton click={() => this.props.startColourAnim( this.props.colours[item][0].key )} src={this.props.colours[item][0].imgSrc} />
+                    <Typography variant="body1" align="center" color='textSecondary' />
+                </GridListTile >
+            )
+            frames[this.props.colours[item][0].type].push(itemJSX)
+
+
+ /*            switch ( this.props.colours[item][0].type ) {
+                case 'single':
+                    singles.push( itemJSX )
+                    break
+                case 'animation':
+                    anims.push( itemJSX )
+                    break
+                case 'abstract':
+                    colours.push( itemJSX )
+                    break
+                default: break
+            } */
+        } )
+
         return (
 
             <Auxillery>
                 <Typography variant="body1" gutterBottom={true}>Select pixel art:</Typography>
-                <Divider />
-                <Typography gutterBottom={true}> </Typography>
-                <GridList className={classes.gridList} cellHeight={85} cols={4}>
-                    {Object.keys(this.props.singles).map( single => (
-                        <GridListTile key={this.props.singles[single].key} cols={1}>
-                            <ImgButton click={() => this.props.startColourSingle( this.props.singles[single].key )} src={this.props.singles[single].imgSrc} />
-                            <Typography variant="body1" align="center" color='textSecondary' />
-                        </GridListTile >
-                    ) )}
+                <GridList className={classes.gridList} cellHeight={90} cols={4}>
+                    {frames.single}
                 </GridList >
-
+                <Typography variant="body1" gutterBottom={true}>Select Animation:</Typography>
+                <GridList className={classes.gridList} cellHeight={90} cols={4}>
+                    {frames.animation}
+                </GridList >
+                <Typography variant="body1" gutterBottom={true}>Select Colours:</Typography>
+                <GridList className={classes.gridList} cellHeight={90} cols={4}>
+                    {frames.abstract}
+                </GridList >
             </Auxillery>
         )
     }
@@ -68,15 +103,13 @@ class ColourControls extends Component {
 
 const mapStateToProps = state => { // map redux state to class props
     return {
-        singles: state.aScene.colours.singles,
-        animations: state.aScene.colours.animations
+        colours: state.aScene.colours
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        startColourSingle: ( ref ) => dispatch( {type: actionTypes.START_COLOUR_SINGLE, ref: ref} ),
-        startColourAnim: ( name ) => dispatch( {type: actionTypes.START_COLOUR_ANIM, name: name} )
+        startColourAnim: ( ref ) => dispatch( {type: actionTypes.START_COLOUR_ANIM, ref: ref} )
     }
 }
 

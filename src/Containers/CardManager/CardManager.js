@@ -11,8 +11,11 @@ class CardManager extends Component {
         animCoords: null
     }
 
-    componentWillMount () {
-        // this.props.startAnimation( {x: 0, z: 2} )
+    componentDidMount () {
+        this.props.startAnimation( {x: 0, z: 2} )
+        setTimeout(
+            () => this.props.startColourAnim('animBackdrops'),100
+        )
     }
 
     render () {
@@ -30,7 +33,7 @@ class CardManager extends Component {
             cardEntityArray.push( row )
         }
         return (
-            <a-entity click={this.cardClickedHandler} position={`-${Math.floor( this.props.dimensions.x / 2 )} 0 ${Math.floor( this.props.dimensions.z / 2 )}`} rotation="0 0 0" >
+            <a-entity click={this.cardClickedHandler} position={`-${Math.floor( this.props.dimensions.x / 2 )} 0 ${Math.floor( this.props.dimensions.z / 2.3 )}`} rotation="0 0 0" >
                 {cardEntityArray}
             </a-entity>
 
@@ -54,7 +57,8 @@ const mapStateToProps = state => { // map redux state to class props
 const mapDispatchToProps = dispatch => {
     return {
         startAnimation: ( coords ) => dispatch( {type: actionTypes.START_ANIMATION, coords: coords} ),
-        setDimensions: ( dimensions ) => dispatch( {type: actionTypes.SET_DIMENSIONS, dimensions: dimensions} )
+        setDimensions: ( dimensions ) => dispatch( {type: actionTypes.SET_DIMENSIONS, dimensions: dimensions} ),
+        startColourAnim: ( ref ) => dispatch( {type: actionTypes.START_COLOUR_ANIM, ref: ref} )
     }
 }
 

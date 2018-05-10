@@ -13,15 +13,19 @@ import {createStore, combineReducers} from 'redux'
 import ASceneReducer from './store/reducers/aSceneReducer'
 import siteReducer from './store/reducers/siteReducer'
 
+import themeCustomisation from './UI/themeCustomisation'
+
 const rootReducer = combineReducers( {
     aScene: ASceneReducer,
     site: siteReducer
 } )
 
 
-const theme = createMuiTheme( {
+const lightTheme = createMuiTheme( {
+    ...themeCustomisation,
     palette: {
-        type: 'dark' // Switching the dark mode on is a single property value change.
+        ...themeCustomisation.palette,
+        type: 'light' // Switching the dark mode on is a single property value change.
     }
 } )
 
@@ -30,7 +34,7 @@ const store = createStore( rootReducer )
 const Component = (
     <Provider store={store}>
 
-            <MuiThemeProvider theme={theme}>
+            <MuiThemeProvider theme={lightTheme}>
             <BrowserRouter>
                 <App />
                 </BrowserRouter>

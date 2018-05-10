@@ -8,10 +8,11 @@ import Drawer from 'material-ui/Drawer'
 import Hidden from 'material-ui/Hidden'
 import MenuIcon from '@material-ui/icons/Menu'
 import IconButton from 'material-ui/IconButton'
+import Paper from 'material-ui/Paper'
 
 import AScene from '../../stateless/AScene/AScene'
 
-const drawerWidth = 320
+const drawerWidth = 400
 
 const styles = theme => ( {
     root: {
@@ -21,7 +22,12 @@ const styles = theme => ( {
         overflow: 'hidden',
         position: 'relative',
         display: 'flex',
-        width: '100%'
+        width: '100%',
+        [theme.breakpoints.up( 'xs' )]: {height: '300px'},
+        [theme.breakpoints.up( 'sm' )]: {height: '400px'},
+        [theme.breakpoints.up( 'md' )]: {height: '600px'},
+        [theme.breakpoints.up( 'lg' )]: {height: '700px'},
+        [theme.breakpoints.up( 'xl' )]: {height: '800px'}
     },
     navIconHide: {
         [theme.breakpoints.up( 'md' )]: {
@@ -34,13 +40,21 @@ const styles = theme => ( {
     },
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
+        position: 'relative',
+        backgroundColor: '#363636',
         [theme.breakpoints.up( 'xs' )]: {
             position: 'relative'
         },
-        maxWidth: drawerWidth
+        maxWidth: drawerWidth,
+        [theme.breakpoints.up( 'xs' )]: {height: '300px'},
+        [theme.breakpoints.up( 'sm' )]: {height: '400px'},
+        [theme.breakpoints.up( 'md' )]: {height: '600px'},
+        [theme.breakpoints.up( 'lg' )]: {height: '700px'},
+        [theme.breakpoints.up( 'xl' )]: {height: '800px'}
     },
     drawerPaperTemp: {
-        maxWidth: drawerWidth
+        maxWidth: drawerWidth,
+        backgroundColor: '#363636'
 
     },
     content: {
@@ -60,64 +74,62 @@ class HomeBanner extends Component {
 
 
     render () {
-        const {classes, theme} = this.props
-        console.log( theme )
-        console.log( 'did render' )
+        const {classes} = this.props
         return (
+            
             <section className={classes.root}>
-                <IconButton
-                    color="inherit"
-                    aria-label="open drawer"
-                    onClick={this.handleDrawerToggle}
-                    className={classes.navIconHide}
-                >
-                    <MenuIcon />
-                </IconButton>
-
-                <Hidden mdUp>
-                    <Drawer
-                        variant="temporary"
-                        anchor='right'
-                        open={this.state.mobileOpen}
-                        onClose={this.handleDrawerToggle}
-                        classes={{
-                            paper: classes.drawerPaperTemp
-                        }}
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        onClick={this.handleDrawerToggle}
+                        className={classes.navIconHide}
                     >
-                        <IconButton
-                            color="secondary"
-                            aria-label="open drawer"
-                            onClick={this.handleDrawerToggle}
-                            className={classes.navIconHide}
+                        <MenuIcon />
+                    </IconButton>
+
+                    <Hidden mdUp>
+                        <Drawer
+                            variant="temporary"
+                            anchor='right'
+                            open={this.state.mobileOpen}
+                            onClose={this.handleDrawerToggle}
+                            classes={{
+                                paper: classes.drawerPaperTemp
+                            }}
                         >
-                            <MenuIcon />
-                        </IconButton>
-                        <DrawerContents />
-                    </Drawer>
-                </Hidden>
+                            <IconButton
+                                color="secondary"
+                                aria-label="open drawer"
+                                onClick={this.handleDrawerToggle}
+                                className={classes.navIconHide}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <DrawerContents />
+                        </Drawer>
+                    </Hidden>
+                    
+                    <div className={classes.content}>
+                        <AScene />
+                    </div>
 
-                <div className={classes.content}>
-                    <AScene />
-                </div>
+                    <Hidden smDown implementation="css">
+                        <Drawer
+                            variant="persistent"
+                            anchor='right'
 
-                <Hidden smDown implementation="css">
-                    <Drawer
-                        variant="persistent"
-                        anchor='right'
-
-                        open
-                        classes={{
-                            paper: classes.drawerPaper
-                        }}
-                    >
-                        <DrawerContents />
-                    </Drawer>
-                </Hidden>
-
-
+                            open
+                            classes={{
+                                paper: classes.drawerPaper
+                            }}
+                        >
+                            <DrawerContents />
+                        </Drawer>
+                    </Hidden>
             </section>
-        )
-    }
-}
-
+            
+                    )
+                }
+            }
+            
 export default withStyles( styles, {withTheme: true} )( HomeBanner )

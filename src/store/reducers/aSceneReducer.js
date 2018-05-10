@@ -1,28 +1,6 @@
 import * as actionTypes from '../actions'
 import colours from './buildColourFrames'
 
-const initialState = {
-    animationIndex: 0,
-    dimensions: {
-        x: 25,
-        z: 25
-    },
-    waveType: 'pixel',
-    waveShape: 'wave',
-    waveHeight: 4,
-    waveSpeed: 8,
-    bounceSpeed: 6,
-    animCoords: null,
-    stopAnim: false,
-    distanceLookUp: [],
-
-    colours: {},
-    colourIndex: 0,
-    colourSingleRef: null
-}
-
-console.log( initialState.colours )
-
 const calcualteDistanceLookup = ( newX, newZ ) => {
     // let selectType = ['pixel','diagonal1','diagonal2','vertical','horizontal']
     let updatedDistanceLookUp = []
@@ -65,10 +43,32 @@ const calcualteDistanceLookup = ( newX, newZ ) => {
     return updatedDistanceLookUp
 }
 
-initialState.distanceLookUp = calcualteDistanceLookup( initialState.dimensions.x, initialState.dimensions.z )
-initialState.colours = colours
+const dim = {
+    x:60,
+    z:60
+}
 
-console.log( initialState.colours.singles )
+const initialState = {
+    animationIndex: 0,
+    dimensions: {
+        x: dim.x,
+        z: dim.z
+    },
+    waveType: 'pixel',
+    waveShape: 'wave',
+    waveHeight: 4,
+    waveSpeed: 8,
+    bounceSpeed: 6,
+    animCoords: null,
+    stopAnim: false,
+    distanceLookUp: calcualteDistanceLookup( dim.x, dim.z ),
+
+    colours: colours,
+    colourIndex: 0,
+    colourRef: null
+}
+
+
 
 const ASceneReducer = ( state = initialState, action ) => {
     switch ( action.type ) {
@@ -109,15 +109,14 @@ const ASceneReducer = ( state = initialState, action ) => {
                 ...state,
                 bounceSpeed: action.bounceSpeed
             }
-        case actionTypes.START_COLOUR_SINGLE:
+        case actionTypes.START_COLOUR_ANIM:
             return {
                 ...state,
-                colourSingleRef: action.ref,
+                colourRef: action.ref,
                 colourIndex: state.colourIndex + 1
             }
         default:
             return state
     }
 }
-export const START_COLOUR_SINGLE = 'START_COLOUR_SINGLE'
 export default ASceneReducer

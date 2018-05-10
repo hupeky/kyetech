@@ -1,12 +1,41 @@
 html {
-  
+
   }
   
   body {
     margin:0;
-    background-color:black
-
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 .myP {
 	color:purple;
+}
+
+
+
+@media only screen and (min-width: 0px) {
+    .sectionBlockMargin {
+        margin:30px auto
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .sectionBlockMargin {
+        margin:40px auto
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .sectionBlockMargin {
+        margin:50px auto
+    }
+}
+@media only screen and (min-width: 1280px) {
+    .sectionBlockMargin {
+        margin:60px auto
+    }
+}
+@media only screen and (min-width: 1920px) {
+    .sectionBlockMargin {
+        margin:70px auto
+    }
 }

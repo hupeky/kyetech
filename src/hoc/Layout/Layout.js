@@ -1,22 +1,13 @@
 import React, {Component} from 'react'
-
-import {withStyles} from 'material-ui/styles';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-
-import Navigation from '../../Navigation/Navigation'
-
+import {withStyles} from 'material-ui/styles'
 import Auxillery from '../../hoc/Auxillery/Auxillery'
 
 const styles = {
     root: {
-     
+
     },
     flex: {
-        flex: 1,
+        flex: 1
     },
     menuButton: {
     }
@@ -43,21 +34,8 @@ class Layout extends Component {
                 break
         }
 
-        console.log (this.props)
-        const {classes} = this.props;
         return (
             <Auxillery>
-                <AppBar position="sticky">
-                    <Toolbar>
-                        <IconButton>
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="title" color="inherit" className={classes.flex}>
-                            {title}
-                        </Typography>
-                        <Navigation />
-                    </Toolbar>
-                </AppBar>
                 {this.props.children}
                 <footer> Footer here </footer>
             </Auxillery>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {Route, Switch} from 'react-router-dom'
 
 import RegisterAframeComponents from './Containers/RegisterAframeComponents/RegisterAframeComponents'
@@ -22,13 +22,13 @@ class App extends Component {
                     <Switch>
                         <Route path="/cv" component={CV} />
                         <Route path="/refs" component={Refs} />
-                        <Route path="/" exact component={Home} />
+                        <Route path="/" component={Home} />
                         <Route render={() => <h1>Not found</h1>} />
                     </Switch>
                 </Layout>
             </Auxillery>
-        );
+        )
     }
 }
 
-export default App;
+export default App

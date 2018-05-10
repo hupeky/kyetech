@@ -1,0 +1,37 @@
+.sectionBlock {
+    display: flex;
+    width: 100%;
+}
+
+.contentBlock {
+    width: 100%;
+    max-width:1000px;
+}
+
+@media only screen and (min-width: 0px) {
+    .contentBlock {
+        margin:30px auto
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .contentBlock {
+        margin:40px auto
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .contentBlock {
+        margin:50px auto
+    }
+}
+@media only screen and (min-width: 1280px) {
+    .contentBlock {
+        margin:60px auto
+    }
+}
+@media only screen and (min-width: 1920px) {
+    .contentBlock {
+        margin:70px auto
+    }
+}
