@@ -1,12 +1,14 @@
-.visible {
+.default {
     display:block;
     opacity: 1;
     left:0px;
+    transform: scale(1);
 }
 
-.notVisible {
+.slide {
     position:relative;
     display:block;
     opacity: 0;
-    left:-30px;
+    left:-50px;
+    transform: scale(0.7);
 }

@@ -44,8 +44,8 @@ const calcualteDistanceLookup = ( newX, newZ ) => {
 }
 
 const dim = {
-    x:60,
-    z:60
+    x:32,
+    z:32
 }
 
 const initialState = {

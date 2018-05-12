@@ -1,0 +1,13 @@
+.Tile {
+    position: relative;
+    margin:2em auto; 
+    max-width: 110px;
+    width:100%;
+}
+
+.skills {
+    opacity:0.5;
+
+}
+
+/* scale3d(100, 1, 100) rotateY(1793deg) rotateX(-90deg) translateZ(-0) translateY(0%) translateX(-5%) */

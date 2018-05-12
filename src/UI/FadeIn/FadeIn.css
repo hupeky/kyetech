@@ -1,0 +1,14 @@
+.FadeIn {
+    transition:400ms;
+}
+
+
+.visible {
+    opacity: 1;
+
+}
+
+.notVisible {
+    opacity: 0;
+
+}

@@ -6,6 +6,8 @@
 .contentBlock {
     width: 100%;
     max-width:1000px;
+    text-align:center;
+    overflow: hidden;
 }
 
 @media only screen and (min-width: 0px) {

@@ -65,20 +65,6 @@ class ColourControls extends Component {
                 </GridListTile >
             )
             frames[this.props.colours[item][0].type].push(itemJSX)
-
-
- /*            switch ( this.props.colours[item][0].type ) {
-                case 'single':
-                    singles.push( itemJSX )
-                    break
-                case 'animation':
-                    anims.push( itemJSX )
-                    break
-                case 'abstract':
-                    colours.push( itemJSX )
-                    break
-                default: break
-            } */
         } )
 
         return (

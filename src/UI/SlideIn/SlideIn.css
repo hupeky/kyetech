@@ -1,0 +1,15 @@
+.SlideIn {
+    transition:600ms;
+    position:relative;
+}
+
+
+.visible {
+    opacity: 1;
+    left:0px;
+}
+
+.notVisible {
+    opacity: 0;
+    left:-25px;
+}
