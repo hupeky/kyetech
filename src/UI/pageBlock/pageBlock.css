@@ -12,28 +12,28 @@
 
 @media only screen and (min-width: 0px) {
     .contentBlock {
-        margin:30px auto
+        margin:70px auto
     }
 }
 
 @media only screen and (min-width: 600px) {
     .contentBlock {
-        margin:40px auto
+        margin:90px auto
     }
 }
 
 @media only screen and (min-width: 960px) {
     .contentBlock {
-        margin:50px auto
+        margin:100px auto
     }
 }
 @media only screen and (min-width: 1280px) {
     .contentBlock {
-        margin:60px auto
+        margin:110px auto
     }
 }
 @media only screen and (min-width: 1920px) {
     .contentBlock {
-        margin:70px auto
+        margin:120px auto
     }
 }

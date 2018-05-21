@@ -10,8 +10,6 @@ html {
 	color:purple;
 }
 
-
-
 @media only screen and (min-width: 0px) {
     .sectionBlockMargin {
         margin:30px auto

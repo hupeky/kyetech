@@ -1,0 +1,102 @@
+import React, {Component} from 'react'
+
+import {withStyles} from 'material-ui/styles'
+
+import Card, {CardContent, CardActions, CardHeader} from 'material-ui/Card'
+import IconButton from 'material-ui/IconButton'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import Collapse from 'material-ui/transitions/Collapse'
+import Typography from 'material-ui/Typography'
+import Avatar from 'material-ui/Avatar'
+
+import LazyLoad from 'react-lazyload'
+import Spinner from '../../../UI/Spinner/Spinner'
+
+import onScreen from '../../../hoc/OnScreen/OnScreen'
+import myClasses from './ExampleImage.css'
+const styles = theme => ( {
+    card: {
+        flexDirection: 'column',
+        backgroundColor: 'rgba(220,220,220,0.5)',
+        marginBottom: '60px'
+        // [theme.breakpoints.down( 'sm' )]: {flexDirection: 'column'}
+    },
+
+    imgHolder: {
+        width: '100%',
+        boxSizing: 'border-box'
+    },
+    img: {
+        height: 0,
+        width: '100%',
+        paddingTop: '56.5%', // 16:9
+        display: 'block',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center'
+    },
+    expand: {
+        transform: 'rotate(0deg)',
+        transition: theme.transitions.create( 'transform', {
+            duration: theme.transitions.duration.shortest
+        } )
+    },
+    expandOpen: {
+        transform: 'rotate(180deg)'
+    },
+    title: {
+        backgroundColor: theme.palette.secondary.main,
+        textAlign: 'left'
+    }
+} )
+
+class ReferenceItem extends Component {
+    state = {
+        expanded: false
+    }
+
+    handleExpandClick = () => {
+        this.setState( {expanded: !this.state.expanded} )
+    }
+
+    render () {
+        const imgProps = {width: '80%', height: '80%'}
+        const {classes} = this.props
+        return (
+            <LazyLoad
+                height={500}
+                offset={40000}
+                placeholder={<Spinner />}>
+                <Card className={classes.card}>
+                    <CardHeader
+                        className={classes.title}
+                        avatar={<Avatar aria-label="Recipe" imgProps={imgProps} src={this.props.logo}></Avatar>}
+                        title={this.props.title} />
+
+                    <div className={[myClasses.imgHolder, this.props.onScreen ? myClasses.onScreen : null].join( " " )}>
+                        <div className={myClasses.img} style={{backgroundImage: `url(${this.props.url})`}} />
+                    </div>
+                    
+                    <CardActions className={classes.actions} disableActionSpacing>
+                        <span style={{marginLeft: 'auto'}}>more info</span>
+                        <IconButton
+                            className={[classes.expand, this.state.expanded ? classes.expandOpen : null].join( " " )}
+                            onClick={this.handleExpandClick}
+                            aria-expanded={this.state.expanded}
+                            aria-label="Show more">
+                            <ExpandMoreIcon />
+                        </IconButton>
+                    </CardActions>
+
+                    <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+                        <CardContent>
+                            <Typography variant='body1'>{this.props.body}</Typography>
+                        </CardContent>
+                    </Collapse>
+                </Card>
+            </LazyLoad>
+        )
+    }
+}
+
+export default onScreen( withStyles( styles )( ReferenceItem ), true )

@@ -11,6 +11,7 @@ import IconButton from 'material-ui/IconButton'
 
 import AScene from '../../stateless/AScene/AScene'
 
+
 const drawerWidth = 400
 
 const styles = theme => ( {
@@ -22,10 +23,9 @@ const styles = theme => ( {
         position: 'relative',
         display: 'flex',
         width: '100%',
-        [theme.breakpoints.up( 'xs' )]: {height: '300px'},
-        [theme.breakpoints.up( 'sm' )]: {height: '400px'},
-        [theme.breakpoints.up( 'md' )]: {height: '600px'},
-        [theme.breakpoints.up( 'lg' )]: {height: '700px'},
+        [theme.breakpoints.up( 'xs' )]: {height: '400px'},
+        [theme.breakpoints.up( 'sm' )]: {height: '500px'},
+        [theme.breakpoints.up( 'md' )]: {height: '700px'},
         [theme.breakpoints.up( 'xl' )]: {height: '800px'}
     },
     navIconHide: {
@@ -45,10 +45,9 @@ const styles = theme => ( {
             position: 'relative'
         },
         maxWidth: drawerWidth,
-        [theme.breakpoints.up( 'xs' )]: {height: '300px'},
-        [theme.breakpoints.up( 'sm' )]: {height: '400px'},
-        [theme.breakpoints.up( 'md' )]: {height: '600px'},
-        [theme.breakpoints.up( 'lg' )]: {height: '700px'},
+        [theme.breakpoints.up( 'xs' )]: {height: '400px'},
+        [theme.breakpoints.up( 'sm' )]: {height: '500px'},
+        [theme.breakpoints.up( 'md' )]: {height: '700px'},
         [theme.breakpoints.up( 'xl' )]: {height: '800px'}
     },
     drawerPaperTemp: {

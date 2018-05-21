@@ -51,9 +51,11 @@
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.3.1",
     "react-hot-loader": "^3.1.3",
+    "react-lazyload": "^2.3.0",
     "react-on-screen": "^2.0.4",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "react-scroll-to-component": "^1.0.2",
     "react-slider": "^0.11.2",
     "react-swipeable-views": "^0.12.13",
     "redux": "^3.7.2",
@@ -111,7 +113,7 @@
       "react-app"
     ]
   },
-  "homepage": "http://kye.tech/pixelsv4",
+  "homepage": "http://kye.tech/pixelsv5",
   "eslintConfig": {
     "extends": "react-app"
   },

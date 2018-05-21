@@ -9,8 +9,8 @@ const mySlider = ( props ) => {
             case props.min:
             case props.max:
                 marks[i] = {
-                    style: {color: 'white', },
-                    label: <strong>{i}</strong>,
+                    style: {color: 'white' },
+                    label: <strong>{i}</strong>
                 }
                 break
 

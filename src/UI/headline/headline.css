@@ -1,0 +1,12 @@
+.visible {
+    display:block;
+    opacity: 1;
+    left:0px;
+}
+
+.notVisible {
+    position:relative;
+    display:block;
+    opacity: 0;
+    left:-30px;
+}

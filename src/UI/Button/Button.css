@@ -1,0 +1,18 @@
+.active {
+}
+
+.active a {
+    text-decoration: none;
+}
+
+.button {
+    opacity: 0;
+}
+
+.active .button {
+    opacity: 0.3;
+}
+
+.noUnderline {
+    text-decoration: none;
+}

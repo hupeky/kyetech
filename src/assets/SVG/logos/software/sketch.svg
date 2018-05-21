@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 147 118.8" style="enable-background:new 0 0 147 118.8;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFAE00;}
+	.st1{fill:#EC6C00;}
+	.st2{fill:#FFEFB4;}
+	.st3{fill:#FED305;}
+</style>
+<g id="Base">
+	<path id="Polygon" class="st0" d="M73.5,118.8L7.9,42.5L36.3,4l37.2-4l37.2,4l28.4,38.5L73.5,118.8z"/>
+</g>
+<g id="Bottom-Back">
+	<path id="Polygon-2" class="st1" d="M73.5,118.8L7.9,42.5h131.3L73.5,118.8z"/>
+</g>
+<g id="Bottom-Mid">
+	<path id="Polygon-3" class="st0" d="M73.5,118.8L34.4,42.5h78.1L73.5,118.8z"/>
+</g>
+<g id="Top-Mid">
+	<path id="Polygon-4" class="st2" d="M73.5,0L34.4,42.5h78.1L73.5,0z"/>
+</g>
+<g id="Top-Side-Left">
+	<path id="Polygon-5" class="st0" d="M36.3,4L21.7,23.4L7.9,42.5h26.8L36.3,4z"/>
+</g>
+<g id="Top-Side-Right">
+	<path id="Polygon-6" class="st0" d="M110.7,4l14.6,19.4l13.8,19.1h-26.8L110.7,4z"/>
+</g>
+<g id="Top-Left">
+	<path id="Polygon-7" class="st3" d="M36.3,4l-1.9,38.5L73.5,0L36.3,4z"/>
+</g>
+<g id="Top-Right">
+	<path id="Polygon-8" class="st3" d="M110.7,4l1.9,38.5L73.5,0L110.7,4z"/>
+</g>
+</svg>

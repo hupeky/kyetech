@@ -33,10 +33,6 @@ class ColourControls extends Component {
 
     }
 
-    shouldComponentUpdate ( nextProps ) {
-        // this.props.startColourAnim('animBackdrops')
-    }
-
     waveHeightHandler = ( value ) => {
         this.props.setWaveHeight( value )
     }
@@ -64,7 +60,7 @@ class ColourControls extends Component {
                     <Typography variant="body1" align="center" color='textSecondary' />
                 </GridListTile >
             )
-            frames[this.props.colours[item][0].type].push(itemJSX)
+            frames[this.props.colours[item][0].type].push( itemJSX )
         } )
 
         return (

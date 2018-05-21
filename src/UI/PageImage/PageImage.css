@@ -1,0 +1,54 @@
+.PageImage {
+    position: relative;
+    margin-bottom: 80px;
+    overflow: hidden;
+}
+
+.PageImage img {
+    transition: 0;
+    transform: scale(1)
+}
+
+.PageImage.onScreen img {
+    transition: 20000ms;
+    transform: scale(1.1)
+
+}
+
+.PageImage .text {
+
+    text-align:left;
+    transition:200ms;
+    position: absolute;
+    top: calc(100% - 40px);
+    left:0px;
+    color:white;
+    transform-origin: 100% 100%;
+    transform: translateY(0%) 
+}
+
+.PageImage:hover .text {
+    
+    transform: translateY(-100%) translateY(+40px)
+}
+
+.PageImage:hover .title {
+    transform: scaleY(0)
+}
+
+.PageImage .title {
+    transform-origin: 0% 100%;
+    transition:200ms;
+    padding:5px 10px;
+    padding-bottom:25px;
+    display:inline-block;
+    transform: scaleY(1)
+}
+
+.PageImage .subText {
+    box-sizing: border-box;
+    width:100%;
+    max-width:400px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding:20px;
+}

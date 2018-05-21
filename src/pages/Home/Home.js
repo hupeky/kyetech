@@ -1,78 +1,38 @@
 import React from 'react'
+
 import Auxillery from '../../hoc/Auxillery/Auxillery'
 import HomeBanner from '../../Containers/HomeBanner/HomeBanner'
 import PageBlock from '../../UI/pageBlock/pageBlock'
+
 import Display3 from '../../UI/Display3/Display3'
 import Display1 from '../../UI/Display1/Display1'
+import Headline from '../../UI/headline/headline'
+import PageImage from '../../UI/PageImage/PageImage'
 
 import Tile from '../../assets/SVG/Tile/Tile'
 import ScaleIn from '../../UI/ScaleIn/ScaleIn'
 import SlideIn from '../../UI/SlideIn/SlideIn'
+import CompanyLogo from '../../UI/companyLogo/companyLogo'
 
-import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles'
+import {MuiThemeProvider} from 'material-ui/styles'
 import {withTheme} from 'material-ui/styles'
 import Grid from 'material-ui/Grid'
 import Paper from 'material-ui/Paper'
 import Typography from 'material-ui/Typography'
-import themeCustomisation from '../../UI/themeCustomisation'
 
-import megamanBG from '../../assets/32/single/megamanBG.png'
-import sonicBG from '../../assets/32/single/sonicBG.png'
-import zeldaBG from '../../assets/32/single/zeldaBG.png'
-import tetrisBG from '../../assets/32/single/tetrisBG.png'
-import marioBG from '../../assets/32/single/marioBG.png'
-import ryuBG from '../../assets/32/single/ryuBG.png'
-import kartBG from '../../assets/32/single/kartBG.png'
-import rtypeBG from '../../assets/32/single/rtypeBG.png'
+import darkTheme from '../../assets/themes/darkTheme'
+import PageList from '../../UI/pageList/pageList'
 
 import SkillsBlockHolder from '../../UI/skillsBlockHolder/skillsBlockHolder'
-import ManageChildren from '../../hoc/ManageChildren/ManageChildren'
+import ReferenceHolder from '../../UI/referenceHolder/ReferenceHolder'
+import ExampleImageHolder from '../../UI/ExampleImageHolder/ExampleImageHolder'
 
-import ReactLogo from '../../assets/SVG/logos/ReactLogo'
+import rsLogo from '../../assets/SVG/logos/companies/rsLogo.svg'
+import pretLogo from '../../assets/SVG/logos/companies/pretSmall.svg'
+import rhokettLogo from '../../assets/SVG/logos/companies/rhokettStampLogo.svg'
 
-const darkTheme = createMuiTheme( {
+import exampleImages from '../../data/exampleImages'
 
-    ...themeCustomisation,
-    palette: {
-        ...themeCustomisation.palette,
-        type: 'dark' // Switching the dark mode on is a single property value change.
-    }
-} )
-
-const skillsArray = [
-    {
-        component: ReactLogo,
-        id: 'react'
-    },
-    {
-        component: ReactLogo,
-        id: 'react'
-    },
-    {
-        component: ReactLogo,
-        id: 'react'
-    },
-    {
-        component: ReactLogo,
-        id: 'react'
-    },
-    {
-        component: ReactLogo,
-        id: 'react'
-    },
-    {
-        component: ReactLogo,
-        id: 'react'
-    },
-    {
-        component: ReactLogo,
-        id: 'react'
-    },
-    {
-        component: ReactLogo,
-        id: 'react'
-    }
-]
 
 const home = ( props ) => {
     const {theme} = props
@@ -84,14 +44,14 @@ const home = ( props ) => {
                     <HomeBanner />
                 </Paper>
 
-                <PageBlock type={'intro'} backgroundColor={theme.palette.primary.main}>
 
-                    <Display3>About me</Display3>
-
+                <PageBlock label={'About Me'} backgroundColor={theme.palette.primary.main}>
+                    <SlideIn partial={true}>
+                        <Display3>About me</Display3>
+                    </SlideIn>
                     <Grid container spacing={8}>
-                        {/* ********** icon */}
-                        <Grid item xs={4} sm={5} />
-                        <Grid item xs={4} sm={2}>
+                        <Grid item xs={1} md={2} />
+                        <Grid item xs={10} md={8}>
                             <ScaleIn>
                                 <Tile icon={'skills'} />
                             </ScaleIn>
@@ -102,10 +62,8 @@ const home = ( props ) => {
                         {/* ********** intro */}
                         <Grid item xs={1} md={2} />
                         <Grid item xs={10} md={8}>
-                            <SlideIn>
+                            <SlideIn partial={true}>
                                 <Typography variant="body1">Hiliquos alibus autem apid modios parchit, voloribusam, sandis re quis exceperum nimoles tibus, con eum quiatus millaborit dellectore sumquodita quaspid eatioribus mi, quam quo con repedis moloruptatem</Typography>
-                            </SlideIn>
-                            <SlideIn>
                                 <Typography variant="body1">re necabor empellupit adictore et laborum quo odi vellore ictio. Perumquidunt quiaspe rcimus doluptassit, suntincia volesci llandia dolupis aut fugia sectesto iducimil eatquam quiaest, </Typography>
                             </SlideIn>
                         </Grid>
@@ -116,46 +74,162 @@ const home = ( props ) => {
 
             </MuiThemeProvider>
 
-            <PageBlock type={'skills'} backgroundColor={theme.palette.grey.main}>
+            <PageBlock label={'Skills'} backgroundColor={theme.palette.grey.main}>
 
-                <Display3>Skills</Display3>
+                <SlideIn partial={true}>
+                    <Display3>Skills</Display3>
+                </SlideIn>
 
                 <Grid container spacing={8}>
-                    {/* ********** icon */}
-                    <Grid item xs={4} sm={5} />
-                    <Grid item xs={4} sm={2}>
+                    <Grid item xs={1} md={2} />
+                    <Grid item xs={10} md={8}>
+                        <ScaleIn><Tile icon={'skills'} /></ScaleIn>
+
+                        <SlideIn partial={true}>
+                            <Typography variant="body1">Hiliquos alibus autem apid modios parchit, voloribusam, sandis re quis exceperum nimoles tibus, con eum quiatus millaborit dellectore sumquodita quaspid eatioribus mi, quam quo con repedis moloruptatem</Typography>
+                            <Typography variant="body1">re necabor empellupit adictore et laborum quo odi vellore ictio. Perumquidunt quiaspe rcimus doluptassit, suntincia volesci llandia dolupis aut fugia sectesto iducimil eatquam quiaest, </Typography>
+                        </SlideIn>
+
+                        {/* ********** technical skill set */}
+                        <Display1>Technical</Display1>
+                        <SkillsBlockHolder type={'technical'} />
+
+                        {/* ********** software skill set */}
+                        <Display1>Software</Display1>
+                        <SkillsBlockHolder type={'software'} />
+
+                        {/* ********** other skill set */}
+                        <Display1>Other</Display1>
+                        <PageList list={[
+                            'incia volesci llandia dolup',
+                            'incia volesci llandia dolup',
+                            'incia volesup',
+                            'incia volesci llandia dolup',
+                            'incia volesci llandiolup',
+                            'incia volesci llandia dolup',
+                            'incia volesci llandia dolup',
+                            'incia volesci llandia dolup']} />
+                    </Grid>
+                </Grid>
+            </PageBlock>
+
+            <PageBlock label={'Examples'} backgroundColor={'white'}>
+                <Grid container spacing={8}>
+                    <Grid item xs={1} md={2} />
+                    <Grid item xs={10} md={8}>
+                    <SlideIn partial={true}>
+                        <Display3>Examples</Display3>
+                    </SlideIn>
                         <ScaleIn>
                             <Tile icon={'skills'} />
                         </ScaleIn>
                     </Grid>
-                    <Grid item xs={4} sm={2} />
-                    <Grid item xs={12} />  {/*  clear line */}
-
-                    {/* ********** intro */}
-                    <Grid item xs={1} md={2} />
-                    <Grid item xs={10} md={8}>
-                        <SlideIn>
-                            <Typography variant="body1">Hiliquos alibus autem apid modios parchit, voloribusam, sandis re quis exceperum nimoles tibus, con eum quiatus millaborit dellectore sumquodita quaspid eatioribus mi, quam quo con repedis moloruptatem</Typography>
-                        </SlideIn>
-                        <SlideIn>
-                            <Typography variant="body1">re necabor empellupit adictore et laborum quo odi vellore ictio. Perumquidunt quiaspe rcimus doluptassit, suntincia volesci llandia dolupis aut fugia sectesto iducimil eatquam quiaest, </Typography>
-                        </SlideIn>
-                    </Grid>
-                    <Grid item xs={12} />   {/*  clear line */}
-                    {/* ********** skill set */}
-                    <Grid item xs={1} md={2} />
-                    <Grid item xs={10} md={8}>
-                        <SlideIn>
-                            <Display1>Technical</Display1>
-                        </SlideIn>
-                        <SkillsBlockHolder logosArray={skillsArray} />
-
-                    </Grid>
-                    <Grid item xs={12} />   {/*  clear line */}
                 </Grid>
+
+                {/* ************************ RS COMPONENTS */}
+                <Grid container spacing={8}>
+                    <Grid item xs={1} md={2} />
+                    <Grid item xs={10} md={8}>
+                        <CompanyLogo img={rsLogo} name={'RS Components'} width={100} />
+                        <Display1>RS Components</Display1>
+
+                        <Typography variant="body1">Hiliquos alibus autem apid modios parchit, voloribusam, sandis re quis exceperum nimoles tibus, con eum quiatus millaborit dellectore sumquodita quaspid eatioribus mi, quam quo con repedis moloruptatem</Typography>
+                        <Typography variant="body1">re necabor empellupit adictore et laborum quo odi vellore ictio. Perumquidunt quiaspe rcimus doluptassit, suntincia volesci llandia dolupis aut fugia sectesto iducimil eatquam quiaest, </Typography>
+
+                        <Headline>Deliverables</Headline>
+
+                        <PageList list={[
+                            'incia volesci llandia dolup',
+                            'incia volesci llandia dolup',
+                            'incia volesup',
+                            'incia volesci llandia dolup',
+                            'incia volesci llandiolup',
+                            'incia volesci llandia dolup',
+                            'incia volesci llandia dolup',
+                            'incia volesci llandia dolup']} />
+                    </Grid>
+                </Grid>
+                <ExampleImageHolder company='rs' />
+                {/* {exampleImages.rs.map( ( exampleImage, i ) => {
+                    return <PageImage key={i} src={exampleImage.src} title={exampleImage.title} subText={exampleImage.subText} />
+                } ) */}
+
+
+                {/* ************************ RHOKETT */}
+                <Grid container spacing={8}>
+                    <Grid item xs={1} md={2} />
+                    <Grid item xs={10} md={8}>
+                        <CompanyLogo img={rhokettLogo} width={170} />
+                        <Display1>Rhokett</Display1>
+
+
+                        <Typography variant="body1">Hiliquos alibus autem apid modios parchit, voloribusam, sandis re quis exceperum nimoles tibus, con eum quiatus millaborit dellectore sumquodita quaspid eatioribus mi, quam quo con repedis moloruptatem</Typography>
+                        <Typography variant="body1">re necabor empellupit adictore et laborum quo odi vellore ictio. Perumquidunt quiaspe rcimus doluptassit, suntincia volesci llandia dolupis aut fugia sectesto iducimil eatquam quiaest, </Typography>
+
+                        <Headline>Deliverables</Headline>
+
+                        <PageList list={[
+                            'incia volesci llandia dolup',
+                            'incia volesci llandia dolup',
+                            'incia volesup',
+                            'incia volesci llandia dolup',
+                            'incia volesci llandiolup',
+                            'incia volesci llandia dolup',
+                            'incia volesci llandia dolup',
+                            'incia volesci llandia dolup']} />
+                    </Grid>
+                </Grid>
+                <ExampleImageHolder company='rhokett' />
+                {/* {exampleImages.rhokett.map( ( exampleImage, i ) => {
+                    return <PageImage key={i} src={exampleImage.src} title={exampleImage.title} subText={exampleImage.subText} />
+                } ) */}
+
+
+                {/* ************************ PRET */}
+                <Grid container spacing={8}>
+                    <Grid item xs={1} md={2} />
+                    <Grid item xs={10} md={8}>
+                        <CompanyLogo img={pretLogo} width={170} />
+                        <Display1>Pret a Manger</Display1>
+
+
+                        <Typography variant="body1">Hiliquos alibus autem apid modios parchit, voloribusam, sandis re quis exceperum nimoles tibus, con eum quiatus millaborit dellectore sumquodita quaspid eatioribus mi, quam quo con repedis moloruptatem</Typography>
+                        <Typography variant="body1">re necabor empellupit adictore et laborum quo odi vellore ictio. Perumquidunt quiaspe rcimus doluptassit, suntincia volesci llandia dolupis aut fugia sectesto iducimil eatquam quiaest, </Typography>
+
+                        <Headline>Deliverables</Headline>
+
+                        <PageList list={[
+                            'incia volesci llandia dolup',
+                            'incia volesci llandia dolup',
+                            'incia volesup',
+                            'incia volesci llandia dolup',
+                            'incia volesci llandiolup',
+                            'incia volesci llandia dolup',
+                            'incia volesci llandia dolup',
+                            'incia volesci llandia dolup']} />
+                    </Grid>
+                </Grid>
+                {exampleImages.pret.map( ( exampleImage, i ) => {
+                    return <PageImage key={i} src={exampleImage.src} title={exampleImage.title} subText={exampleImage.subText} />
+                } )}
+
 
             </PageBlock>
 
+            <PageBlock label={'Recommendations'} backgroundColor={theme.palette.grey.main}>
+                <SlideIn partial={true}>
+                    <Display3>Recommendations</Display3>
+                </SlideIn>
+
+                <Grid container spacing={8}>
+                    <Grid item xs={1} md={2} />
+                    <Grid item xs={10} md={8}>
+                        <ScaleIn><Tile icon={'skills'} /></ScaleIn>
+                    </Grid>
+                </Grid>
+
+                <ReferenceHolder />
+            </PageBlock>
         </Auxillery >
     )
 }

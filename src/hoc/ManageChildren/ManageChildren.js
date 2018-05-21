@@ -1,34 +1,65 @@
-import React, {Component} from 'react'
+import React from 'react'
+
+import TimelineLite from 'gsap/src/uncompressed/TimelineMax.js'
+import 'gsap/src/plugins/DrawSVGPlugin.js'
+import {Elastic} from 'gsap/src/uncompressed/easing/EasePack'
 
 class ManageChildren extends React.Component {
     state = {
 
     }
+    tl = new TimelineLite()
     renderChildren () {
-        return React.Children.map( this.props.children, (child,i) => {
+        return React.Children.map( this.props.children, ( child, i ) => {
             let clonedChild1 = React.cloneElement( child, {
-                fillOpacity: "0.1",
-                className:"fill",
-                id:'fill'+i
-
+                className: "fill",
+                id: 'fill' + i,
+                style: {fillOpacity: 0, transformOrigin:'50% 50%', transform:'scale(0)'}
             } )
             let clonedChild2 = React.cloneElement( child, {
-                fill:"none",
-                className:"stroke",
-                id:'stroke'+i,
-                stroke:child.props.fill,
-                strokeWidth:"6"
+                fill: "none",
+                className: "stroke",
+                id: 'stroke' + i,
+                stroke: child.props.fill,
+                strokeWidth: "2px",
+                strokeOpacity:1
             } )
             let clonedArray = []
-            clonedArray.push([clonedChild1,clonedChild2])
-            console.log(i)
+            clonedArray.push( [clonedChild1, clonedChild2] )
             return clonedArray
         } )
     }
 
+    componentDidMount () {
+        this.tl.set( `#${this.props.name} .stroke`, {drawSVG: "0% 0%"}, 0 )
+        this.tl.set( `#${this.props.name} .stroke`, {delay: this.props.startDelay}, 0 )
+            .staggerTo( `#${this.props.name} .stroke`, 1, {drawSVG: "0% 100%"}, 0.3 )
+            .staggerTo( `#${this.props.name} .stroke`, 0.5, {strokeOpacity: 0}, 0.3 )
+
+            // this.tl.staggerFromTo("#react .stroke", 1, {drawSVG:"0% 100%"}, {drawSVG:"0% 0%"}, 0.05)
+            .seek( 0 )
+            .pause()
+
+        let myFIll = document.getElementById( `${this.props.name}` ).getElementsByClassName( 'fill' )
+        for ( let i = 0; i < myFIll.length; i++ ) {
+            this.tl.set( myFIll[i].style, {fillOpacity: 0}, 0 )
+            this.tl.to( myFIll[i].style, 0.5, {fillOpacity: 1}, 1.6 + ( this.props.startDelay / 100 ) )
+            this.tl.to( myFIll[i].style, 1.5, {transform:'scale(1)', ease:Elastic.easeOut}, 1.2 + ( 0.1 * i ) )
+        }
+    }
+
+
     render () {
+        if ( this.props.onScreen ) {
+            this.tl.timeScale(1)
+            this.tl.play()
+        } else {
+            this.tl.timeScale(8)
+            this.tl.reverse()
+        }
+
         return (
-            <svg pathcount={React.Children.count(this.props.children)} version="1.1" id={this.props.logoid} x="0px" y="0px" viewBox="0 0 400 300" enableBackground="new 0 0 400 300">
+            <svg className="logoSVG" pathcount={React.Children.count( this.props.children )} version="1.1" id={this.props.name} x="0px" y="0px" viewBox="0 0 400 300" enableBackground="new 0 0 400 300">
                 {this.renderChildren()}
             </svg>
         )

@@ -1,28 +1,41 @@
-import React from 'react'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+
+import * as siteActions from '../../store/actions/siteActions'
+
 import OnScreen from '../../hoc/OnScreen/OnScreen'
 import classes from './pageBlock.css'
 
-import Grid from 'material-ui/Grid'
 import Paper from 'material-ui/Paper'
 
 
-const pageBlock = ( props ) => {
-
-    const backgroundColor = {backgroundColor: props.backgroundColor}
-    console.log( props )
-    return (
-
-        <section style={backgroundColor} className={[classes.sectionBlock, props.onScreen ? 'visible' : null].join( ' ' )}>
-            <Paper elevation={10}>
-                <div className={classes.contentBlock}>
-                    {props.children}
-                </div>
-            </Paper>
-        </section>
-
-
-    )
+class PageBlock extends Component {
+    componentDidMount () {
+         let pageBlockData = {
+             label: this.props.label,
+             ref: this.sectionRef,
+             current: false
+         }
+        this.props.addPageBlockDataHandler (pageBlockData)
+    }
+    render () {
+        const backgroundColor = {backgroundColor: this.props.backgroundColor}
+        return (
+            <section ref={(sectionRef) => { this.sectionRef = sectionRef }} style={backgroundColor} className={[classes.sectionBlock, this.props.onScreen ? 'visible' : null].join( ' ' )}>
+                <Paper elevation={10}>
+                    <div className={classes.contentBlock}>
+                        {this.props.children}
+                    </div>
+                </Paper>
+            </section>
+        )
+    }
 }
 
-const updatedPageBlock = OnScreen( pageBlock )
-export default updatedPageBlock
+const mapDispatchToProps = dispatch => {
+    return {
+        addPageBlockDataHandler: ( pageBlockData ) => dispatch( {type: siteActions.ADD_PAGEBLOCK, pageBlockData: pageBlockData} )
+    }
+} 
+
+export default connect( null, mapDispatchToProps )( OnScreen( PageBlock ) )

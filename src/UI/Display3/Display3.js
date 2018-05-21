@@ -16,8 +16,8 @@ const styles = theme => ( {
 const Display3 = ( props ) => {
     const {classes} = props
     return (
-        <SlideIn>
-            <Typography variant={'display3'} className={classes.display3}>{props.children}</Typography>
+        <SlideIn partial={true}>
+            <Typography {...props} variant={'display3'} className={classes.display3}>{props.children}</Typography>
         </SlideIn>
     )
 }

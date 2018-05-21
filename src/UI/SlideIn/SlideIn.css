@@ -1,15 +1,16 @@
 .SlideIn {
-    transition:600ms;
     position:relative;
 }
 
 
 .visible {
+    transition:600ms;
     opacity: 1;
-    left:0px;
+    transform:translateX(0px);
 }
 
 .notVisible {
+    transition:200ms;
     opacity: 0;
-    left:-25px;
+    transform:translateX(-25px);
 }

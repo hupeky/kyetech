@@ -1,61 +1,44 @@
 import React, {Component} from 'react'
-import {withStyles} from 'material-ui/styles'
+import {withTheme} from 'material-ui/styles'
+import {MuiThemeProvider} from 'material-ui/styles'
+
+import Typography from 'material-ui/Typography'
+
 import Auxillery from '../../hoc/Auxillery/Auxillery'
 
-const styles = {
-    root: {
+import PageBlock from '../../UI/pageBlock/pageBlock'
+import Grid from 'material-ui/Grid'
+import darkTheme from '../../assets/themes/darkTheme'
 
-    },
-    flex: {
-        flex: 1
-    },
-    menuButton: {
-    }
-}
+import Footer from '../../stateless/footer/footer'
+import NavBar from '../../stateless/navBar/navBar'
 
 class Layout extends Component {
     state = {
     }
 
     render () {
-        let title = ''
-        switch ( window.location.pathname ) {
-            case '/':
-                title = 'Home'
-                break
-            case '/cv':
-                title = 'CV'
-                break
-            case '/refs':
-                title = 'References'
-                break
-            default:
-                title = ''
-                break
-        }
-
+        const {theme} = this.props
         return (
             <Auxillery>
+                <MuiThemeProvider theme={darkTheme}>
+                    <NavBar />
+                </MuiThemeProvider>
                 {this.props.children}
-                <footer> Footer here </footer>
+                <PageBlock label={'Contact'} backgroundColor={theme.palette.primary.main}>
+                    <Grid container spacing={8}>
+                        <Grid item xs={1} md={2} />
+                        <Grid item xs={10} md={8}>
+                            <MuiThemeProvider theme={darkTheme}>
+                                <Footer />
+                            </MuiThemeProvider>
+                        </Grid>
+                    </Grid>
+                </PageBlock>
+
             </Auxillery>
         )
     }
 }
 
-/* const mapStateToProps = state => { // map redux state to class props
-    return {
-        location: state.location,
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        startAnimation: ( coords ) => dispatch( {type: actionTypes.START_ANIMATION, coords: coords} ),
-        setDimensions: ( dimensions ) => dispatch( {type: actionTypes.SET_DIMENSIONS, dimensions: dimensions} )
-    }
-} */
-
-// export default connect( mapStateToProps, mapDispatchToProps )( CardManager )
-
-export default withStyles( styles )( Layout )
+export default withTheme()( Layout )

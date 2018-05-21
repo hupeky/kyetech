@@ -2,25 +2,24 @@ import React from 'react'
 import {withStyles} from 'material-ui/styles'
 import Typography from 'material-ui/Typography'
 
-import SlideIn from '../SlideIn/SlideIn'
-
 const styles = theme => ( {
     display1: {
-        [theme.breakpoints.up( 'xs' )]: {fontSize: '1.2em'},
-        [theme.breakpoints.up( 'md' )]: {fontSize: '1.4em'},
-        [theme.breakpoints.up( 'lg' )]: {fontSize: '1.6em'},
+        [theme.breakpoints.up( 'xs' )]: {fontSize: '1.5em'},
+        [theme.breakpoints.up( 'md' )]: {fontSize: '1.7em'},
+        [theme.breakpoints.up( 'lg' )]: {fontSize: '1.9em'},
         fontWeight: 500,
         textAlign:'left',
-        marginBottom:'10px'
+        marginBottom:'10px',
+        marginTop:'60px'
     }
 } )
 
 const Display1 = ( props ) => {
     const {classes} = props
     return (
-        <SlideIn>
-            <Typography variant={'display1'} className={classes.display1}>{props.children}</Typography>
-        </SlideIn>
+
+            <Typography {...props} variant={'display1'} className={classes.display1}>{props.children}</Typography>
+
     )
 }
 export default withStyles( styles, {withTheme: true} )( Display1 )

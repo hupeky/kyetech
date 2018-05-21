@@ -1,0 +1,2 @@
+export const ADD_PAGEBLOCK = 'ADD_PAGEBLOCK'
+export const SET_CURRENT_BLOCK = 'SET_CURRENT_BLOCK'

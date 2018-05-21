@@ -1,0 +1,23 @@
+.imgHolder {
+    width:100%;
+    overflow: hidden;
+}
+
+.img {
+    height: 0;
+    width: 100%;
+    padding-top: 56.5%; 
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    transition: 0;
+    transform: scale(1);
+}
+
+.imgHolder.onScreen .img  {
+    transition: 15000ms;
+    transform: scale(1.1)
+
+}

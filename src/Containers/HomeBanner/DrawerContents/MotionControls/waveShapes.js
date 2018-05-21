@@ -23,7 +23,7 @@ const waveShapes = [
         img: saw,
         title: 'Saw',
         key: 'saw'
-    },
+    }
 ]
 
 export default waveShapes

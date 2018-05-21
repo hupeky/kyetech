@@ -66,8 +66,8 @@ class ASceneDrawer extends React.Component {
                         textColor="secondary"
                         scrollable={false}
                     >
-                        <Tab style={{minWidth: '50%'}} label="Colour" />
                         <Tab style={{minWidth: '50%'}} label="Motion" />
+                        <Tab style={{minWidth: '50%'}} label="Colour" />
                     </Tabs>
                 </AppBar>
                 <SwipeableViews
@@ -77,10 +77,10 @@ class ASceneDrawer extends React.Component {
                     disabled={true}
                 >
                     <TabContainer dir={theme.direction}>
-                        <ColourControls />
+                        <MotionControls />
                     </TabContainer>
                     <TabContainer dir={theme.direction}>
-                        <MotionControls />
+                        <ColourControls />
                     </TabContainer>
                 </SwipeableViews>
             </Auxillery>

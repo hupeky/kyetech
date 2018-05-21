@@ -11,7 +11,7 @@ abstractBackdrops.colour1 =  [{
     imgSrc: colour1,
     rgbaArray: {}
 }]
-abstractBackdrops.colour1_4x4 =  [{
+/* abstractBackdrops.colour1_4x4 =  [{
     type: 'abstract',
     key: 'colour1_4x4',
     imgSrc: colour1_4x4,
@@ -28,6 +28,6 @@ abstractBackdrops.colour1_3x3mario =  [{
     key: 'colour1_3x3mario',
     imgSrc: colour1_3x3mario,
     rgbaArray: {}
-}]
+}] */
 
 export default {...abstractBackdrops} 

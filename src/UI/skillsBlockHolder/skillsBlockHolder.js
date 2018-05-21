@@ -1,29 +1,49 @@
-import React from 'react'
+import React, {Component} from 'react'
 
 import OnScreen from '../../hoc/OnScreen/OnScreen'
 import classes from './skillsBlockHolder.css'
 
 import Grid from 'material-ui/Grid'
 
+import skillsBlockData from './skillsBlockData'
 
-const skillsBlockHolder = ( props ) => {
-    const buildLogosHandler =  () => {
-        let delay = 0
-        return props.logosArray.map(logo => {
-            const Component = logo.component
-            delay += 60
-            return <Grid item xs={6} sm={3}><div style={{transitionDelay:delay+'ms'}} className={classes.slideIn}><Component id="react" /></div></Grid>
-        })
-        
-    }
-    console.log( props.onScreen )
-    return (
-        <div className={props.onScreen ? classes.onScreen : null}   >
-            <Grid container spacing={8}>
-                {buildLogosHandler()}
+class SkillsBlockHolder extends Component {
+    delay = 0
+    buildLogosHandler = () => {
+        this.delay = 0
+        return (
+            <Grid className={classes.skillsBlock} container>
+                {skillsBlockData[this.props.type].map( item => {
+                    const LogoComponent = item.component
+                    this.delay += this.props.delay
+                    let startDelay = this.delay / 1000
+                    return (
+                        <Grid key={item.id} item xs={this.props.xs} sm={this.props.sm}>
+                            <div style={{transitionDelay: this.props.onScreen === true ? this.delay + 'ms' :  '0ms'}} className={classes.slideIn}>
+                                <LogoComponent img={item.img} startDelay={startDelay} onScreen={this.props.onScreen} id={item.id} title={item.title} />
+                                {this.props.type === 'logo' ? <div>{item.title}</div> : null}
+                            </div>
+                        </Grid>
+                    )
+                } )}
             </Grid>
-        </div>
-    )
-}
+        )
+    }
 
-export default OnScreen( skillsBlockHolder, true, -125 ) // component, partial vis, offset
+    render() {
+        return (
+            <div className={this.props.onScreen ? [classes.onScreen, 'onscreen'].join( " " ) : null} >
+                <Grid container spacing={8}>
+                    {this.buildLogosHandler()}
+                </Grid>
+            </div>
+        )
+    }
+
+}
+SkillsBlockHolder.defaultProps = {
+    delay: 100,
+    xs: 6,
+    sm: 3
+}
+export default OnScreen( SkillsBlockHolder, true, -25) // component, partial vis, offset
