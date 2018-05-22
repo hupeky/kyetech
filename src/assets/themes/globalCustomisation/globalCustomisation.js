@@ -17,6 +17,11 @@ let globalCustomisation = {
             main: '#e3e3e3',
             light: 'fff',
             dark: '#A4A4A4'
+        },
+        darkGrey: {
+            main: '#363636',
+            light: '#656565',
+            dark: '#202020'
         }
     },
     overrides: {
@@ -50,30 +55,6 @@ let globalCustomisation = {
                 opacity: 0.6,
                 fontWeight: 500,
                 textAlign:'left'
-            }
-        },
-        MuiListItemText: {
-            root: {padding: 0},
-            primary: {
-                fontSize: "0.875rem",
-                fontWeight: 400,
-                marginBottom: 0,
-                lineHeight: "1.46429em",
-                opacity: 0.8
-            }
-        },
-        MuiListItemIcon: {
-            root: {
-                marginLeft: '20px',
-                width: '15px',
-                height: '15px'
-            }
-
-        },
-        MuiListItem: {
-            default: {
-                paddingTop: '0px',
-                paddingBottom: '6px'
             }
         }
     }

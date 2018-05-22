@@ -19,6 +19,9 @@ class PageBlock extends Component {
         this.props.addPageBlockDataHandler (pageBlockData)
     }
     render () {
+        if (this.props.onScreen === true) {
+            console.log (this.props.label, 'is on screen now')
+        }
         const backgroundColor = {backgroundColor: this.props.backgroundColor}
         return (
             <section ref={(sectionRef) => { this.sectionRef = sectionRef }} style={backgroundColor} className={[classes.sectionBlock, this.props.onScreen ? 'visible' : null].join( ' ' )}>
@@ -38,4 +41,4 @@ const mapDispatchToProps = dispatch => {
     }
 } 
 
-export default connect( null, mapDispatchToProps )( OnScreen( PageBlock ) )
+export default connect( null, mapDispatchToProps )( PageBlock )

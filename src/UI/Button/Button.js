@@ -17,17 +17,16 @@ const navButtonStyles = {
 const button = ( props ) => {
     const {classes} = props
     return (
-        <Button className={classes.root}>
-
+        <Button onClick={props.click} className={classes.root}>
             <div style={{position: 'relative'}}>{props.label}</div>
             <div
-                onClick={props.click}
                 className={localClasses.button}
                 style={{
                     position: 'absolute',
                     width: '100%', height: '100%',
                     top: 0, left: 0,
-                    backgroundColor: 'red'
+                    backgroundColor: 'red',
+                    
                 }} />
         </Button>
     )

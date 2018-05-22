@@ -6,7 +6,7 @@ const darkTheme = createMuiTheme( {
     ...globalCustomisation,
     palette: {
         ...globalCustomisation.palette,
-        type: 'dark' // Switching the dark mode on is a single property value change.
+        type: 'dark', // Switching the dark mode on is a single property value change.
     }
 } )
 
