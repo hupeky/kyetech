@@ -3,10 +3,9 @@ import {connect} from 'react-redux'
 
 import * as siteActions from '../../store/actions/siteActions'
 
-import OnScreen from '../../hoc/OnScreen/OnScreen'
 import classes from './pageBlock.css'
 
-import Paper from 'material-ui/Paper'
+import Paper from '@material-ui/core/Paper'
 
 
 class PageBlock extends Component {
@@ -14,6 +13,7 @@ class PageBlock extends Component {
          let pageBlockData = {
              label: this.props.label,
              ref: this.sectionRef,
+             icon: this.props.icon,
              current: false
          }
         this.props.addPageBlockDataHandler (pageBlockData)

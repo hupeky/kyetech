@@ -3,9 +3,9 @@ import React from 'react'
 import OnScreen from '../../hoc/OnScreen/OnScreen'
 import classes from './skillsBlockHolder.css'
 
-import Grid from 'material-ui/Grid'
+import Grid from '@material-ui/core/Grid'
 
-import {ListItem, ListItemIcon, ListItemText} from 'material-ui/List'
+import {ListItem, ListItemIcon, ListItemText} from '@material-ui/core/List'
 import ListIcon from '../../assets/SVG/Tile/listIcon.svg'
 
 const skillsBlockHolder = ( props ) => {

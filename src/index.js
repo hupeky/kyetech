@@ -4,8 +4,7 @@ import {Provider} from 'react-redux'
 
 import {BrowserRouter} from 'react-router-dom'
 
-import {MuiThemeProvider} from 'material-ui/styles'
-
+import { MuiThemeProvider } from '@material-ui/core/styles'
 import './globalStyles.css'
 import App from './App'
 

@@ -1,16 +1,13 @@
 import React, {Component} from 'react'
 import DrawerContents from './DrawerContents/DrawerContents'
 
-import 'typeface-roboto'
-
-import {withStyles} from 'material-ui/styles'
-import Drawer from 'material-ui/Drawer'
-import Hidden from 'material-ui/Hidden'
+import Drawer from '@material-ui/core/Drawer'
+import Hidden from '@material-ui/core/Hidden'
 import MenuIcon from '@material-ui/icons/Menu'
-import IconButton from 'material-ui/IconButton'
+import IconButton from '@material-ui/core/IconButton'
 
 import AScene from '../../stateless/AScene/AScene'
-
+import {withStyles} from '@material-ui/core/styles'
 
 const drawerWidth = 400
 

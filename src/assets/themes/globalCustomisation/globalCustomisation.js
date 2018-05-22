@@ -56,6 +56,11 @@ let globalCustomisation = {
                 fontWeight: 500,
                 textAlign:'left'
             }
+        },
+        MuiListItemIcon: {
+            root: {
+                color: 'none'
+            }
         }
     }
 

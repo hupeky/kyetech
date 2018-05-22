@@ -1,6 +1,6 @@
 import React from 'react'
-import {withStyles} from 'material-ui/styles'
-import ButtonBase from 'material-ui/ButtonBase'
+import {withStyles} from '@material-ui/core/styles'
+import ButtonBase from '@material-ui/core/ButtonBase'
 
 const styles = theme => ( {
     root: {

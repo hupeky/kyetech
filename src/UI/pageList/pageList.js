@@ -1,12 +1,15 @@
 import React from 'react'
 
-import Grid from 'material-ui/Grid'
-import List, {ListItem, ListItemIcon, ListItemText} from 'material-ui/List'
+import Grid from '@material-ui/core/Grid'
+
+import List from '@material-ui/core/List'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
+
 import ListIcon from '../../assets/SVG/Tile/listIcon.svg'
 
-import SlideIn from '../../UI/SlideIn/SlideIn'
-
-import {withStyles} from 'material-ui/styles'
+import {withStyles} from '@material-ui/core/styles'
 
 const styles = theme => ( {
     ListItemText: {
@@ -29,9 +32,11 @@ const styles = theme => ( {
             marginLeft: '20px',
             width: '15px',
             height: '15px'
-
-
+    },
+    centerList: {
+        margin: '0 auto 50px auto'
     }
+
 } )
 
 const pageList = ( props ) => {

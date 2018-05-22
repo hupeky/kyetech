@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import LazyLoad from 'react-lazyload'
 
-import {withTheme} from 'material-ui/styles'
+import {withTheme} from '@material-ui/core/styles'
 import Title from '../../UI/title/title'
 import onScreen from '../../hoc/OnScreen/OnScreen'
 

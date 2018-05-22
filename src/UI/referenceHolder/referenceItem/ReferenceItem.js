@@ -1,12 +1,13 @@
 import React from 'react'
 
-import {withStyles} from 'material-ui/styles'
+import {withStyles} from '@material-ui/core/styles'
 
-import Card, {CardContent, CardMedia} from 'material-ui/Card'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
 
 import refImg from '../../../assets/imgs/refImg.jpg'
 import quoteMarks from '../../../assets/SVG/quoteMarks.svg'
-import Typography from 'material-ui/Typography'
+import Typography from '@material-ui/core/Typography'
 
 const styles = theme => ( {
     card: {

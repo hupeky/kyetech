@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-import {withStyles} from 'material-ui/styles'
-import {MuiThemeProvider} from 'material-ui/styles'
+import {withStyles} from '@material-ui/core/styles'
+import {MuiThemeProvider} from '@material-ui/core/styles'
 
-import Grid from 'material-ui/Grid'
+import Grid from '@material-ui/core/Grid'
 import darkTheme from '../../assets/themes/darkTheme'
 
 import PageBlock from '../../UI/pageBlock/pageBlock'
@@ -13,17 +13,28 @@ import NavBar from '../../stateless/navBar/navBar'
 
 import * as siteActions from '../../store/actions/siteActions'
 
-import Button from '../../UI/Button/Button'
+import SlideIn from '../../UI/SlideIn/SlideIn'
+import ScaleIn from '../../UI/ScaleIn/ScaleIn'
+import Display3 from '../../UI/Display3/Display3'
 
-import Drawer from 'material-ui/Drawer'
-import AppBar from 'material-ui/AppBar'
-import Toolbar from 'material-ui/Toolbar'
+import Drawer from '@material-ui/core/Drawer'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
 
-import List, {ListItem, ListItemIcon, ListItemText} from 'material-ui/List'
+import Hidden from '@material-ui/core/Hidden'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ListItemText from '@material-ui/core/ListItemText'
 
-import IconButton from 'material-ui/IconButton'
+import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import HomeIcon from '@material-ui/icons/Home'
+
+import ThreeDRotation from '@material-ui/icons/ThreeDRotation'
+
+import ChatIcon from '@material-ui/icons/Chat'
+
 
 import scrollToComponent from 'react-scroll-to-component'
 
@@ -34,6 +45,13 @@ const styles = theme => ( {
     },
     content: {
         flexGrow: 1
+    },
+    pageBlockIcon: {
+        fontSize: '200px',
+        color: 'white',
+        opacity: '0.1',
+        boxSizing: 'border-box',
+        margin: '15px 0'
     }
 } )
 
@@ -45,7 +63,7 @@ class Layout extends Component {
     scrollFromButtonHandler ( ref ) {
         console.log( ref.offsetTop )
         console.log( window.pageYOffset )
-        scrollToComponent( ref, {offset: 0, align: 'top', duration: 1000, ease: 'inOutQuad'} )
+        scrollToComponent( ref, {offset: -50, align: 'top', duration: 1000, ease: 'inOutQuad'} )
     }
 
     componentWillMount () {
@@ -57,7 +75,7 @@ class Layout extends Component {
         let homeBlockData = {
             ref: document.body,
             label: <HomeIcon />,
-            icon: <HomeIcon />,
+            icon: <ThreeDRotation />,
             current: true
         }
         this.props.addPageBlockDataHandler( homeBlockData )
@@ -81,47 +99,54 @@ class Layout extends Component {
                         scrollButton={this.scrollFromButtonHandler}
                         pageBlockData={this.props.pageBlockData} />
                 </MuiThemeProvider>
-                <Drawer
-                    variant="temporary"
-                    anchor='left'
-                    open={this.state.drawerOpen}
-                    onClick={() => this.toggleDrawer( false )}
-                    classes={{
-                        paper: classes.drawerPaperTemp
-                    }}>
-                    <div
-                        role="button"
+
+                <Hidden mdUp={true}>
+                    <Drawer
+                        variant="temporary"
+                        anchor='left'
+                        open={this.state.drawerOpen}
                         onClick={() => this.toggleDrawer( false )}
-                        onKeyDown={() => this.toggleDrawer( false )}>
+                        classes={{
+                            paper: classes.drawerPaperTemp
+                        }}>
+                        <div
+                            role="button"
+                            onClick={() => this.toggleDrawer( false )}
+                            onKeyDown={() => this.toggleDrawer( false )}>
 
-                        <AppBar color={'secondary'} position="sticky" elevation={10}>
-                            <Toolbar>
-                                <IconButton>
-                                    <MenuIcon />
-                                </IconButton>
-                            </Toolbar>
-                        </AppBar>
-                        {this.props.pageBlockData.map( ( pageBlock, i ) => {
-                            return <List onClick={() => this.scrollFromButtonHandler( pageBlock.ref )} key={i} label={pageBlock.label}>
-                                <ListItem button>
-                                    <ListItemIcon>
+                            <AppBar color={'primary'} position="sticky" elevation={10}>
+                                <Toolbar>
+                                    <IconButton style={{color: 'white'}}>
                                         <MenuIcon />
-                                    </ListItemIcon>
-                                    <ListItemText
-                                        primary={pageBlock.label}
-                                    />
-                                </ListItem>
-                            </List>
-                        } )}
+                                    </IconButton>
+                                </Toolbar>
+                            </AppBar>
+                            {this.props.pageBlockData.map( ( pageBlock, i ) => {
+                                return <List onClick={() => this.scrollFromButtonHandler( pageBlock.ref )} key={i} label={pageBlock.label}>
+                                    <ListItem button>
+                                        <ListItemIcon color='secondary'>
+                                            {pageBlock.icon}
+                                        </ListItemIcon>
+                                        <ListItemText
+                                            primary={pageBlock.label}
+                                        />
+                                    </ListItem>
+                                </List>
+                            } )}
 
 
-                    </div>
+                        </div>
 
-                </Drawer>
-
+                    </Drawer>
+                </Hidden>
 
                 {this.props.children}
-                <PageBlock label={'Contact'} backgroundColor={theme.palette.primary.main}>
+                <MuiThemeProvider theme={darkTheme}>
+                <PageBlock icon={<ChatIcon />} label={'Contact'} backgroundColor={theme.palette.primary.main}>
+                    <SlideIn partial={true}>
+                        <Display3>Get in touch</Display3>
+                    </SlideIn>
+                    <ScaleIn><ChatIcon style={{color: 'white', padding: '30px 15px'}} className={classes.pageBlockIcon} /></ScaleIn>
                     <Grid container spacing={8}>
                         <Grid item xs={1} md={2} />
                         <Grid item xs={10} md={8}>
@@ -131,6 +156,7 @@ class Layout extends Component {
                         </Grid>
                     </Grid>
                 </PageBlock>
+                </MuiThemeProvider>
             </React.Fragment>
         )
     }

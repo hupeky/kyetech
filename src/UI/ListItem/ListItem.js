@@ -1,6 +1,8 @@
 import React from 'react'
 
-import {ListItem, ListItemIcon, ListItemText} from 'material-ui/List'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
 
 const listItem = (props) => {
     return (

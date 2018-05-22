@@ -6,10 +6,12 @@ import * as actionTypes from '../../../../store/actions'
 import Auxillery from '../../../../hoc/Auxillery/Auxillery'
 import ImgButton from '../../../../UI/ImgButton/ImgButton'
 
-import GridList, {GridListTile} from 'material-ui/GridList'
-import {withStyles} from 'material-ui/styles'
+import GridList from '@material-ui/core/GridList'
+import GridListTile from '@material-ui/core/GridListTile'
 
-import Typography from 'material-ui/Typography'
+import { withStyles } from '@material-ui/core/styles'
+
+import Typography from '@material-ui/core/Typography'
 
 const styles = theme => ( {
     root: {
