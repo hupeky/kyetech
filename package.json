@@ -113,7 +113,7 @@
       "react-app"
     ]
   },
-  "homepage": "http://kye.tech/pixelsv5",
+  "homepage": "http://kye.tech",
   "eslintConfig": {
     "extends": "react-app"
   },

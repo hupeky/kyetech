@@ -7,7 +7,6 @@ import PageBlock from '../../UI/pageBlock/pageBlock'
 import Display3 from '../../UI/Display3/Display3'
 import Display1 from '../../UI/Display1/Display1'
 import Headline from '../../UI/headline/headline'
-import PageImage from '../../UI/PageImage/PageImage'
 
 import ScaleIn from '../../UI/ScaleIn/ScaleIn'
 import SlideIn from '../../UI/SlideIn/SlideIn'
@@ -35,8 +34,6 @@ import ExamplesIcon from '@material-ui/icons/Devices'
 import RecommendationsIcon from '@material-ui/icons/ThumbUp'
 import SkillsIcon from '@material-ui/icons/Settings'
 import AboutMeIcon from '@material-ui/icons/FormatQuote'
-
-import exampleImages from '../../data/exampleImages'
 
 const styles = {
     pageBlockIcon: {
@@ -114,7 +111,7 @@ const home = ( props ) => {
 
                         {/* ********** other skill set */}
                         <Display1>Other</Display1>
-                        <PageList list={[
+                        <PageList columns={2} list={[
                             'incia volesci llandia dolup',
                             'incia volesci llandia dolup',
                             'incia volesup',
@@ -201,23 +198,7 @@ const home = ( props ) => {
                     <Grid item xs={1} md={2} />
                     <Grid item xs={10} md={8}>
                         <CompanyLogo img={pretLogo} width={170} />
-                        <Display1>Pret a Manger</Display1>
-
-
-                        <Typography variant="body1">Hiliquos alibus autem apid modios parchit, voloribusam, sandis re quis exceperum nimoles tibus, con eum quiatus millaborit dellectore sumquodita quaspid eatioribus mi, quam quo con repedis moloruptatem</Typography>
-                        <Typography variant="body1">re necabor empellupit adictore et laborum quo odi vellore ictio. Perumquidunt quiaspe rcimus doluptassit, suntincia volesci llandia dolupis aut fugia sectesto iducimil eatquam quiaest, </Typography>
-
-                        <Headline>Deliverables</Headline>
-
-                        <PageList list={[
-                            'incia volesci llandia dolup',
-                            'incia volesci llandia dolup',
-                            'incia volesup',
-                            'incia volesci llandia dolup',
-                            'incia volesci llandiolup',
-                            'incia volesci llandia dolup',
-                            'incia volesci llandia dolup',
-                            'incia volesci llandia dolup']} />
+                        <Display1></Display1>
                     </Grid>
                 </Grid>
                 <ExampleImageHolder company='pret' />

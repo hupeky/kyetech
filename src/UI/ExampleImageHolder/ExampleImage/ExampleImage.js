@@ -80,23 +80,27 @@ class ReferenceItem extends Component {
                     <div className={[myClasses.imgHolder, this.props.onScreen ? myClasses.onScreen : null].join( " " )}>
                         <div className={myClasses.img} style={{backgroundImage: `url(${this.props.url})`}} />
                     </div>
-                    
-                    <CardActions className={classes.actions} disableActionSpacing>
-                        <span style={{marginLeft: 'auto'}}>more info</span>
-                        <IconButton
-                            className={[classes.expand, this.state.expanded ? classes.expandOpen : null].join( " " )}
-                            onClick={this.handleExpandClick}
-                            aria-expanded={this.state.expanded}
-                            aria-label="Show more">
-                            <ExpandMoreIcon />
-                        </IconButton>
-                    </CardActions>
+                    {this.props.body ? (
+                        <React.Fragment>
+                            <CardActions className={classes.actions} disableActionSpacing>
+                                <span style={{marginLeft: 'auto'}}>more info</span>
+                                <IconButton
+                                    className={[classes.expand, this.state.expanded ? classes.expandOpen : null].join( " " )}
+                                    onClick={this.handleExpandClick}
+                                    aria-expanded={this.state.expanded}
+                                    aria-label="Show more">
+                                    <ExpandMoreIcon />
+                                </IconButton>
+                            </CardActions>
 
-                    <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-                        <CardContent>
-                            <Typography variant='body1'>{this.props.body}</Typography>
-                        </CardContent>
-                    </Collapse>
+                            <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+                                <CardContent>
+                                    {this.props.body}
+                                </CardContent>
+                            </Collapse>
+                        </React.Fragment> )
+                        : null
+                    }
                 </Card>
             </LazyLoad>
         )

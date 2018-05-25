@@ -1,15 +1,22 @@
-html {
 
-  }
+
   
   body {
     margin:0;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 .myP {
-	color:purple;
+    color:purple;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+    vertical-align: middle;
+}
+menu {
+    margin:0
+}
 @media only screen and (min-width: 0px) {
     .sectionBlockMargin {
         margin:30px auto

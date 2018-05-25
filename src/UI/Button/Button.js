@@ -1,35 +1,18 @@
 import React from 'react'
 import Button from '@material-ui/core/Button'
-import {withStyles} from '@material-ui/core/styles'
 
 import localClasses from './Button.css'
-
-const navButtonStyles = {
-    root: {
-        textTransform: 'capitalize',
-        textDecoration: 'none',
-        height: 50,
-        minWidth: 'initial'
-    }
-}
-
+import LinkedInIcon from './../../assets/icons/LinkedIn.js'
 
 const button = ( props ) => {
-    const {classes} = props
     return (
-        <Button onClick={props.click} className={classes.root}>
-            <div style={{position: 'relative'}}>{props.label}</div>
-            <div
-                className={localClasses.button}
-                style={{
-                    position: 'absolute',
-                    width: '100%', height: '100%',
-                    top: 0, left: 0,
-                    backgroundColor: 'red',
-                    
-                }} />
+        <Button className={localClasses.Button} onClick={props.click}>
+        {props.children}
+            {props.icon ? props.icon : null}
+            <div style={props.spacer ? {marginLeft: '15px'} : null}>{props.label}</div>
+            {props.bg === false ? null : <div className={localClasses.bg} />}
         </Button>
     )
 }
 
-export default withStyles( navButtonStyles )( button )
+export default button

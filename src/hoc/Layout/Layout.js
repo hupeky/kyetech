@@ -30,13 +30,13 @@ import ListItemText from '@material-ui/core/ListItemText'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import HomeIcon from '@material-ui/icons/Home'
-
 import ThreeDRotation from '@material-ui/icons/ThreeDRotation'
 
 import ChatIcon from '@material-ui/icons/Chat'
 
 
 import scrollToComponent from 'react-scroll-to-component'
+import {Typography} from '@material-ui/core';
 
 const styles = theme => ( {
     drawerPaperTemp: {
@@ -67,18 +67,7 @@ class Layout extends Component {
     }
 
     componentWillMount () {
-        this.buildHomeRef()
         window.addEventListener( "scroll", () => this.props.setCurrentBlockHandler( window.pageYOffset ) )
-    }
-
-    buildHomeRef () {
-        let homeBlockData = {
-            ref: document.body,
-            label: <HomeIcon />,
-            icon: <ThreeDRotation />,
-            current: true
-        }
-        this.props.addPageBlockDataHandler( homeBlockData )
     }
 
     toggleDrawer = ( isOpen ) => {
@@ -121,18 +110,24 @@ class Layout extends Component {
                                     </IconButton>
                                 </Toolbar>
                             </AppBar>
-                            {this.props.pageBlockData.map( ( pageBlock, i ) => {
-                                return <List onClick={() => this.scrollFromButtonHandler( pageBlock.ref )} key={i} label={pageBlock.label}>
-                                    <ListItem button>
-                                        <ListItemIcon color='secondary'>
-                                            {pageBlock.icon}
-                                        </ListItemIcon>
-                                        <ListItemText
-                                            primary={pageBlock.label}
-                                        />
-                                    </ListItem>
-                                </List>
-                            } )}
+                            <List  >
+                                <ListItem onClick={() => this.scrollFromButtonHandler( document.body )} button >
+                                    <ListItemIcon color='secondary'>
+                                    <ThreeDRotation />
+                                    </ListItemIcon>
+                                    <Typography variant={'body2'}>Home</Typography>
+                                </ListItem>
+                                {this.props.pageBlockData.map( ( pageBlock, i ) => {
+                                    return (
+                                        <ListItem key={i} onClick={() => this.scrollFromButtonHandler( pageBlock.ref )} button >
+                                            <ListItemIcon color='secondary'>
+                                                {pageBlock.icon}
+                                            </ListItemIcon>
+                                            <Typography variant={'body2'}>{pageBlock.label}</Typography>
+                                        </ListItem>
+                                    )
+                                } )}
+                            </List>
 
 
                         </div>
@@ -142,20 +137,20 @@ class Layout extends Component {
 
                 {this.props.children}
                 <MuiThemeProvider theme={darkTheme}>
-                <PageBlock icon={<ChatIcon />} label={'Contact'} backgroundColor={theme.palette.primary.main}>
-                    <SlideIn partial={true}>
-                        <Display3>Get in touch</Display3>
-                    </SlideIn>
-                    <ScaleIn><ChatIcon style={{color: 'white', padding: '30px 15px'}} className={classes.pageBlockIcon} /></ScaleIn>
-                    <Grid container spacing={8}>
-                        <Grid item xs={1} md={2} />
-                        <Grid item xs={10} md={8}>
-                            <MuiThemeProvider theme={darkTheme}>
-                                <Footer />
-                            </MuiThemeProvider>
+                    <PageBlock icon={<ChatIcon />} label={'Contact'} backgroundColor={theme.palette.primary.main}>
+                        <SlideIn partial={true}>
+                            <Display3>Get in touch</Display3>
+                        </SlideIn>
+                        <ScaleIn><ChatIcon style={{color: 'white', padding: '30px 15px'}} className={classes.pageBlockIcon} /></ScaleIn>
+                        <Grid container spacing={8}>
+                            <Grid item xs={1} md={2} />
+                            <Grid item xs={10} md={8}>
+                                <MuiThemeProvider theme={darkTheme}>
+                                    <Footer />
+                                </MuiThemeProvider>
+                            </Grid>
                         </Grid>
-                    </Grid>
-                </PageBlock>
+                    </PageBlock>
                 </MuiThemeProvider>
             </React.Fragment>
         )

@@ -8,7 +8,10 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
+import ThreeDRotation from '@material-ui/icons/ThreeDRotation'
 
+import LinkedInIcon from './../../assets/icons/LinkedIn'
+import DownloadCVIcon from './../../assets/icons/cv'
 
 const navBar = ( props ) => {
     return (
@@ -20,10 +23,30 @@ const navBar = ( props ) => {
                     </IconButton>
                 </Hidden>
                 <Hidden only={['xs', 'sm']}>
+                    <Button spacer click={() => props.scrollButton( document.body)} label={'Home'} >
+                        <ThreeDRotation color={'secondary'}/>
+                        
+                    </Button>
                     {props.pageBlockData.map( ( pageBlock, i ) => {
-                        return <Button click={() => props.scrollButton( pageBlock.ref )} key={i} label={pageBlock.label} />
+                        return (
+                            <Button bg={false} click={() => props.scrollButton( pageBlock.ref )} key={i} >
+                                {pageBlock.label}
+                            </Button>
+                        )
                     } )}
                 </Hidden>
+                <menu style={{marginLeft: 'auto'}}>
+                    <a target="_blank" href="https://www.linkedin.com/in/kyehuelin/">
+                        <Button>
+                            <LinkedInIcon height={25}/>
+                        </Button>
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/in/kyehuelin/">
+                        <Button spacer label={'CV'}>
+                            <DownloadCVIcon height={25} />
+                    </Button>
+                    </a>
+                </menu>
             </Toolbar>
         </AppBar>
     )

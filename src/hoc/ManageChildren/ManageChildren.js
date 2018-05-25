@@ -35,8 +35,6 @@ class ManageChildren extends React.Component {
         this.tl.set( `#${this.props.name} .stroke`, {delay: this.props.startDelay}, 0 )
             .staggerTo( `#${this.props.name} .stroke`, 1, {drawSVG: "0% 100%"}, 0.3 )
             .staggerTo( `#${this.props.name} .stroke`, 0.5, {strokeOpacity: 0}, 0.3 )
-
-            // this.tl.staggerFromTo("#react .stroke", 1, {drawSVG:"0% 100%"}, {drawSVG:"0% 0%"}, 0.05)
             .seek( 0 )
             .pause()
 
@@ -59,7 +57,7 @@ class ManageChildren extends React.Component {
         }
 
         return (
-            <svg className="logoSVG" pathcount={React.Children.count( this.props.children )} version="1.1" id={this.props.name} x="0px" y="0px" viewBox="0 0 400 300" enableBackground="new 0 0 400 300">
+            <svg className="logoSVG" pathcount={React.Children.count( this.props.children )} version="1.1" id={this.props.name} x="0px" y="0px" viewBox="0 0 400 300">
                 {this.renderChildren()}
             </svg>
         )

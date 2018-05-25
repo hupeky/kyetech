@@ -33,7 +33,7 @@ class CardManager extends Component {
             cardEntityArray.push( row )
         }
         return (
-            <a-entity click={this.cardClickedHandler} position={`-${Math.floor( this.props.dimensions.x / 2 )} 0 ${Math.floor( this.props.dimensions.z / 2.1 )}`} rotation="0 0 0" >
+            <a-entity click={this.cardClickedHandler} position={`-${Math.floor( this.props.dimensions.x / 2 )} 0 ${Math.floor( this.props.dimensions.z / 2.2 )}`} rotation="0 0 0" >
                 {cardEntityArray}
             </a-entity>
 

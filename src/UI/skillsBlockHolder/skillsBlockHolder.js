@@ -21,7 +21,7 @@ class SkillsBlockHolder extends Component {
                         <Grid key={item.id} item xs={this.props.xs} sm={this.props.sm}>
                             <div style={{transitionDelay: this.props.onScreen === true ? this.delay + 'ms' :  '0ms'}} className={classes.slideIn}>
                                 <LogoComponent img={item.img} startDelay={startDelay} onScreen={this.props.onScreen} id={item.id} title={item.title} />
-                                {this.props.type === 'logo' ? <div>{item.title}</div> : null}
+                                {this.props.type === 'technical' ? <div>{item.title}</div> : null}
                             </div>
                         </Grid>
                     )

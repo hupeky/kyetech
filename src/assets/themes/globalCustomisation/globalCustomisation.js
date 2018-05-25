@@ -61,6 +61,14 @@ let globalCustomisation = {
             root: {
                 color: 'none'
             }
+        },
+        MuiButton: {
+            root: {
+                textTransform: 'capitalize',
+                textDecoration: 'none',
+                height: 50,
+                minWidth: 'initial'
+            }
         }
     }
 

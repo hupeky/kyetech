@@ -6,36 +6,32 @@ import List from '@material-ui/core/List'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
+import Typography from '@material-ui/core/Typography'
 
 import ListIcon from '../../assets/SVG/Tile/listIcon.svg'
 
 import {withStyles} from '@material-ui/core/styles'
 
 const styles = theme => ( {
-    ListItemText: {
-        padding: 0,
-        fontSize: "0.875rem",
-        fontWeight: 400,
-        marginBottom: 0,
-        lineHeight: "1.46429em",
-        opacity: 0.8
+
+    ListItem: {
+        paddingTop: '0px',
+        paddingBottom: '6px'
 
     },
-    ListItem: {
-
-            paddingTop: '0px',
-            paddingBottom: '6px'
-
+    ListItemText: {
+        margin:0
     },
     ListItemIcon: {
 
-            marginLeft: '20px',
-            width: '15px',
-            height: '15px'
+        marginLeft: '20px',
+        width: '15px',
+        height: '15px'
     },
     centerList: {
         margin: '0 auto 50px auto'
     }
+
 
 } )
 
@@ -46,12 +42,14 @@ const pageList = ( props ) => {
             <Grid container>
                 {props.list.map( ( listItem, i ) => {
                     return (
-                        <Grid key={i} item xs={12} sm={6}>
+                        <Grid key={i} item xs={12} sm={props.columns ? 12 / props.columns : 12}>
                             <ListItem className={classes.ListItem} disableGutters>
                                 <ListItemIcon className={classes.ListItemIcon} >
                                     <img src={ListIcon} role="presentation" />
                                 </ListItemIcon>
-                                <ListItemText className={classes.ListItemText} primary={listItem} />
+                                
+                                    <Typography className={classes.ListItemText} variant={'body1'}> {listItem} </Typography>
+                            
                             </ListItem>
                         </Grid>
                     )
