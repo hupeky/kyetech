@@ -49,7 +49,7 @@ const styles = theme => ( {
         transform: 'rotate(180deg)'
     },
     title: {
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: theme.palette.primary.main,
         textAlign: 'left'
     }
 } )

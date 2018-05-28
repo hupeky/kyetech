@@ -5,7 +5,7 @@ import classes from './FadeIn.css'
 
 const fadeIn = (props) => {
     return (
-        <TrackVisibility partialVisibility={props.partial} >
+        <TrackVisibility partialVisibility={props.partial}  offset={props.offset} >
             {( {isVisible} ) => <div className={[classes.FadeIn, isVisible ? classes.visible : classes.notVisible].join( " " )}>{props.children}</div>}
         </TrackVisibility>
     )

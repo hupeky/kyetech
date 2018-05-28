@@ -3,19 +3,25 @@ import {connect} from 'react-redux'
 
 import Card from './Card/Card'
 import 'aframe'
-import * as actionTypes from '../../store/actions'
+import * as actionTypes from '../../store/actions/actions'
 
 class CardManager extends Component {
     state = {
-        amimIndex: 0,
-        animCoords: null
+
     }
+    intervalAnimation = null
 
     componentDidMount () {
-        this.props.startAnimation( {x: 0, z: 2} )
         setTimeout(
-            () => this.props.startColourAnim('animBackdrops'),100
+            () => this.props.startColourAnim( 'animBackdrops' ), 100
         )
+        this.intervalAnimation = setInterval(
+            () => {
+                if ( !this.props.enter3D )
+                    this.props.startAnimation( {x: Math.floor( Math.random() * this.props.dimensions.x ), z: Math.floor( Math.random() * this.props.dimensions.z )} )
+            }
+            , 7000)
+        
     }
 
     render () {
@@ -33,7 +39,7 @@ class CardManager extends Component {
             cardEntityArray.push( row )
         }
         return (
-            <a-entity click={this.cardClickedHandler} position={`-${Math.floor( this.props.dimensions.x / 2 )} 0 ${Math.floor( this.props.dimensions.z / 2.2 )}`} rotation="0 0 0" >
+            <a-entity click={this.cardClickedHandler} position={`-${Math.floor( this.props.dimensions.x / 2 )} 0 ${Math.floor( this.props.dimensions.z / 2.3 )}`} rotation="0 0 0" >
                 {cardEntityArray}
             </a-entity>
 
@@ -43,6 +49,7 @@ class CardManager extends Component {
 
 const mapStateToProps = state => { // map redux state to class props
     return {
+        enter3D: state.aScene.enter3D,
         animationIndex: state.aScene.animationIndex, // access the aScene reducer slice from global state
         dimensions: state.aScene.dimensions,
         animCoords: state.aScene.animCoords,

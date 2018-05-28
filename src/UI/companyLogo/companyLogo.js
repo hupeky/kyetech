@@ -4,7 +4,7 @@ import Headline from '../../UI/headline/headline'
 
 const companyLogo = ( props ) => {
     return (
-        <div className={classes.companyLogo}>
+        <div {...props} className={classes.companyLogo}>
             <img src={props.img} role="presentation" />
         </div>
     )

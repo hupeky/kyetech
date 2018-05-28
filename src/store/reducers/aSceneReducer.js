@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions'
+import * as actionTypes from '../actions/actions'
 import colours from './buildColourFrames'
 
 const calcualteDistanceLookup = ( newX, newZ ) => {
@@ -49,6 +49,7 @@ const dim = {
 }
 
 const initialState = {
+    enter3D: false,
     animationIndex: 0,
     dimensions: {
         x: dim.x,
@@ -56,9 +57,9 @@ const initialState = {
     },
     waveType: 'pixel',
     waveShape: 'wave',
-    waveHeight: 4,
-    waveSpeed: 8,
-    bounceSpeed: 6,
+    waveHeight: 2,
+    waveSpeed: 4,
+    bounceSpeed: 2,
     animCoords: null,
     stopAnim: false,
     distanceLookUp: calcualteDistanceLookup( dim.x, dim.z ),
@@ -72,6 +73,14 @@ const initialState = {
 
 const ASceneReducer = ( state = initialState, action ) => {
     switch ( action.type ) {
+        case actionTypes.TOGGLE_ENTER_3D:
+        return {
+            ...state,
+            enter3D: !state.enter3D,
+            waveHeight: 5,
+            waveSpeed: 8,
+            bounceSpeed: 4
+        }
         case actionTypes.START_ANIMATION:
             return {
                 ...state,

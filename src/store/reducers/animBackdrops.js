@@ -14,73 +14,73 @@ let animBackdrops = [
         imgSrc: megamanBG,
         rgbaArray: {},
         delay: 0,
-        duration: 1
+        duration: 2
 
     },
     {
         imgSrc: megamanBG,
         rgbaArray: {},
         delay: 1,
-        duration: 1,
+        duration: 2,
         label: 'start'
     },
     {
         imgSrc: sonicBG,
         rgbaArray: {},
         delay: 1,
-        duration: 1
+        duration: 2
     },
     {
         imgSrc: marioBG,
         rgbaArray: {},
         delay: 1,
-        duration: 1
+        duration: 2
     },
     {
         imgSrc: ryuBG,
         rgbaArray: {},
         delay: 1,
-        duration: 1
+        duration: 2
     },
     {
         imgSrc: zeldaBG,
         rgbaArray: {},
         delay: 1,
-        duration: 1
+        duration: 2
     },
     {
         imgSrc: megamanBG,
         rgbaArray: {},
         delay: 1,
-        duration: 1
+        duration:2
     },
     {
         imgSrc: tetrisBG,
         rgbaArray: {},
         delay: 1,
-        duration: 1
+        duration: 2
     },
     {
         imgSrc: kartBG,
         rgbaArray: {},
         delay: 1,
-        duration: 1
+        duration: 2
     },
     {
         imgSrc: rtypeBG,
         rgbaArray: {},
         delay: 1,
-        duration: 1
+        duration: 2
     },
     {
         imgSrc: megamanBG,
         rgbaArray: {},
         delay: 0,
-        duration: 1,
+        duration: 2,
         goTo: {
             id: 'megamanBG',
             position: 'start',
-            loopCount: 1
+            loopCount: 10
         }
     }
 ]

@@ -25,12 +25,10 @@ import Hidden from '@material-ui/core/Hidden'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
 
 import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
-import HomeIcon from '@material-ui/icons/Home'
-import ThreeDRotation from '@material-ui/icons/ThreeDRotation'
+import CloseIcon from '@material-ui/icons/Close'
+import DemoIcon from '../../assets/icons/demo'
 
 import ChatIcon from '@material-ui/icons/Chat'
 
@@ -61,8 +59,6 @@ class Layout extends Component {
     }
 
     scrollFromButtonHandler ( ref ) {
-        console.log( ref.offsetTop )
-        console.log( window.pageYOffset )
         scrollToComponent( ref, {offset: -50, align: 'top', duration: 1000, ease: 'inOutQuad'} )
     }
 
@@ -106,14 +102,14 @@ class Layout extends Component {
                             <AppBar color={'primary'} position="sticky" elevation={10}>
                                 <Toolbar>
                                     <IconButton style={{color: 'white'}}>
-                                        <MenuIcon />
+                                        <CloseIcon />
                                     </IconButton>
                                 </Toolbar>
                             </AppBar>
                             <List  >
                                 <ListItem onClick={() => this.scrollFromButtonHandler( document.body )} button >
-                                    <ListItemIcon color='secondary'>
-                                    <ThreeDRotation />
+                                    <ListItemIcon style={{marginRight: '20px'}} color='secondary'>
+                                    <DemoIcon  height={25} />
                                     </ListItemIcon>
                                     <Typography variant={'body2'}>Home</Typography>
                                 </ListItem>

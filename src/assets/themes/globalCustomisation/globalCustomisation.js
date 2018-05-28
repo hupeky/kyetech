@@ -11,7 +11,7 @@ let globalCustomisation = {
             main: '#00A2A2'
         },
         secondary: {
-            main: '#D9004A'
+            main: '#d3207f'
         },
         grey: {
             main: '#e3e3e3',
@@ -42,13 +42,16 @@ let globalCustomisation = {
             }
 
         },
-        MuiCardHeader: {
+        MuiCardContent: {
+            root: {
+                textAlign: 'left',
+            }
+
         },
         MuiTypography: {
             body1: {
                 textAlign: 'left',
-                marginBottom: '20px',
-                marginTop: '10px',
+                marginBottom: '30px',
                 opacity: 0.8
             },
             headline: {
@@ -68,6 +71,11 @@ let globalCustomisation = {
                 textDecoration: 'none',
                 height: 50,
                 minWidth: 'initial'
+            }
+        },
+        MuiTabs: {
+            flexContainer: {
+                marginBottom: '0px'
             }
         }
     }

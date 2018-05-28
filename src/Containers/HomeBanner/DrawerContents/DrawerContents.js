@@ -33,6 +33,9 @@ const styles = theme => ( {
     root: {
         backgroundColor: theme.palette.background.paper,
         width: 300
+    },
+    slides: {
+        padding: '5px'
     }
 } )
 
@@ -54,12 +57,12 @@ class ASceneDrawer extends Component {
 
         return (
             <Auxillery>
-                <AppBar style={{height: '45px'}} position="static" color="secondary">
-                    <Toolbar style={{minHeight: '45px'}}>
+                <AppBar position="static" color="secondary">
+                    <Toolbar>
                         <Typography variant="subheading">3D controls</Typography>
                     </Toolbar>
                 </AppBar>
-                <Divider style={{backgroundColor: '#333'}} />
+
                 <AppBar position="static" color="default">
                     <Tabs
                         value={this.state.value}
@@ -67,23 +70,19 @@ class ASceneDrawer extends Component {
                         indicatorColor="primary"
                         textColor="secondary"
                         scrollable={false}
+                        style={{marginBottom: '0px'}}
                     >
-                        <Tab style={{minWidth: '50%'}} label="Motion" />
-                        <Tab style={{minWidth: '50%'}} label="Colour" />
+                        <Tab style={{minWidth: '50%', marginBottom: '0px'}} label="Motion" />
+                        <Tab style={{minWidth: '50%', marginBottom: '0px'}} label="Colour" />
                     </Tabs>
                 </AppBar>
                 <SwipeableViews
                     axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                     index={this.state.value}
                     onChangeIndex={this.handleChangeIndex}
-                    disabled={true}
-                >
-                    <TabContainer dir={theme.direction}>
+                    disabled={true}>
                         <MotionControls />
-                    </TabContainer>
-                    <TabContainer dir={theme.direction}>
                         <ColourControls />
-                    </TabContainer>
                 </SwipeableViews>
             </Auxillery>
         )

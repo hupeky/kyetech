@@ -16,20 +16,22 @@ const styles = theme => ( {
 
     ListItem: {
         paddingTop: '0px',
-        paddingBottom: '6px'
+        paddingBottom: '6px',
+        alignItems: 'flex-start'
 
     },
     ListItemText: {
         margin:0
     },
     ListItemIcon: {
-
+        position:'relative',
+        top:'3px',
         marginLeft: '20px',
         width: '15px',
         height: '15px'
     },
     centerList: {
-        margin: '0 auto 50px auto'
+        margin: '0 auto 0px auto'
     }
 
 

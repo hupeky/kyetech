@@ -6,7 +6,7 @@ import classes from './AScene.css'
 import RegisterAframeComponents from '../../Containers/RegisterAframeComponents/RegisterAframeComponents'
 import 'aframe'
 
-const AScene = () => {
+const AScene = ( props ) => {
 
     return (
         <header>
@@ -30,6 +30,7 @@ const AScene = () => {
                     <a-entity id="center" position="0 -2 0" opacity="0" material="opacity: 0;" geometry="primitive: box; height:0.1; width:0.1; depth:0.1"></a-entity>
                     <a-sky-gradient></a-sky-gradient>
                     <CardManager/>
+                    {props.children}
                 </a-scene>
             </section>
         </header >

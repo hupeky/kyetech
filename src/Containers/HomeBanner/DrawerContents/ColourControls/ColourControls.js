@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-import * as actionTypes from '../../../../store/actions'
+import * as actionTypes from '../../../../store/actions/actions'
 
 import Auxillery from '../../../../hoc/Auxillery/Auxillery'
 import ImgButton from '../../../../UI/ImgButton/ImgButton'
@@ -9,7 +9,7 @@ import ImgButton from '../../../../UI/ImgButton/ImgButton'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 
-import { withStyles } from '@material-ui/core/styles'
+import {withStyles} from '@material-ui/core/styles'
 
 import Typography from '@material-ui/core/Typography'
 
@@ -59,7 +59,7 @@ class ColourControls extends Component {
             let itemJSX = (
                 <GridListTile key={this.props.colours[item][0].key} cols={1}>
                     <ImgButton click={() => this.props.startColourAnim( this.props.colours[item][0].key )} src={this.props.colours[item][0].imgSrc} />
-                    <Typography variant="body1" align="center" color='textSecondary' />
+                    <Typography variant="body2" align="center" color='textSecondary' />
                 </GridListTile >
             )
             frames[this.props.colours[item][0].type].push( itemJSX )
@@ -67,20 +67,20 @@ class ColourControls extends Component {
 
         return (
 
-            <Auxillery>
-                <Typography variant="body1" gutterBottom={true}>Select pixel art:</Typography>
+            <div style={{overflow: 'hidden', padding: '10px 20px', boxSizing: 'border-box'}}>
+                <Typography variant="body2" gutterBottom={true}>Select pixel art:</Typography>
                 <GridList className={classes.gridList} cellHeight={90} cols={4}>
                     {frames.single}
                 </GridList >
-                <Typography variant="body1" gutterBottom={true}>Select Animation:</Typography>
+                <Typography variant="body2" gutterBottom={true}>Select Animation:</Typography>
                 <GridList className={classes.gridList} cellHeight={90} cols={4}>
                     {frames.animation}
                 </GridList >
-                <Typography variant="body1" gutterBottom={true}>Select Colours:</Typography>
+                <Typography variant="body2" gutterBottom={true}>Select Colours:</Typography>
                 <GridList className={classes.gridList} cellHeight={90} cols={4}>
                     {frames.abstract}
                 </GridList >
-            </Auxillery>
+            </div>
         )
     }
 }

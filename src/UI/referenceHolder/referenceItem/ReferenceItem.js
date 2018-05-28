@@ -5,7 +5,6 @@ import {withStyles} from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 
-import refImg from '../../../assets/imgs/refImg.jpg'
 import quoteMarks from '../../../assets/SVG/quoteMarks.svg'
 import Typography from '@material-ui/core/Typography'
 
@@ -43,12 +42,12 @@ const referenceItem = ( props ) => {
     return (
         <Card className={classes.card}>
             <div className={classes.refImgHolder}>
-                <div style={{backgroundImage: `url(${refImg})`}} className={classes.refImg} />
+                <div style={{backgroundImage: `url(${props.img})`}} className={classes.refImg} />
             </div>
             <img className={classes.quoteMarks} src={quoteMarks} role="presentation"/>
             <CardContent>
-                <Typography variant='headline'>Title goes here</Typography>
-                <Typography variant='body1'>Body goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes hereBody goes here</Typography>
+                <Typography variant='headline'>{props.title}</Typography>
+                {props.body}
             </CardContent>
         </Card>
     )

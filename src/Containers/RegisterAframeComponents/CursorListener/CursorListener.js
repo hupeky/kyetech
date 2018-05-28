@@ -3,7 +3,7 @@ import {Component} from 'react'
 import {connect} from 'react-redux'
 
 import AFRAME from 'aframe'
-import * as actionTypes from '../../../store/actions'
+import * as actionTypes from '../../../store/actions/actions'
 
 class CursorListener extends Component {
     componentWillMount () {

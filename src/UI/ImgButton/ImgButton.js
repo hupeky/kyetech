@@ -1,7 +1,6 @@
 import React from 'react'
 import {withStyles} from '@material-ui/core/styles'
 import ButtonBase from '@material-ui/core/ButtonBase'
-
 const styles = theme => ( {
     root: {
         display: 'flex',
@@ -11,7 +10,7 @@ const styles = theme => ( {
     image: {
         position: 'relative',
         height: 'auto',
-        overflow: 'hidden',
+        
         width:'100%',
         '&:hover': {
             zIndex: 1
@@ -29,7 +28,7 @@ const styles = theme => ( {
         imageRendering: 'pixelated'
     },
     imageButton: {
-        position: 'absolute',
+        position: 'absolute', 
         left: 0,
         right: 0,
         top: 0,
@@ -81,6 +80,7 @@ function imgButton ( props ) {
     const {classes} = props
 
     return (
+        
         <div className={classes.root}>
             <ButtonBase
                 onClick={props.click}
@@ -88,10 +88,14 @@ function imgButton ( props ) {
                 key={props.key}
                 className={classes.image}
             >
+            
                 <img alt="" className={classes.img} src={props.src} />
+                
                 <span className={classes.imageBackdrop} />
+                
             </ButtonBase>
         </div>
+        
     )
 }
 

@@ -5,7 +5,7 @@ import classes from './ScaleIn.css'
 
 const ScaleIn = (props) => {
     return (
-        <TrackVisibility partialVisibility={props.partial} >
+        <TrackVisibility partialVisibility={props.partial}  offset={props.offset}>
             {( {isVisible} ) => <div className={[classes.ScaleIn, isVisible ? classes.visible : classes.notVisible].join( " " )}>{props.children}</div>}
         </TrackVisibility>
     )

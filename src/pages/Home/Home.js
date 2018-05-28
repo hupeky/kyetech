@@ -63,7 +63,7 @@ const home = ( props ) => {
                     <Grid container spacing={8}>
                         <Grid item xs={1} md={2} />
                         <Grid item xs={10} md={8}>
-                            <ScaleIn>
+                            <ScaleIn offset={50}>
                                 <AboutMeIcon className={classes.pageBlockIcon} />
                             </ScaleIn>
                         </Grid>
@@ -74,8 +74,16 @@ const home = ( props ) => {
                         <Grid item xs={1} md={2} />
                         <Grid item xs={10} md={8}>
                             <SlideIn partial={true}>
-                                <Typography variant="body1">Hiliquos alibus autem apid modios parchit, voloribusam, sandis re quis exceperum nimoles tibus, con eum quiatus millaborit dellectore sumquodita quaspid eatioribus mi, quam quo con repedis moloruptatem</Typography>
-                                <Typography variant="body1">re necabor empellupit adictore et laborum quo odi vellore ictio. Perumquidunt quiaspe rcimus doluptassit, suntincia volesci llandia dolupis aut fugia sectesto iducimil eatquam quiaest, </Typography>
+
+                                <SlideIn partial={true}>
+                                    <Typography variant="body1">I am a front-end web developer with a specialism in 3D, a blend of creative and technical skills and a passion for learning and problem solving. I help companies create a competitive edge and open new markets by innovating ways to connect users to the information they need.</Typography >
+                                    <Typography variant="body1">I have knowledge of the latest frameworks and tools like React, Redux, JS2015+, GSAP, WebVR / Aframe amongst others (and will continue to learn more).</Typography >
+                                </SlideIn>
+                                <SlideIn partial={true}>
+                                    <Typography variant="body1">With a background in 3d I’m seeing huge opportunities in the new wave of applications that can be created on the web and I'm excited to be evolving with it.</Typography >
+                                    <Typography variant="body1">I've worked in a variety of industries over the last 10 years, ranging from engineering, insurance, ecommerce, B2B and B2C, I have a diverse range of skills in design, technical and business development, that give me the versitility to adapt to any job.</Typography >
+                                </SlideIn>
+
                             </SlideIn>
                         </Grid>
                         <Grid item xs={1} md={2} />
@@ -94,11 +102,12 @@ const home = ( props ) => {
                 <Grid container spacing={8}>
                     <Grid item xs={1} md={2} />
                     <Grid item xs={10} md={8}>
-                        <ScaleIn><SkillsIcon style={{color: 'black', padding: '15px'}} className={classes.pageBlockIcon} /></ScaleIn>
+                        <ScaleIn offset={50}>
+                            <SkillsIcon style={{color: 'black', padding: '15px'}} className={classes.pageBlockIcon} />
+                        </ScaleIn>
 
                         <SlideIn partial={true}>
-                            <Typography variant="body1">Hiliquos alibus autem apid modios parchit, voloribusam, sandis re quis exceperum nimoles tibus, con eum quiatus millaborit dellectore sumquodita quaspid eatioribus mi, quam quo con repedis moloruptatem</Typography>
-                            <Typography variant="body1">re necabor empellupit adictore et laborum quo odi vellore ictio. Perumquidunt quiaspe rcimus doluptassit, suntincia volesci llandia dolupis aut fugia sectesto iducimil eatquam quiaest, </Typography>
+                            <Typography variant="body1">I’m never going to want to stop learning, I'm amazed at the power of the technology we have at our disposal today. Such is my interest in technology, that I will spend my free time learning it, not because I need to, but because I <i>want</i> to.</Typography>
                         </SlideIn>
 
                         {/* ********** technical skill set */}
@@ -112,14 +121,15 @@ const home = ( props ) => {
                         {/* ********** other skill set */}
                         <Display1>Other</Display1>
                         <PageList columns={2} list={[
-                            'incia volesci llandia dolup',
-                            'incia volesci llandia dolup',
-                            'incia volesup',
-                            'incia volesci llandia dolup',
-                            'incia volesci llandiolup',
-                            'incia volesci llandia dolup',
-                            'incia volesci llandia dolup',
-                            'incia volesci llandia dolup']} />
+                            'Rapid learning'
+                            , 'Detailed researching',
+                            'Prototyping and testing',
+                            'Strong communicator ',
+                            'Good presentation skills',
+                            'Can influence at senior level',
+                            'Exposure to agile environment',
+                            'Creative and design sensibility'
+                        ]} />
                     </Grid>
                 </Grid>
             </PageBlock>
@@ -138,23 +148,20 @@ const home = ( props ) => {
                 <Grid container spacing={8}>
                     <Grid item xs={1} md={2} />
                     <Grid item xs={10} md={8}>
-                        <CompanyLogo img={rsLogo} name={'RS Components'} width={100} />
+                        <ScaleIn offset={50}>
+                            <CompanyLogo img={rsLogo} name={'RS Components'} width={100} />
+                        </ScaleIn>
                         <Display1>RS Components</Display1>
-
-                        <Typography variant="body1">Hiliquos alibus autem apid modios parchit, voloribusam, sandis re quis exceperum nimoles tibus, con eum quiatus millaborit dellectore sumquodita quaspid eatioribus mi, quam quo con repedis moloruptatem</Typography>
-                        <Typography variant="body1">re necabor empellupit adictore et laborum quo odi vellore ictio. Perumquidunt quiaspe rcimus doluptassit, suntincia volesci llandia dolupis aut fugia sectesto iducimil eatquam quiaest, </Typography>
+                        <Typography variant="body1">I started this role as a web designer creating marketing pages for the multichannel team (Internationally). The role quickly evolved to supporting the UX design teams for mobile prototyping and development.</Typography >
+                        <Typography variant="body1">Whilst in that role I impressed the company by developing (in my own time) a web based 3d demo, using JavaScript, WebGL, and three.js. Which earned me a new position in innovation, working with new technologies to drive user experiences such as web based 3d product systems and augmented reality for mobile, which were fast becoming the most important future technology platforms for the business. </Typography >
 
                         <Headline>Deliverables</Headline>
-
-                        <PageList list={[
-                            'incia volesci llandia dolup',
-                            'incia volesci llandia dolup',
-                            'incia volesup',
-                            'incia volesci llandia dolup',
-                            'incia volesci llandiolup',
-                            'incia volesci llandia dolup',
-                            'incia volesci llandia dolup',
-                            'incia volesci llandia dolup']} />
+                        <PageList columns={1} list={[
+                            'Earned a promotion from a pioneering 3d web prototype',
+                            'Supported the developement of an experimental AR product viewer',
+                            'Built marketing pages to support product launches of global brands',
+                            'Built a prototype mobile interface with UX team'
+                        ]} />
                     </Grid>
                 </Grid>
                 <ExampleImageHolder company='rs' />
@@ -168,23 +175,19 @@ const home = ( props ) => {
                     <Grid item xs={1} md={2} />
                     <Grid item xs={10} md={8}>
                         <CompanyLogo img={rhokettLogo} width={170} />
-                        <Display1>Rhokett</Display1>
+                        <ScaleIn offset={50}>
+                            <Display1>Rhokett</Display1>
+                        </ScaleIn>
 
-
-                        <Typography variant="body1">Hiliquos alibus autem apid modios parchit, voloribusam, sandis re quis exceperum nimoles tibus, con eum quiatus millaborit dellectore sumquodita quaspid eatioribus mi, quam quo con repedis moloruptatem</Typography>
-                        <Typography variant="body1">re necabor empellupit adictore et laborum quo odi vellore ictio. Perumquidunt quiaspe rcimus doluptassit, suntincia volesci llandia dolupis aut fugia sectesto iducimil eatquam quiaest, </Typography>
+                        <Typography variant="body1">Rhokett is a company Ive done a lot of freelance work for over the years, most recently I worked on a prototype for a new 3d product viewing system for their dessert range using a photogrammetry technique for photorealistic 3d. Its then run through simplification processes to bring each dessert down from 60MB of data to under 1MB and can run on low-end devices. </Typography>
 
                         <Headline>Deliverables</Headline>
 
-                        <PageList list={[
-                            'incia volesci llandia dolup',
-                            'incia volesci llandia dolup',
-                            'incia volesup',
-                            'incia volesci llandia dolup',
-                            'incia volesci llandiolup',
-                            'incia volesci llandia dolup',
-                            'incia volesci llandia dolup',
-                            'incia volesci llandia dolup']} />
+                        <PageList columns={1} list={[
+                            'Created award nominated designs for luxury packaging',
+                            'Designed and built their web site end to end',
+                            'Prototyped 3D photogrammatery for photo-real products',
+                        ]} />
                     </Grid>
                 </Grid>
                 <ExampleImageHolder company='rhokett' />
@@ -197,27 +200,25 @@ const home = ( props ) => {
                 <Grid container spacing={8}>
                     <Grid item xs={1} md={2} />
                     <Grid item xs={10} md={8}>
-                        <CompanyLogo img={pretLogo} width={170} />
-                        <Display1></Display1>
+                        <ScaleIn offset={50}>
+                            <CompanyLogo style={{marginBottom: '50px'}} img={pretLogo} width={170} />
+                        </ScaleIn>
                     </Grid>
                 </Grid>
                 <ExampleImageHolder company='pret' />
-                {/* {exampleImages.pret.map( ( exampleImage, i ) => {
-                    return <PageImage key={i} src={exampleImage.src} title={exampleImage.title} subText={exampleImage.subText} />
-                } )} */}
-
 
             </PageBlock>
 
             <PageBlock icon={<RecommendationsIcon />} label={'Recommendations'} backgroundColor={theme.palette.grey.main}>
-                <SlideIn partial={true}>
-                    <Display3>Recommendations</Display3>
-                </SlideIn>
+
 
                 <Grid container spacing={8}>
                     <Grid item xs={1} md={2} />
                     <Grid item xs={10} md={8}>
-                        <ScaleIn>
+                        <SlideIn partial={true}>
+                            <Display3>Recommendations</Display3>
+                        </SlideIn>
+                        <ScaleIn offset={50}>
                             <RecommendationsIcon style={{color: 'black', padding: '15px'}} className={classes.pageBlockIcon} />
                         </ScaleIn>
                     </Grid>

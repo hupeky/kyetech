@@ -1,12 +1,12 @@
 .centerList {
     left:0%;
-    margin-bottom:70px !important;
     padding-top:0px !important;
 }
 
 .ListItem {
     padding-top: 0px;
     padding-bottom: 6px;
+    align-items: flex-start;
 }
 
 .listItemText {
@@ -21,6 +21,8 @@
 .ListItemIcon {
     margin-left: 20px;
     width: 15px;
-    height: 15px
+    height: 15px;
+    align-self: flex-start;
+
 }
 

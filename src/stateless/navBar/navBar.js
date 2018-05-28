@@ -10,8 +10,8 @@ import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import ThreeDRotation from '@material-ui/icons/ThreeDRotation'
 
-import LinkedInIcon from './../../assets/icons/LinkedIn'
-import DownloadCVIcon from './../../assets/icons/cv'
+import SecondaryLinks from '../secondaryLinks/secondaryLinks'
+import DemoIcon from '../../assets/icons/demo'
 
 const navBar = ( props ) => {
     return (
@@ -23,9 +23,9 @@ const navBar = ( props ) => {
                     </IconButton>
                 </Hidden>
                 <Hidden only={['xs', 'sm']}>
-                    <Button spacer click={() => props.scrollButton( document.body)} label={'Home'} >
-                        <ThreeDRotation color={'secondary'}/>
-                        
+                    <Button spacer="true" click={() => props.scrollButton( document.body )} label={'Home'} >
+                        <DemoIcon height={25} />
+
                     </Button>
                     {props.pageBlockData.map( ( pageBlock, i ) => {
                         return (
@@ -35,18 +35,7 @@ const navBar = ( props ) => {
                         )
                     } )}
                 </Hidden>
-                <menu style={{marginLeft: 'auto'}}>
-                    <a target="_blank" href="https://www.linkedin.com/in/kyehuelin/">
-                        <Button>
-                            <LinkedInIcon height={25}/>
-                        </Button>
-                    </a>
-                    <a target="_blank" href="https://www.linkedin.com/in/kyehuelin/">
-                        <Button spacer label={'CV'}>
-                            <DownloadCVIcon height={25} />
-                    </Button>
-                    </a>
-                </menu>
+                <SecondaryLinks  align='right' />
             </Toolbar>
         </AppBar>
     )

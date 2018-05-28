@@ -7,22 +7,26 @@ const waveShapes = [
     {
         img: wave,
         title: 'Wave',
-        key: 'wave'
+        key: 'wave',
+        toolTip: 'Smooth wave (Click a 3d cube)'
     },
     {
         img: step,
         title: 'Step',
-        key: 'step'
+        key: 'step',
+        toolTip: 'Step wave (Click a 3d cube)'
     },
     {
         img: bounce,
         title: 'Bounce',
-        key: 'bounce'
+        key: 'bounce',
+        toolTip: 'Bounce wave (Click a 3d cube)'
     },
     {
         img: saw,
         title: 'Saw',
-        key: 'saw'
+        key: 'saw',
+        toolTip: 'Saw wave (Click a 3d cube)'
     }
 ]
 

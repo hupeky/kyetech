@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Slider from '../../../../UI/Slider/Slider'
 import {connect} from 'react-redux'
 
-import * as actionTypes from '../../../../store/actions'
+import * as actionTypes from '../../../../store/actions/actions'
 
 import Auxillery from '../../../../hoc/Auxillery/Auxillery'
 import ImgButton from '../../../../UI/ImgButton/ImgButton'
@@ -27,7 +27,7 @@ const styles = theme => ( {
         width: '100%'
     },
     gridList: {
-        marginBottom: '20px !important'
+        marginBottom: '0px !important'
     }
 } )
 
@@ -53,37 +53,38 @@ class MotionControls extends Component {
         const {classes} = this.props
         return (
 
-            <Auxillery>
-                <Typography variant="body1" gutterBottom={true}>Select wave type:</Typography>
-                <GridList className={classes.gridList}  cellHeight={90}  cols={4}>
+            <div style={{overflow: 'hidden', padding: '10px 20px', boxSizing: 'border-box'}}>
+                <Typography variant="body2" gutterBottom={true}>Select wave type:</Typography>
+                <GridList className={classes.gridList} cellHeight={90} cols={4}>
                     {waveTypes.map( type => (
                         <GridListTile key={type.key} cols={1}>
+
                             <ImgButton click={() => this.props.setWaveType( type.key )} src={type.img} />
-                            <Typography variant="body1" align="center" color='textSecondary' />
                         </GridListTile >
                     ) )
                     }
                 </GridList >
-                <Typography variant="body1" gutterBottom={true}>Select wave shape:</Typography>
-                <GridList className={classes.gridList}  cellHeight={90}  cols={4}>
+                <Typography variant="body2" gutterBottom={true}>Select wave shape:</Typography>
+                <GridList className={classes.gridList} cellHeight={90} cols={4}>
                     {waveShapes.map( shape => (
                         <GridListTile key={shape.title} cols={1}>
                             <ImgButton click={() => this.props.setWaveShape( shape.key )} src={shape.img} />
                             <Typography variant="body1" align="center" color='textSecondary' />
+
                         </GridListTile >
                     ) )
                     }
                 </GridList >
-                <Typography variant="body1" gutterBottom={true}>Select wave height:</Typography>
+                <Typography variant="body2" gutterBottom={true}>Select wave height:</Typography>
                 <Slider min={1} max={20} step={1} default={this.props.waveHeight} onRelease={this.waveHeightHandler} />
 
-                <Typography variant="body1" gutterBottom={true}>Wave travel speed:</Typography>
+                <Typography variant="body2" gutterBottom={true}>Wave travel speed:</Typography>
                 <Slider min={5} max={35} step={3} default={this.props.waveSpeed} onRelease={this.waveSpeedHandler} />
 
-                <Typography variant="body1" gutterBottom={true}>Bounce speed:</Typography>
+                <Typography variant="body2" gutterBottom={true}>Bounce speed:</Typography>
                 <Slider min={1} max={10} step={1} default={this.props.bounceSpeed} onRelease={this.bounceSpeedHandler} />
 
-            </Auxillery>
+            </div>
         )
     }
 }

@@ -1,27 +1,16 @@
 import React from 'react'
-
 import Typography from '@material-ui/core/Typography'
-
-import ListIcon from '../../assets/SVG/Tile/listIcon.svg'
-import LinkedInIcon from '../../assets/icons/LinkedIn'
 import classes from './footer.css'
+import SecondaryLinks from '../secondaryLinks/secondaryLinks'
 
 const footer = ( props ) => {
     return (
         <footer className={classes.footer}>
             <div className={classes.column}>
-                <div className={classes.footerItem}>
-                    <LinkedInIcon className={classes.footerIcon} />
-                    <Typography variant='body2'> linkedin.com/in/kyehuelin</Typography>
-                </div>
-                <div className={classes.footerItem}>
-                    <LinkedInIcon className={classes.footerIcon} />
-                    <Typography variant='body2'> 07490 696991</Typography>
-                </div>
-                <div className={classes.footerItem}>
-                    <LinkedInIcon className={classes.footerIcon} />
-                    <Typography variant='body2'> kyehuelin@gmail.com</Typography>
-                </div>
+                <Typography variant='subheading'><a href="tel:+44 7490 696 991">+44 7490 696 991</a> </Typography>
+
+                <Typography style={{marginBottom: '20px'}} variant='subheading'> <a href="mailto:kyehuelin@gmail.com">kyehuelin@gmail.com</a></Typography>
+                <SecondaryLinks  />
             </div>
         </footer>
     )
