@@ -9,12 +9,13 @@ import abstract from './abstractBackdrops'
 
 let colours = {}
 
+colours = Object.assign(singleBackdrops, colours)
 colours.animBackdrops = animBackdrops
 colours.sonicAnim = animSonic
 colours.animKart = animKart
 colours.animSF2 = animSF2
 colours = Object.assign(abstract, colours)
-colours = Object.assign(singleBackdrops, colours)
+
 
 const reverseArray = ( array ) => {
     let reversedArray = []

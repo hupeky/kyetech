@@ -76,12 +76,13 @@ const home = ( props ) => {
                             <SlideIn partial={true}>
 
                                 <SlideIn partial={true}>
-                                    <Typography variant="body1">I am a front-end web developer with a specialism in 3D, a blend of creative and technical skills and a passion for learning and problem solving. I help companies create a competitive edge and open new markets by innovating ways to connect users to the information they need.</Typography >
-                                    <Typography variant="body1">I have knowledge of the latest frameworks and tools like React, Redux, JS2015+, GSAP, WebVR / Aframe amongst others (and will continue to learn more).</Typography >
+                                    <Typography variant="body1">I am a front-end web developer with a specialism in 3D.  I have a blend of creative and technical skills with a passion for learning and problem solving. I help companies create a competitive edge by innovating the ways their users can connect to and visualise data.</Typography>
                                 </SlideIn>
                                 <SlideIn partial={true}>
-                                    <Typography variant="body1">With a background in 3d I’m seeing huge opportunities in the new wave of applications that can be created on the web and I'm excited to be evolving with it.</Typography >
-                                    <Typography variant="body1">I've worked in a variety of industries over the last 10 years, ranging from engineering, insurance, ecommerce, B2B and B2C, I have a diverse range of skills in design, technical and business development, that give me the versitility to adapt to any job.</Typography >
+                                    <Typography variant="body1">I’ve worked in a variety of industries over the last 10 years, ranging from engineering, insurance, e-commerce, B2B and B2C, I have a diverse range of skills in design, technical and business development, that give me the versatility to adapt to any job.</Typography>
+                                </SlideIn>
+                                <SlideIn partial={true}>
+                                    <Typography variant="body1">I have knowledge of the latest frameworks and tools like React, Redux, JS2015+, GSAP, WebVR / Aframe amongst others (and will continue to learn more). With a background in 3d I’m seeing huge opportunities in the new wave of applications that can be created on the web and I’m excited to be evolving with it.</Typography>
                                 </SlideIn>
 
                             </SlideIn>
@@ -174,10 +175,11 @@ const home = ( props ) => {
                 <Grid container spacing={8}>
                     <Grid item xs={1} md={2} />
                     <Grid item xs={10} md={8}>
+                    <ScaleIn offset={50}>
                         <CompanyLogo img={rhokettLogo} width={170} />
-                        <ScaleIn offset={50}>
+                    </ScaleIn>
                             <Display1>Rhokett</Display1>
-                        </ScaleIn>
+                        
 
                         <Typography variant="body1">Rhokett is a company Ive done a lot of freelance work for over the years, most recently I worked on a prototype for a new 3d product viewing system for their dessert range using a photogrammetry technique for photorealistic 3d. Its then run through simplification processes to bring each dessert down from 60MB of data to under 1MB and can run on low-end devices. </Typography>
 

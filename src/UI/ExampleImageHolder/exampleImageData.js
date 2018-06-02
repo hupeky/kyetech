@@ -15,7 +15,7 @@ const exampleImages = {
     },
     rs: [
         {
-            url: 'http://kye.tech/imgs/rs/mobile.jpg',
+            url: 'https://kye.tech/imgs/rs/mobile.jpg',
             title: 'Mobile prototyping with UX',
             body:
                 <React.Fragment>
@@ -31,7 +31,7 @@ const exampleImages = {
                 </React.Fragment>
         },
         {
-            url: 'http://kye.tech/imgs/rs/laptop.jpg',
+            url: 'https://kye.tech/imgs/rs/laptop.jpg',
             title: 'Marketing development for global brands',
             body:
                 <Typography variant={'body1'}>
@@ -39,7 +39,7 @@ const exampleImages = {
             </Typography>
         },
         {
-            url: 'http://kye.tech/imgs/rs/finder.jpg',
+            url: 'https://kye.tech/imgs/rs/finder.jpg',
             title: '2D product viewer',
             body:
                 <React.Fragment>
@@ -55,7 +55,7 @@ const exampleImages = {
                 </React.Fragment>
         },
         {
-            url: 'http://kye.tech/imgs/rs/bench1.jpg',
+            url: 'https://kye.tech/imgs/rs/bench1.jpg',
             title: 'Web based 3D product viewer',
             body:
                 <React.Fragment>
@@ -71,13 +71,13 @@ const exampleImages = {
                 </React.Fragment>
         },
         {
-            url: 'http://kye.tech/imgs/rs/bench3.jpg',
+            url: 'https://kye.tech/imgs/rs/bench3.jpg',
             title: 'Web based 3D product viewer'
         }
     ],
     rhokett: [
         {
-            url: 'http://kye.tech/imgs/rhokett/app.jpg',
+            url: 'https://kye.tech/imgs/rhokett/app.jpg',
             title: '2D / 3D mix site design',
             body:
                 <React.Fragment>
@@ -92,11 +92,11 @@ const exampleImages = {
                 </React.Fragment>
         },
         {
-            url: 'http://kye.tech/imgs/rhokett/macbook.jpg',
+            url: 'https://kye.tech/imgs/rhokett/macbook.jpg',
             title: 'Desktop view of site'
         },
         {
-            url: 'http://kye.tech/imgs/rhokett/3dback.jpg',
+            url: 'https://kye.tech/imgs/rhokett/3dback.jpg',
             title: 'WebVR prototype product viewer',
             body:
                 <React.Fragment>
@@ -112,7 +112,7 @@ const exampleImages = {
                 </React.Fragment>
         },
         {
-            url: 'http://kye.tech/imgs/rhokett/3dfront.jpg',
+            url: 'https://kye.tech/imgs/rhokett/3dfront.jpg',
             title: 'Photorealism for web',
             body:
                 <React.Fragment>
@@ -130,17 +130,17 @@ const exampleImages = {
     ],
     pret: [
         {
-            url: 'http://kye.tech/imgs/pret/mobile.jpg',
+            url: 'https://kye.tech/imgs/pret/mobile.jpg',
             title: 'Front-end development'
 
         },
         {
-            url: 'http://kye.tech/imgs/pret/product.jpg',
+            url: 'https://kye.tech/imgs/pret/product.jpg',
             title: '3D product vis'
 
         },
         {
-            url: 'http://kye.tech/imgs/pret/packaging.jpg',
+            url: 'https://kye.tech/imgs/pret/packaging.jpg',
             title: 'Packaging design'
 
         }

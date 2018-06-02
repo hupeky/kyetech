@@ -9,11 +9,14 @@ class CardManager extends Component {
     state = {
 
     }
-    intervalAnimation = null
+
 
     componentDidMount () {
-        setTimeout(
-            () => this.props.startColourAnim( 'animBackdrops' ), 100
+         setTimeout(
+             () => {
+                 this.props.startColourAnim( 'megamanBG' )
+                 this.props.startAnimation( {x: Math.floor( Math.random() * this.props.dimensions.x ), z: Math.floor( Math.random() * this.props.dimensions.z )} )
+             }, 3000
         )
         this.intervalAnimation = setInterval(
             () => {

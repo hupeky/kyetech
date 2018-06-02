@@ -91,6 +91,12 @@ class HomeBanner extends Component {
         this.setState( {mobileOpen: !this.state.mobileOpen} )
     }
 
+    startDemoHandler = () => {
+        console.log('fuck you')
+        this.props.enter3DHandler()
+        this.props.startColourAnim( 'animBackdrops' )
+    }
+
 
     render () {
         const {classes} = this.props
@@ -141,7 +147,7 @@ class HomeBanner extends Component {
                                 <Typography className={classes.blockGreenText} variant={'body2'}>Contractor, London, available now</Typography>
 
                                 <Hidden mdUp>
-                                    <Button style={{marginTop:'10px',marginBottom:'5px'}} click={this.props.enter3DHandler} outline='true'  spacer="true" label={'Click to play Pixels'}>
+                                    <Button style={{marginTop:'10px',marginBottom:'5px'}} click={this.startDemoHandler} outline='true'  spacer="true" label={'Click to play Pixels'}>
                                         <DemoIcon height={25} />
                                     </Button>
 
@@ -170,7 +176,7 @@ class HomeBanner extends Component {
                                 <Typography style={{marginBottom: '15px', textAlign: 'right'}} variant={'body1'}>Come and play this demo: 'pixels' a homage to the games that inspired me to love tech</Typography>
 
 
-                                <Button style={{marginBottom: '5px'}} click={this.props.enter3DHandler} outline='true' spacer="true" label={'Click to play Pixels'}>
+                                <Button style={{marginBottom: '5px'}} click={this.startDemoHandler} outline='true' spacer="true" label={'Click to play Pixels'}>
                                     <DemoIcon height={25} />
                                 </Button>
 

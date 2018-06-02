@@ -14,14 +14,14 @@ let animBackdrops = [
         imgSrc: megamanBG,
         rgbaArray: {},
         delay: 0,
-        duration: 2
+        duration: 1 
 
     },
     {
         imgSrc: megamanBG,
         rgbaArray: {},
-        delay: 1,
-        duration: 2,
+        delay: 0,
+        duration: 0.7,
         label: 'start'
     },
     {
