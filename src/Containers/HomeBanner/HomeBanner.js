@@ -106,7 +106,7 @@ class HomeBanner extends Component {
             {this.props.enter3D ? <IconButton
                     color="inherit"
                     aria-label="open drawer"
-                    onClick={this.handleDrawerToggle}
+                    onClick={this.handleDrawerToggle} 
                     className={classes.navIconHide}
                 >
                     <MenuIcon />

@@ -78,7 +78,7 @@ class ReferenceItem extends Component {
                         title={this.props.title} />
 
                     <div className={[myClasses.imgHolder, this.props.onScreen ? myClasses.onScreen : null].join( " " )}>
-                        <div className={myClasses.img} style={{backgroundImage: `url(${this.props.url})`}} />
+                        <div className={myClasses.img} style={{paddingTop:this.props.height, backgroundImage: `url(${this.props.url})`}} />
                     </div>
                     {this.props.body ? (
                         <React.Fragment>

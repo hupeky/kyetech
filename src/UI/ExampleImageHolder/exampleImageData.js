@@ -28,7 +28,9 @@ const exampleImages = {
                         'Bootstrap',
                         'Jquery',
                         'CSS']} />
-                </React.Fragment>
+                </React.Fragment>,
+            width: 1900,
+            height: 1188
         },
         {
             url: 'https://kye.tech/imgs/rs/laptop.jpg',
@@ -36,7 +38,9 @@ const exampleImages = {
             body:
                 <Typography variant={'body1'}>
                     Supported global tech brands such as Siemens, Panasonic, TE, and Omron. With all channels of marketing for a number of European countries, new product releases and big campaign initiatives.'
-            </Typography>
+            </Typography>,
+            width: 1884,
+            height: 1055
         },
         {
             url: 'https://kye.tech/imgs/rs/finder.jpg',
@@ -52,7 +56,9 @@ const exampleImages = {
                         'GSAP',
                         'CSS3',
                         'HTML']} />
-                </React.Fragment>
+                </React.Fragment>,
+            width: 1900,
+            height: 1597
         },
         {
             url: 'https://kye.tech/imgs/rs/bench1.jpg',
@@ -68,11 +74,15 @@ const exampleImages = {
                         'Three.js',
                         'Web GL',
                         'HTML']} />
-                </React.Fragment>
+                </React.Fragment>,
+            width: 1920,
+            height: 1027
         },
         {
             url: 'https://kye.tech/imgs/rs/bench3.jpg',
-            title: 'Web based 3D product viewer'
+            title: 'Web based 3D product viewer',
+            width: 1920,
+            height: 1027
         }
     ],
     rhokett: [
@@ -82,18 +92,22 @@ const exampleImages = {
             body:
                 <React.Fragment>
                     <Typography variant={'body1'}>
-                            This concept, produced for the client is another example of combining traditional web content with cutting edge 3D. (WebVR) </Typography>
+                        This concept, produced for the client is another example of combining traditional web content with cutting edge 3D. (WebVR) </Typography>
                     <Typography variant={'body2'}>Developed with:</Typography>
                     <PageList columns={2} list={[
                         'Javascript',
                         'WebVR',
                         'CSS3',
                         'HTML']} />
-                </React.Fragment>
+                </React.Fragment>,
+            width: 2400,
+            height: 1600
         },
         {
             url: 'https://kye.tech/imgs/rhokett/macbook.jpg',
-            title: 'Desktop view of site'
+            title: 'Desktop view of site',
+            width: 1920,
+            height: 1027
         },
         {
             url: 'https://kye.tech/imgs/rhokett/3dback.jpg',
@@ -109,7 +123,9 @@ const exampleImages = {
                         'GSAP',
                         'CSS3',
                         'HTML']} />
-                </React.Fragment>
+                </React.Fragment>,
+            width: 1894,
+            height: 1009
         },
         {
             url: 'https://kye.tech/imgs/rhokett/3dfront.jpg',
@@ -125,23 +141,32 @@ const exampleImages = {
                         'AFrame',
                         'JS2015+',
                         'Reality Capture']} />
-                </React.Fragment>
+                </React.Fragment>,
+            width: 1887,
+            height: 986
+
         }
     ],
     pret: [
         {
             url: 'https://kye.tech/imgs/pret/mobile.jpg',
-            title: 'Front-end development'
+            title: 'Front-end development',
+            width: 1900,
+            height:1123
 
         },
         {
             url: 'https://kye.tech/imgs/pret/product.jpg',
-            title: '3D product vis'
+            title: '3D product vis',
+            width: 1920,
+            height:1147
 
         },
         {
             url: 'https://kye.tech/imgs/pret/packaging.jpg',
-            title: 'Packaging design'
+            title: 'Packaging design',
+            width: 1920,
+            height:1256
 
         }
     ]

@@ -14,6 +14,9 @@ import siteReducer from './store/reducers/siteReducer'
 
 import lightTheme from './assets/themes/lightTheme'
 
+import { unregister } from './registerServiceWorker'
+unregister()
+
 const rootReducer = combineReducers( {
     aScene: ASceneReducer,
     site: siteReducer

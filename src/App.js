@@ -17,8 +17,7 @@ class App extends Component {
             <Auxillery>
                 <Layout>
                     <Switch>
-                        <Route path="/cv" component={CV} />
-                        <Route path="/" component={Home} />
+                        {/* <Route path="/cv" exact component={CV} /> */}
                         <Route path="/"  render={() => <Home {...this.props} />}/>
                         < Route render={() => <h1>Not found</h1>} />
                     </Switch>
