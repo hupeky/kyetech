@@ -10,7 +10,6 @@ import CardActions from '@material-ui/core/CardActions'
 import IconButton from '@material-ui/core/IconButton'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Collapse from '@material-ui/core/Collapse'
-import Typography from '@material-ui/core/Typography'
 import Avatar from '@material-ui/core/Avatar'
 
 import LazyLoad from 'react-lazyload'
@@ -75,11 +74,15 @@ class ReferenceItem extends Component {
                     <CardHeader
                         className={classes.title}
                         avatar={<Avatar aria-label="Recipe" imgProps={imgProps} src={this.props.logo}></Avatar>}
-                        title={this.props.title} />
+                        title={this.props.title}
+                    />
 
-                    <div className={[myClasses.imgHolder, this.props.onScreen ? myClasses.onScreen : null].join( " " )}>
-                        <div className={myClasses.img} style={{paddingTop:this.props.height, backgroundImage: `url(${this.props.url})`}} />
-                    </div>
+                    {this.props.url ? <div className={[myClasses.imgHolder, this.props.onScreen ? myClasses.onScreen : null].join( " " )}>
+                        <div className={myClasses.img} style={{paddingTop: this.props.height, backgroundImage: `url(${this.props.url})`}} />
+                    </div> :
+                    <div className={myClasses.videoWrapper}>
+                            <iframe src={this.props.video} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+                    </div>}
                     {this.props.body ? (
                         <React.Fragment>
                             <CardActions className={classes.actions} disableActionSpacing>

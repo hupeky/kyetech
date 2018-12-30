@@ -16,7 +16,7 @@ class Camera extends Component {
                 position={this.props.enter3D ? '-10 35 40' : '-10 13 23'} /* position="-10 30 40" */
                 orbit-controls={`
                     autoRotate: ${this.props.enter3D ? 'false;' : 'true;'}
-                    autoRotateSpeed: 0.15;
+                    autoRotateSpeed: 0.10   ;
                     target: #center;
                     enableDamping: true;
                     dampingFactor: 0.125;

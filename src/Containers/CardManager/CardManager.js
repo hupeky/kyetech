@@ -16,7 +16,7 @@ class CardManager extends Component {
              () => {
                  this.props.startColourAnim( 'megamanBG' )
                  this.props.startAnimation( {x: Math.floor( Math.random() * this.props.dimensions.x ), z: Math.floor( Math.random() * this.props.dimensions.z )} )
-             }, 3000
+             }, 2000
         )
         this.intervalAnimation = setInterval(
             () => {

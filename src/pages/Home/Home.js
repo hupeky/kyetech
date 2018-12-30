@@ -28,6 +28,7 @@ import ExampleImageHolder from '../../UI/ExampleImageHolder/ExampleImageHolder'
 import rsLogo from '../../assets/SVG/logos/companies/rsLogo.svg'
 import pretLogo from '../../assets/SVG/logos/companies/pretSmall.svg'
 import rhokettLogo from '../../assets/SVG/logos/companies/rhokettStampLogo.svg'
+import rbsLogo from '../../assets/SVG/logos/companies/rbs.svg'
 
 // import aboutMeIcon from '../../assets/SVG/pageBlockIcons/aboutMe.svg'
 import ExamplesIcon from '@material-ui/icons/Devices'
@@ -145,6 +146,26 @@ const home = ( props ) => {
                     </Grid>
                 </Grid>
 
+                {/* ************************ RBS */}
+                <Grid container spacing={8}>
+                    <Grid item xs={1} md={2} />
+                    <Grid item xs={10} md={8}>
+                        <ScaleIn offset={50}>
+                            <CompanyLogo img={rbsLogo} name='RBS Bank' width={100} />
+                        </ScaleIn>
+                        <Display1>RBS Bank</Display1>
+                        <Typography variant="body1">This app was produced in around 5 weeks, it was a gamified style quiz that helped communicate banking regulation changes in a fun way. I worked closely with the designer from an 80 page story board to build out a React app that worked across all device types and IE11.</Typography >
+                        <Typography variant="body1">React was also used to create a dynamic character using svg data that could randomise 10s of thousands of character combinations that could then be shared on their social media platform.</Typography >
+                        <Headline>Deliverables</Headline>
+                        <PageList columns={1} list={[
+                            'Great feedback from client',
+                            'Compatible accross all devices and resolutions',
+                            'Randomised character creation'
+                        ]} />
+                    </Grid>
+                </Grid>
+                <ExampleImageHolder company='rbs' />
+
                 {/* ************************ RS COMPONENTS */}
                 <Grid container spacing={8}>
                     <Grid item xs={1} md={2} />
@@ -166,20 +187,16 @@ const home = ( props ) => {
                     </Grid>
                 </Grid>
                 <ExampleImageHolder company='rs' />
-                {/* {exampleImages.rs.map( ( exampleImage, i ) => {
-                    return <PageImage key={i} src={exampleImage.src} title={exampleImage.title} subText={exampleImage.subText} />
-                } ) */}
-
 
                 {/* ************************ RHOKETT */}
                 <Grid container spacing={8}>
                     <Grid item xs={1} md={2} />
                     <Grid item xs={10} md={8}>
-                    <ScaleIn offset={50}>
-                        <CompanyLogo img={rhokettLogo} width={170} />
-                    </ScaleIn>
-                            <Display1>Rhokett</Display1>
-                        
+                        <ScaleIn offset={50}>
+                            <CompanyLogo img={rhokettLogo} width={170} />
+                        </ScaleIn>
+                        <Display1>Rhokett</Display1>
+
 
                         <Typography variant="body1">Rhokett is a company Ive done a lot of freelance work for over the years, most recently I worked on a prototype for a new 3d product viewing system for their dessert range using a photogrammetry technique for photorealistic 3d. Its then run through simplification processes to bring each dessert down from 60MB of data to under 1MB and can run on low-end devices. </Typography>
 
@@ -188,15 +205,11 @@ const home = ( props ) => {
                         <PageList columns={1} list={[
                             'Created award nominated designs for luxury packaging',
                             'Designed and built their web site end to end',
-                            'Prototyped 3D photogrammatery for photo-real products',
+                            'Prototyped 3D photogrammatery for photo-real products'
                         ]} />
                     </Grid>
                 </Grid>
                 <ExampleImageHolder company='rhokett' />
-                {/* {exampleImages.rhokett.map( ( exampleImage, i ) => {
-                    return <PageImage key={i} src={exampleImage.src} title={exampleImage.title} subText={exampleImage.subText} />
-                } ) */}
-
 
                 {/* ************************ PRET */}
                 <Grid container spacing={8}>

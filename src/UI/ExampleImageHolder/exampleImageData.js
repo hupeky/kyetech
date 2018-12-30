@@ -1,18 +1,40 @@
 import React from 'react'
-import Display1 from '../../UI/Display1/Display1'
 import Typography from '@material-ui/core/Typography'
 import PageList from '../../UI/pageList/pageList'
 
 import rsLogo from '../../assets/SVG/logos/companies/rsLogo.svg'
 import pretLogo from '../../assets/SVG/logos/companies/pretStar.svg'
 import rhokettLogo from '../../assets/SVG/logos/companies/rhokettStampLogo.svg'
+import rbsLogo from '../../assets/SVG/logos/companies/rbs.svg'
+
 
 const exampleImages = {
     logos: {
+        rbs: rbsLogo,
         rs: rsLogo,
         pret: pretLogo,
         rhokett: rhokettLogo
     },
+    rbs: [
+        {
+            video: 'https://www.youtube.com/embed/HdYhE0fp7zg',
+            title: 'RBS Ring-fencing App',
+            body:
+                <React.Fragment>
+                    <Typography variant={'body1'}>
+                        React based web app for educating the banking sector around new regualations.
+                    </Typography>
+                    <Typography variant={'body2'}>Developed with:</Typography>
+                    <PageList columns={2} list={[
+                        'React',
+                        'GSAP',
+                        'JS2015+',
+                        'Dynamic SVGs in React']} />
+                </React.Fragment>,
+            width: 1920,
+            height: 1080
+        }
+    ],
     rs: [
         {
             url: 'https://kye.tech/imgs/rs/mobile.jpg',
@@ -152,21 +174,21 @@ const exampleImages = {
             url: 'https://kye.tech/imgs/pret/mobile.jpg',
             title: 'Front-end development',
             width: 1900,
-            height:1123
+            height: 1123
 
         },
         {
             url: 'https://kye.tech/imgs/pret/product.jpg',
             title: '3D product vis',
             width: 1920,
-            height:1147
+            height: 1147
 
         },
         {
             url: 'https://kye.tech/imgs/pret/packaging.jpg',
             title: 'Packaging design',
             width: 1920,
-            height:1256
+            height: 1256
 
         }
     ]

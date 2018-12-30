@@ -92,7 +92,6 @@ class HomeBanner extends Component {
     }
 
     startDemoHandler = () => {
-        console.log('fuck you')
         this.props.enter3DHandler()
         this.props.startColourAnim( 'animBackdrops' )
     }
