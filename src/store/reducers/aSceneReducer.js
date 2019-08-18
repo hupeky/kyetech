@@ -63,7 +63,8 @@ const initialState = {
     animCoords: null,
     stopAnim: false,
     distanceLookUp: calcualteDistanceLookup( dim.x, dim.z ),
-
+    paused: false,
+    autoWave: true,
     colours: colours,
     colourIndex: 0,
     colourRef: null
@@ -81,6 +82,16 @@ const ASceneReducer = ( state = initialState, action ) => {
             waveSpeed: 8,
             bounceSpeed: 4
         }
+        case actionTypes.TOGGLE_PAUSE:
+            return {
+                ...state,
+                paused: !state.paused
+            }
+        case actionTypes.TOGGLE_AUTO_WAVE:
+            return {
+                ...state,
+                autoWave: !state.autoWave
+            }
         case actionTypes.START_ANIMATION:
             return {
                 ...state,

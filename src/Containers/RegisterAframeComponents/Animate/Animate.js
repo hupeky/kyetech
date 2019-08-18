@@ -13,7 +13,8 @@ class Animate extends Component {
             schema: {
                 key: {type: 'string', default: ''},
                 distance: {type: 'number', default: -1},
-                animIndex: {type: 'number', default: 0}
+                animIndex: {type: 'number', default: 0},
+                paused: {type: 'boolean', default: false}
             },
             init: function () {
                 this.myData = {}
@@ -23,6 +24,7 @@ class Animate extends Component {
                 this.myData.bounce = CustomEase.create( 'custom', `M0,0 C0,0 0.026,0.58 0.15,0.58 0.268,0.58 0.3,0 0.3,0 0.3,0 0.348,0.368 0.424,0.368 0.526,0.368 0.538,0 0.538,0 0.538,0 0.572,0.194 0.634,0.194 0.706,0.194 0.736,0 0.736,0 0.736,0 0.754,0.088 0.81,0.088 0.866,0.088 0.886,0 0.886,0 0.886,0 0.896,0.03 0.93,0.03 0.958,0.03 0.976,0 0.976,0 0.994,0 0.98,0 1,0`)
                 this.myData.bounceLookUp = [9,9,8.2,7.5,7,6.2,5.4,4.6,3.8,3,2.2]
                 this.myData.animations = {}
+                this.myData.pause = false
             },
             update: function ( oldData ) {
                 const removeAnimation = ( animName, tween ) => {
@@ -37,12 +39,24 @@ class Animate extends Component {
                     this.myData.animations[animName].tween = new TimelineLite().to( this.myData.animations[animName], this.myData.bounceLookUp[thisClass.props.bounceSpeed], { y:thisClass.props.waveHeight, delay: delay, ease: this.myData[thisClass.props.waveShape], onComplete: () => removeAnimation( animName, this.myData.animations[animName].tween ) })
                     this.myData.animations[animName].y = 0
                 }
+                if ( this.data.paused) {
+                    if ( Object.keys( this.myData.animations ).length > 0 ) {
+                        Object.keys( this.myData.animations ).forEach( ( animation ) => this.myData.animations[animation].tween.pause() )
+                    }
+                } else {
+                    if ( Object.keys( this.myData.animations ).length > 0 ) {
+                        Object.keys( this.myData.animations ).forEach( ( animation ) => this.myData.animations[animation].tween.play() )
+                    }
+                }
             },
             tick: function ( ) {
-                if ( Object.keys( this.myData.animations ).length > 0 ) {
-                    const yPos = Object.keys( this.myData.animations ).reduce( ( accumulator, animation ) => { return this.myData.animations[animation].y + accumulator }, 0 )
-                    this.el.object3D.position.y = yPos
+                if ( !this.data.paused) {
+                    if ( Object.keys( this.myData.animations ).length > 0 ) {
+                        const yPos = Object.keys( this.myData.animations ).reduce( ( accumulator, animation ) => { return this.myData.animations[animation].y + accumulator }, 0 )
+                        this.el.object3D.position.y = yPos
+                    }
                 }
+
             }
         })
     }

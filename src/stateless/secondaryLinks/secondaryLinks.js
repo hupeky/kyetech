@@ -21,7 +21,7 @@ const secondaryLinks = ( props ) => {
         case 'center':
             margin = {
                 marginRight: 'auto',
-                marginLeft: 'auto',
+                marginLeft: 'auto'
             }
             break
         default:
@@ -35,7 +35,7 @@ const secondaryLinks = ( props ) => {
                     <LinkedInIcon height={25} />
                 </Button>
             </a>
-            <a target="_blank" href="http://kye.tech/pdf/kyehuelin2018.pdf">
+            <a target="_blank" href="http://kye.tech/pdf/kyehuelin2019.pdf">
                 <Button outline={props.outline ? true : null} spacer="true" label={'CV'}>
                     <DownloadCVIcon height={25} />
                 </Button>

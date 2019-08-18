@@ -1,28 +1,29 @@
 .embedded {
   width:100%;
   background-color:rgb(31, 31, 31);
+  height:750px
 }
 
 @media only screen and (min-width: 0px) {
     .embedded {
-        height:500px
+        height:750px
     }
 }
 
 @media only screen and (min-width: 600px) {
     .embedded {
-        height:500px
+        height:750px
     }
 }
 
 @media only screen and (min-width: 960px) {
     .embedded {
-        height:700px
+        height:900px
     }
 }
 
 @media only screen and (min-width: 1920px) {
     .embedded {
-        height:800px
+        height:1000px
     }
 }

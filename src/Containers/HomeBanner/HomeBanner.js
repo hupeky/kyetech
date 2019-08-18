@@ -34,16 +34,16 @@ const styles = theme => ( {
         width: '100%'
     },
     maxHeightBreaks: {
-        [theme.breakpoints.up( 'xs' )]: {maxHeight: '500px'},
-        [theme.breakpoints.up( 'sm' )]: {maxHeight: '500px'},
-        [theme.breakpoints.up( 'md' )]: {maxHeight: '700px'},
-        [theme.breakpoints.up( 'xl' )]: {maxHeight: '800px'}
+
+        [theme.breakpoints.up( 'sm' )]: {maxHeight: '750px'},
+        [theme.breakpoints.up( 'md' )]: {maxHeight: '900px'},
+        [theme.breakpoints.up( 'xl' )]: {maxHeight: '1000px'}
     },
     heightBreaks: {
-        [theme.breakpoints.up( 'xs' )]: {height: '500px'},
-        [theme.breakpoints.up( 'sm' )]: {height: '500px'},
-        [theme.breakpoints.up( 'md' )]: {height: '700px'},
-        [theme.breakpoints.up( 'xl' )]: {height: '800px'}
+
+        [theme.breakpoints.up( 'sm' )]: {height: '750px'},
+        [theme.breakpoints.up( 'md' )]: {height: '900px'},
+        [theme.breakpoints.up( 'xl' )]: {height: '1000px'}
     },
     navIconHide: {
         [theme.breakpoints.up( 'md' )]: {
@@ -105,12 +105,12 @@ class HomeBanner extends Component {
             {this.props.enter3D ? <IconButton
                     color="inherit"
                     aria-label="open drawer"
-                    onClick={this.handleDrawerToggle} 
+                    onClick={this.handleDrawerToggle}
                     className={classes.navIconHide}
                 >
                     <MenuIcon />
                 </IconButton> : null}
-                
+
 
                 <Hidden mdUp>
                     <Drawer
