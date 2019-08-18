@@ -1,8 +1,8 @@
 import React from 'react'
 
-import TimelineLite from 'gsap/src/uncompressed/TimelineMax.js'
-import 'gsap/src/plugins/DrawSVGPlugin.js'
-import {Elastic} from 'gsap/src/uncompressed/easing/EasePack'
+import TimelineLite from '../../assets/gsap/TimelineLite'
+import '../../assets/gsap/plugins/DrawSVGPlugin'
+import {Elastic} from '../../assets/gsap/EasePack'
 
 class ManageChildren extends React.Component {
     state = {

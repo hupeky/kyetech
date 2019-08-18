@@ -1,9 +1,9 @@
 import {Component} from 'react'
 import {connect} from 'react-redux'
 
-import TimelineLite from 'gsap/src/uncompressed/TimelineLite.js'
+import TimelineLite from '../../../assets/gsap/TimelineLite'
 
-import CustomEase from 'gsap/CustomEase'
+import CustomEase from '../../../assets/gsap/plugins/CustomEase'
 import AFRAME from 'aframe'
 
 class Animate extends Component {

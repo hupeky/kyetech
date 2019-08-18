@@ -3,8 +3,8 @@ import AFRAME from 'aframe'
 
 import {connect} from 'react-redux'
 
-import TimelineLite from 'gsap/src/uncompressed/TimelineLite.js'
-import {Power0} from "gsap/src/uncompressed/easing/EasePack"
+import TimelineLite from '../../../assets/gsap/TimelineLite'
+import {Power0} from "../../../assets/gsap/EasePack"
 
 
 class Colour extends Component {
