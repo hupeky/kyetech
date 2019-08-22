@@ -12,6 +12,7 @@ class CardManager extends Component {
 
 
     componentDidMount () {
+        let introCount = 0
          setTimeout(
              () => {
                  this.props.startColourAnim( 'megamanBG' )
@@ -20,9 +21,11 @@ class CardManager extends Component {
         )
         this.intervalAnimation = setInterval(
             () => {
-                if ( !this.props.enter3D )
+                if ( introCount < 4 && !this.props.enter3D ) {
+                    ++introCount
                     this.props.startAnimation( {x: Math.floor( Math.random() * this.props.dimensions.x ), z: Math.floor( Math.random() * this.props.dimensions.z )} )
             }
+        }
             , 7000)
 
     }
