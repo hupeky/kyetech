@@ -9,7 +9,7 @@ import ehonda from '../../assets/32/animations/sf2/ehonda.png'
 
 let animSF2 = [
     {
-        type: 'animation',
+        type: 'slideShow',
         key: 'animSF2',
         imgSrc: ken,
         rgbaArray: {},

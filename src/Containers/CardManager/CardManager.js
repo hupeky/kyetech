@@ -37,7 +37,7 @@ class CardManager extends Component {
                     delay = this.props.distanceLookUp[this.props.animCoords.x][this.props.animCoords.z][this.props.waveType][x][z]
                 else
                     delay = null
-                row.push( <Card colourInd={this.props.colourIndex} paused={this.props.paused} animInd={this.props.animationIndex} distance={delay} position={`${x} -0 ${-z}`} key={`${x}_${z}`} id={`${x}_${z}`} x={x} z={z} /> )
+                row.push( <Card height={this.props.cubeHeight} colourInd={this.props.colourIndex} paused={this.props.paused} animInd={this.props.animationIndex} distance={delay} position={`${x} -0 ${-z}`} key={`${x}_${z}`} id={`${x}_${z}`} x={x} z={z} /> )
             }
             cardEntityArray.push( row )
         }
@@ -60,7 +60,8 @@ const mapStateToProps = state => { // map redux state to class props
         waveShape: state.aScene.waveShape,
         distanceLookUp: state.aScene.distanceLookUp,
         paused: state.aScene.paused,
-        colourIndex: state.aScene.colourIndex
+        colourIndex: state.aScene.colourIndex,
+        cubeHeight: state.aScene.cubeHeight
     }
 }
 

@@ -59,6 +59,11 @@ class MotionControls extends Component {
         this.props.setBounceSpeed( value )
     }
 
+    cubeHeightHandler = ( value ) => {
+        console.log (value)
+        this.props.setCubeHeight(value)
+    }
+
     clickHandler = (waveFunction) => {
         const {autoWave} = this.props
         waveFunction()
@@ -109,6 +114,8 @@ class MotionControls extends Component {
                 <Typography variant="body2" gutterBottom={true}>Bounce speed:</Typography>
                 <Slider min={1} max={10} step={1} default={this.props.bounceSpeed} onRelease={this.bounceSpeedHandler} />
 
+                <Typography variant="body2" gutterBottom={true}>Cube height:</Typography>
+                <Slider min={0.1} max={3.1} step={0.2} onChange={this.cubeHeightHandler} default={this.props.cubeHeight}/>
             </div>
         )
     }
@@ -123,7 +130,8 @@ const mapStateToProps = state => { // map redux state to class props
         bounceSpeed: state.aScene.bounceSpeed,
         dimensions: state.aScene.dimensions,
         paused: state.aScene.paused,
-        autoWave: state.aScene.autoWave
+        autoWave: state.aScene.autoWave,
+        cubeHeight: state.aScene.cubeHeight
     }
 }
 
@@ -136,7 +144,8 @@ const mapDispatchToProps = dispatch => {
         setWaveShape: ( waveShape ) => dispatch( {type: actionTypes.SET_WAVE_SHAPE, waveShape: waveShape} ),
         setWaveHeight: ( waveHeight ) => dispatch( {type: actionTypes.SET_WAVE_HEIGHT, waveHeight: waveHeight} ),
         setWaveSpeed: ( waveSpeed ) => dispatch( {type: actionTypes.SET_WAVE_SPEED, waveSpeed: waveSpeed} ),
-        setBounceSpeed: ( bounceSpeed ) => dispatch( {type: actionTypes.SET_BOUNCE_SPEED, bounceSpeed: bounceSpeed} )
+        setBounceSpeed: ( bounceSpeed ) => dispatch( {type: actionTypes.SET_BOUNCE_SPEED, bounceSpeed: bounceSpeed} ),
+        setCubeHeight: ( cubeHeight ) => dispatch( {type: actionTypes.SET_CUBE_HEIGHT, cubeHeight} )
     }
 }
 

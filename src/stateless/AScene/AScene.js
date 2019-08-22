@@ -11,7 +11,7 @@ const AScene = ( props ) => {
     return (
         <header>
             <section>
-                <a-scene  colour="" shadow  embedded vr-mode-ui="enabled: false" background="transparent: true" class={classes.embedded}>
+                <a-scene shadow  embedded vr-mode-ui="enabled: false" background="transparent: true" class={classes.embedded}>
                 <RegisterAframeComponents />
                     <Camera />
                     <a-entity light="type: hemisphere; color: #ffffff; groundColor: #a3a3a3; intensity: 1"></a-entity>

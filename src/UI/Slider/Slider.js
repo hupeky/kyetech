@@ -4,13 +4,17 @@ import Slider from 'rc-slider'
 const mySlider = ( props ) => {
     let marks = {}
     for ( let i = props.min; i <= props.max; i +=props.step ) {
-        marks[i] = `${i}`
-        switch ( i ) {
+        let parsedI = parseFloat(i.toFixed(1))
+        marks[i] = {
+            style: { userSelect: "none" },
+            label: <strong>{parsedI}</strong>
+        }
+        switch ( parsedI ) {
             case props.min:
             case props.max:
                 marks[i] = {
-                    style: {color: 'white' },
-                    label: <strong>{i}</strong>
+                    style: {color: 'white', userSelect: "none" },
+                    label: <strong>{parsedI}</strong>
                 }
                 break
 
@@ -18,9 +22,24 @@ const mySlider = ( props ) => {
         }
     }
 
+    marks[props.max] = {
+        style: {color: 'white',userSelect: "none" },
+        label: <strong>{props.max}</strong>
+    }
+
+
+
     return (
         <div style={{marginBottom: 40 }}>
-            <Slider dots min={props.min} max={props.max} marks={marks} step={props.step} onAfterChange={(value) => props.onRelease(value)} defaultValue={props.default} />
+            <Slider
+            dots
+            min={props.min}
+            max={props.max}
+            marks={marks}
+            step={props.step}
+            onAfterChange={ (value) => props.onRelease && props.onRelease(value)}
+            onChange={ (value) => props.onChange && props.onChange(value)}
+            defaultValue={props.default} />
         </div>
     )
 }

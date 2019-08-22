@@ -9,57 +9,61 @@ import rightSmoke2 from '../../assets/kartAnim/rightSmoke2.png'
 
 let animKart = [
     {
-        label: 'trundle',
         type: 'animation',
         key: 'animKart',
         imgSrc: trundle1,
         rgbaArray: {},
         delay: 0,
-        duration: 0.13
+        duration: 0.5
     },
     {
-        type: 'animation',
-        key: 'kartAnim',
+        label: 'trundle',
+        imgSrc: trundle1,
+        rgbaArray: {},
+        delay: 0.07,
+        duration: 0
+    },
+    {
         imgSrc: trundle2,
         rgbaArray: {},
-        delay: 0,
-        duration: 0.13,
+        delay: 0.17,
+        duration: 0,
         goTo: {
             id: 'trundle',
             position: 'trundle',
-            loopCount: 6
+            loopCount: 5
         }
     },
     {
         imgSrc: right1,
         rgbaArray: {},
-        delay: 0.1,
+        delay: 0.085,
         duration: 0
     },
     {
         imgSrc: right2,
         rgbaArray: {},
-        delay: 0.1,
+        delay: 0.085,
         duration: 0
     },
     {
         imgSrc: right3,
         rgbaArray: {},
-        delay: 0.1,
+        delay: 0.085,
         duration: 0
     },
     {
         label: 'rightSmoke',
         imgSrc: rightSmoke1,
         rgbaArray: {},
-        delay: 0.05,
-        duration: 0.05
+        delay: 0.11,
+        duration: 0
     },
     {
         imgSrc: rightSmoke2,
         rgbaArray: {},
-        delay: 0.05,
-        duration: 0.05,
+        delay: 0.11,
+        duration: 0,
         goTo: {
             id: 'rightSmoke',
             position: 'rightSmoke',
@@ -69,24 +73,24 @@ let animKart = [
     {
         imgSrc: right3,
         rgbaArray: {},
-        delay: 0.05,
-        duration: 0.05
+        delay: 0.085,
+        duration: 0
     },
     {
         imgSrc: right2,
         rgbaArray: {},
-        delay: 0.05,
-        duration: 0.05
+        delay: 0.085,
+        duration: 0
     },
     {
         imgSrc: right1,
         rgbaArray: {},
-        delay: 0.05,
-        duration: 0.05,
+        delay: 0.085,
+        duration: 0,
         goTo: {
             id: 'trundle2',
             position: 'trundle',
-            loopCount: 1
+            loopCount: 1000
         }
     }
 

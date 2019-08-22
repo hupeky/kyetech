@@ -9,12 +9,12 @@ import rtypeBG from '../../assets/32/single/rtypeBG.png'
 
 let animBackdrops = [
     {
-        type: 'animation',
+        type: 'slideShow',
         key: 'animBackdrops',
         imgSrc: megamanBG,
         rgbaArray: {},
         delay: 0,
-        duration: 1 
+        duration: 1
 
     },
     {

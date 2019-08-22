@@ -8,7 +8,6 @@ class Camera extends Component {
     render () {
         return (
             <a-camera
-                animate-cam="" 
                 id="camera"
                 fov="22"
                 near="1"

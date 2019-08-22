@@ -67,7 +67,8 @@ const initialState = {
     autoWave: true,
     colours: colours,
     colourIndex: 0,
-    colourRef: null
+    colourRef: null,
+    cubeHeight: 0.3
 }
 
 
@@ -129,6 +130,11 @@ const ASceneReducer = ( state = initialState, action ) => {
                 ...state,
                 bounceSpeed: action.bounceSpeed
             }
+            case actionTypes.SET_CUBE_HEIGHT:
+                return {
+                    ...state,
+                    cubeHeight: action.cubeHeight
+                }
         case actionTypes.START_COLOUR_ANIM:
             return {
                 ...state,

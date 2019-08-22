@@ -21,6 +21,9 @@ class Colour extends Component {
             init: function () {
                 this.el.colourTween = new TimelineLite()
                 this.el.loops = {}
+                this.el.object3D.children[0].material.transparent = true
+                this.el.object3D.children[0].material.side = "double"
+                this.el.object3D.children[0].material.alphaTest = 0.2
             },
             update: function ( oldData ) {
                 if ( this.data.colourIndex !== oldData.colourIndex && this.data.colourIndex > 0 ) {
@@ -35,10 +38,10 @@ class Colour extends Component {
                         } else ( this.el.loops[loopId].loopCount = this.el.loops[loopId].originalLoopCount )
 
                     }
-
+                    this.el.object3D.children[0].material.transparent = true
                     thisClass.props.colours[thisClass.props.colourRef].forEach( ( frame ) => {
-                        const rgb = frame.rgbaArray.data.slice( frame.rgbaArray.index( this.data.x, this.data.z, 0 ), frame.rgbaArray.index( this.data.x, this.data.z, 0 ) + 3 )
-                        this.el.colourTween.to( this.el.object3D.children[0].material.color, frame.duration, {r: rgb[0], g: rgb[1], b: rgb[2], delay: frame.delay, ease: Power0.none} )
+                        const rgb = frame.rgbaArray.data.slice( frame.rgbaArray.index( this.data.x, this.data.z, 0 ), frame.rgbaArray.index( this.data.x, this.data.z, 0 ) + 4 )
+                        this.el.colourTween.to( [this.el.object3D.children[0].material.color, this.el.object3D.children[0].material], frame.duration, {r: rgb[0], g: rgb[1], b: rgb[2], opacity: rgb[3], delay: frame.delay, ease: Power0.none} )
                         if ( frame.label ) {
                             this.el.colourTween.addLabel( frame.label )
                         }
@@ -49,9 +52,11 @@ class Colour extends Component {
                                 originalLoopCount: frame.goTo.loopCount,
                                 position: frame.goTo.position
                             }
-                            this.el.colourTween.to( this.el.object3D.children[0].material.color, frame.duration, {r: rgb[0], g: rgb[1], b: rgb[2], delay: frame.delay, ease: Power0.none, onComplete: onComplete, onCompleteParams: [frame.goTo.id]} )
+                            this.el.colourTween.to( [this.el.object3D.children[0].material.color, this.el.object3D.children[0].material], frame.duration, {r: rgb[0], g: rgb[1], b: rgb[2], opacity: rgb[3], delay: frame.delay, ease: Power0.none, onComplete: onComplete, onCompleteParams: [frame.goTo.id]} )
+
                         } else {
-                            this.el.colourTween.to( this.el.object3D.children[0].material.color, frame.duration, {r: rgb[0], g: rgb[1], b: rgb[2], delay: frame.delay, ease: Power0.none} )
+                            this.el.colourTween.to( [this.el.object3D.children[0].material.color, this.el.object3D.children[0].material], frame.duration, {r: rgb[0], g: rgb[1], b: rgb[2], opacity: rgb[3], delay: frame.delay, ease: Power0.none} )
+
                         }
                     } )
                 }

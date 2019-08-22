@@ -53,6 +53,7 @@ class ColourControls extends Component {
         let frames = {
             single: [],
             animation: [],
+            slideShow: [],
             abstract: []
         }
         Object.keys( this.props.colours ).forEach( ( item, index ) => {
@@ -72,9 +73,13 @@ class ColourControls extends Component {
                 <GridList className={classes.gridList} cellHeight={90} cols={4}>
                     {frames.single}
                 </GridList >
-                <Typography variant="body2" gutterBottom={true}>Select Animation:</Typography>
+                <Typography variant="body2" gutterBottom={true}>Select animation:</Typography>
                 <GridList className={classes.gridList} cellHeight={90} cols={4}>
                     {frames.animation}
+                </GridList >
+                <Typography variant="body2" gutterBottom={true}>Select slideshow:</Typography>
+                <GridList className={classes.gridList} cellHeight={90} cols={4}>
+                    {frames.slideShow}
                 </GridList >
                 <Typography variant="body2" gutterBottom={true}>Select Colours:</Typography>
                 <GridList className={classes.gridList} cellHeight={90} cols={4}>
