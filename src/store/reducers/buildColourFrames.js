@@ -4,7 +4,7 @@ import singleBackdrops from './singleBackdrops'
 import animBackdrops from './animBackdrops'
 import animSonic from './animSonic'
 import animKart from './animKart'
-import animSF2 from './animSF2'
+// import animSF2 from './animSF2'
 import abstract from './abstractBackdrops'
 
 let colours = {}
@@ -13,7 +13,7 @@ colours = Object.assign(singleBackdrops, colours)
 colours.animBackdrops = animBackdrops
 colours.sonicAnim = animSonic
 colours.animKart = animKart
-colours.animSF2 = animSF2
+// colours.animSF2 = animSF2
 colours = Object.assign(abstract, colours)
 
 

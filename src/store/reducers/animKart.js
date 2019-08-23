@@ -20,13 +20,13 @@ let animKart = [
         label: 'trundle',
         imgSrc: trundle1,
         rgbaArray: {},
-        delay: 0.07,
+        delay: 0.11,
         duration: 0
     },
     {
         imgSrc: trundle2,
         rgbaArray: {},
-        delay: 0.17,
+        delay: 0.24,
         duration: 0,
         goTo: {
             id: 'trundle',
@@ -37,32 +37,32 @@ let animKart = [
     {
         imgSrc: right1,
         rgbaArray: {},
-        delay: 0.085,
+        delay: 0.12,
         duration: 0
     },
     {
         imgSrc: right2,
         rgbaArray: {},
-        delay: 0.085,
+        delay: 0.12,
         duration: 0
     },
     {
         imgSrc: right3,
         rgbaArray: {},
-        delay: 0.085,
+        delay: 0.12,
         duration: 0
     },
     {
         label: 'rightSmoke',
         imgSrc: rightSmoke1,
         rgbaArray: {},
-        delay: 0.11,
+        delay: 0.17,
         duration: 0
     },
     {
         imgSrc: rightSmoke2,
         rgbaArray: {},
-        delay: 0.11,
+        delay: 0.17,
         duration: 0,
         goTo: {
             id: 'rightSmoke',
@@ -73,19 +73,19 @@ let animKart = [
     {
         imgSrc: right3,
         rgbaArray: {},
-        delay: 0.085,
+        delay: 0.12,
         duration: 0
     },
     {
         imgSrc: right2,
         rgbaArray: {},
-        delay: 0.085,
+        delay: 0.12,
         duration: 0
     },
     {
         imgSrc: right1,
         rgbaArray: {},
-        delay: 0.085,
+        delay: 0.12,
         duration: 0,
         goTo: {
             id: 'trundle2',

@@ -34,14 +34,14 @@ const styles = theme => ( {
         width: '100%'
     },
     maxHeightBreaks: {
-
-        [theme.breakpoints.up( 'sm' )]: {maxHeight: '750px'},
+        [theme.breakpoints.down( 'xs' )]: {maxHeight: '650px'},
+        [theme.breakpoints.up( 'sm' )]: {maxHeight: '700px'},
         [theme.breakpoints.up( 'md' )]: {maxHeight: '900px'},
         [theme.breakpoints.up( 'xl' )]: {maxHeight: '1000px'}
     },
     heightBreaks: {
-
-        [theme.breakpoints.up( 'sm' )]: {height: '750px'},
+        [theme.breakpoints.down( 'xs' )]: {height: '650px'},
+        [theme.breakpoints.up( 'sm' )]: {height: '700px'},
         [theme.breakpoints.up( 'md' )]: {height: '900px'},
         [theme.breakpoints.up( 'xl' )]: {height: '1000px'}
     },
@@ -140,8 +140,8 @@ class HomeBanner extends Component {
                             <div className={myClasses.bg} />
                             <div className={[myClasses.contentHolder, classes.maxHeightBreaks].join( " " )}>
                                 <Typography variant={'display3'}>Kye Huelin</Typography>
-                                <Typography style={{opacity: 1}} variant={'headline'}>Front-end developer</Typography>
-                                <Typography style={{marginTop: '0',opacity: 1}} variant={'body2'}>React, WebVR, Redux, JS2015+</Typography>
+                                <Typography style={{opacity: 1}} variant={'headline'}>Senior web software and vis engineer</Typography>
+                                <Typography style={{marginTop: '0',opacity: 1}} variant={'body2'}>React, WebVR, Redux, JS2015+, </Typography>
                                 {/* <SecondaryLinks /> */}
                                 <Typography className={classes.blockGreenText} variant={'body2'}>Contractor, London, available now</Typography>
 

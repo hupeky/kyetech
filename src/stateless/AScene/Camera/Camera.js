@@ -9,7 +9,7 @@ class Camera extends Component {
         return (
             <a-camera
                 id="camera"
-                fov="22"
+                fov="25"
                 near="1"
                 far="4000"
                 position={this.props.enter3D ? '-10 35 40' : '-10 13 23'} /* position="-10 30 40" */

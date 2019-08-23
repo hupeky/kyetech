@@ -39,6 +39,6 @@ const mapDispatchToProps = dispatch => {
     return {
         addPageBlockDataHandler: ( pageBlockData ) => dispatch( {type: siteActions.ADD_PAGEBLOCK, pageBlockData: pageBlockData} )
     }
-} 
+}
 
 export default connect( null, mapDispatchToProps )( PageBlock )

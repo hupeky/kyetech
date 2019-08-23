@@ -27,49 +27,49 @@ let animBackdrops = [
     {
         imgSrc: sonicBG,
         rgbaArray: {},
-        delay: 1,
+        delay: 2,
         duration: 2
     },
     {
         imgSrc: marioBG,
         rgbaArray: {},
-        delay: 1,
+        delay: 2,
         duration: 2
     },
     {
         imgSrc: ryuBG,
         rgbaArray: {},
-        delay: 1,
+        delay: 2,
         duration: 2
     },
     {
         imgSrc: zeldaBG,
         rgbaArray: {},
-        delay: 1,
+        delay: 2,
         duration: 2
     },
     {
         imgSrc: megamanBG,
         rgbaArray: {},
-        delay: 1,
+        delay: 2,
         duration:2
     },
     {
         imgSrc: tetrisBG,
         rgbaArray: {},
-        delay: 1,
+        delay: 2,
         duration: 2
     },
     {
         imgSrc: kartBG,
         rgbaArray: {},
-        delay: 1,
+        delay: 2,
         duration: 2
     },
     {
         imgSrc: rtypeBG,
         rgbaArray: {},
-        delay: 1,
+        delay: 2,
         duration: 2
     },
     {

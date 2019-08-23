@@ -81,10 +81,6 @@ class ColourControls extends Component {
                 <GridList className={classes.gridList} cellHeight={90} cols={4}>
                     {frames.slideShow}
                 </GridList >
-                <Typography variant="body2" gutterBottom={true}>Select Colours:</Typography>
-                <GridList className={classes.gridList} cellHeight={90} cols={4}>
-                    {frames.abstract}
-                </GridList >
             </div>
         )
     }
