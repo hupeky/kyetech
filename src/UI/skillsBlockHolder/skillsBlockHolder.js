@@ -6,6 +6,7 @@ import classes from './skillsBlockHolder.css'
 import Grid from '@material-ui/core/Grid'
 
 import skillsBlockData from './skillsBlockData'
+import { Typography } from '@material-ui/core'
 
 class SkillsBlockHolder extends Component {
     delay = 0
@@ -19,9 +20,9 @@ class SkillsBlockHolder extends Component {
                     let startDelay = this.delay / 1000
                     return (
                         <Grid key={item.id} item xs={this.props.xs} sm={this.props.sm}>
-                            <div style={{transitionDelay: this.props.onScreen === true ? this.delay + 'ms' :  '0ms'}} className={classes.slideIn}>
+                            <div style={{transitionDelay: this.props.onScreen === true ? this.delay + 'ms' :  '0ms', width: "80%", margin: "auto"}} className={classes.slideIn}>
                                 <LogoComponent img={item.img} startDelay={startDelay} onScreen={this.props.onScreen} id={item.id} title={item.title} />
-                                {this.props.type === 'technical' ? <div>{item.title}</div> : null}
+                                {this.props.type === 'technical' ? <Typography  style={{textAlign: "center"}}>{item.title}</Typography> : null}
                             </div>
                         </Grid>
                     )

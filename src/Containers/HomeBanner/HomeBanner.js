@@ -140,8 +140,8 @@ class HomeBanner extends Component {
                             <div className={myClasses.bg} />
                             <div className={[myClasses.contentHolder, classes.maxHeightBreaks].join( " " )}>
                                 <Typography variant={'display3'}>Kye Huelin</Typography>
-                                <Typography style={{opacity: 1}} variant={'headline'}>Senior web software and vis engineer</Typography>
-                                <Typography style={{marginTop: '0',opacity: 1}} variant={'body2'}>React, WebVR, Redux, JS2015+, </Typography>
+                                <Typography style={{opacity: 1, textAlign: "center", padding: "0 30px"}} variant={'headline'}>VR/AR/XR Web Software Engineer</Typography>
+                                <Typography style={{marginTop: '0',opacity: 1}} variant={'body2'}>Three, Babylon, React, Typescript </Typography>
                                 {/* <SecondaryLinks /> */}
                                 <Typography className={classes.blockGreenText} variant={'body2'}>Contractor, London, available now</Typography>
 

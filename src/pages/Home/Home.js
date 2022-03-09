@@ -22,17 +22,14 @@ import darkTheme from '../../assets/themes/darkTheme'
 import PageList from '../../UI/pageList/pageList'
 
 import SkillsBlockHolder from '../../UI/skillsBlockHolder/skillsBlockHolder'
-import ReferenceHolder from '../../UI/referenceHolder/ReferenceHolder'
 import ExampleImageHolder from '../../UI/ExampleImageHolder/ExampleImageHolder'
 
 import rsLogo from '../../assets/SVG/logos/companies/rsLogo.svg'
-import pretLogo from '../../assets/SVG/logos/companies/pretSmall.svg'
 import rhokettLogo from '../../assets/SVG/logos/companies/rhokettStampLogo.svg'
-import rbsLogo from '../../assets/SVG/logos/companies/rbs.svg'
+import verizonLogo from '../../assets/SVG/logos/companies/verizonMedia.svg'
+import kadtechLogo from '../../assets/SVG/logos/companies/kadtech.svg'
 
-// import aboutMeIcon from '../../assets/SVG/pageBlockIcons/aboutMe.svg'
 import ExamplesIcon from '@material-ui/icons/Devices'
-import RecommendationsIcon from '@material-ui/icons/ThumbUp'
 import SkillsIcon from '@material-ui/icons/Settings'
 import AboutMeIcon from '@material-ui/icons/FormatQuote'
 
@@ -75,16 +72,19 @@ const home = ( props ) => {
                         <Grid item xs={1} md={2} />
                         <Grid item xs={10} md={8}>
                             <SlideIn partial={true}>
+                            <SlideIn partial={true}>
+                                    <Typography variant="body1">
+                            With a life-long interest in 3d technology, I’ve spent the last 4 years developing web AR/VR software. I am passionate about this space and see 3d web applications as the future for delivering immersive 3d content to the mainstream. </Typography>
+                            </SlideIn>
+                            <SlideIn partial={true}>
+                                    <Typography variant="body1">
+                                        I have experience developing full stack 3d webXR applications that are cross platform and cross browser compatible. I have also developed retail AR technology for mobile, delivering interactive sales and marketing content.</Typography>
+                                        </SlideIn>
+                                        <SlideIn partial={true}>
+                                    <Typography variant="body1">
+                                        I have knowledge of the latest frameworks and tools like Babylon, Three, WebXR, React and many more, see the list below for more details. I’ll continue to evolve in this technology space and look forward to the next challange.</Typography>
 
-                                <SlideIn partial={true}>
-                                    <Typography variant="body1">I am a front-end web developer with a specialism in 3D.  I have a blend of creative and technical skills with a passion for learning and problem solving. I help companies create a competitive edge by innovating the ways their users can connect to and visualise data.</Typography>
-                                </SlideIn>
-                                <SlideIn partial={true}>
-                                    <Typography variant="body1">I’ve worked in a variety of industries over the last 10 years, ranging from engineering, insurance, e-commerce, B2B and B2C, I have a diverse range of skills in design, technical and business development, that give me the versatility to adapt to any job.</Typography>
-                                </SlideIn>
-                                <SlideIn partial={true}>
-                                    <Typography variant="body1">I have knowledge of the latest frameworks and tools like React, Redux, JS2015+, GSAP, WebVR / Aframe amongst others (and will continue to learn more). With a background in 3d I’m seeing huge opportunities in the new wave of applications that can be created on the web and I’m excited to be evolving with it.</Typography>
-                                </SlideIn>
+                                        </SlideIn>
 
                             </SlideIn>
                         </Grid>
@@ -109,7 +109,7 @@ const home = ( props ) => {
                         </ScaleIn>
 
                         <SlideIn partial={true}>
-                            <Typography variant="body1">I’m never going to want to stop learning, I'm amazed at the power of the technology we have at our disposal today. Such is my interest in technology, that I will spend my free time learning it, not because I need to, but because I <i>want</i> to.</Typography>
+                            <Typography align='center' variant="body1">Here are just some of the tools and frameworks I use on a daily basis</Typography>
                         </SlideIn>
 
                         {/* ********** technical skill set */}
@@ -146,25 +146,32 @@ const home = ( props ) => {
                     </Grid>
                 </Grid>
 
-                {/* ************************ RBS */}
+                {/* ************************ Kadtech */}
                 <Grid container spacing={8}>
                     <Grid item xs={1} md={2} />
                     <Grid item xs={10} md={8}>
                         <ScaleIn offset={50}>
-                            <CompanyLogo img={rbsLogo} name='RBS Bank' width={100} />
+                            <CompanyLogo img={kadtechLogo} name='Verizon Media' />
                         </ScaleIn>
-                        <Display1>RBS Bank</Display1>
-                        <Typography variant="body1">This app was produced in around 5 weeks, it was a gamified style quiz that helped communicate banking regulation changes in a fun way. I worked closely with the designer from an 80 page story board to build out a React app that worked across all device types and IE11.</Typography >
-                        <Typography variant="body1">React was also used to create a dynamic character using svg data that could randomise 10s of thousands of character combinations that could then be shared on their social media platform.</Typography >
-                        <Headline>Deliverables</Headline>
-                        <PageList columns={1} list={[
-                            'Great feedback from client',
-                            'Compatible accross all devices and resolutions',
-                            'Randomised character creation'
-                        ]} />
+                        <Typography variant="body1">I have co-developed a web-based 3D application, that runs in VR, desktop and mobile from a single JavaScript codebase.  Delivered through the cloud using AWS services on a Node server environment, I have a deep knowledge of the pipeline, workflow and technology stack. For the front end I setup a combination of Babylon, WebXr, React and Zustand with transient store updates for performant per frame state driven component based 3d.</Typography >
+
                     </Grid>
                 </Grid>
-                <ExampleImageHolder company='rbs' />
+                <ExampleImageHolder company='kadtech' />
+
+                {/* ************************ Verizon Media */}
+                <Grid container spacing={8}>
+                    <Grid item xs={1} md={2} />
+                    <Grid item xs={10} md={8}>
+                        <ScaleIn offset={50}>
+                            <CompanyLogo img={verizonLogo} name='Verizon Media' />
+                        </ScaleIn>
+                        <Typography variant="body1">I supported development of a retail AR product delivering marketing and advertising experiences. I also research and developed shader code for running animations on the GPU via a technology called Vertex Animation Textures, which is a process of saving complex animation data from Houdini into texture files for decoding on the GPU.</Typography >
+
+                    </Grid>
+                </Grid>
+                <ExampleImageHolder company='verizon' />
+
 
                 {/* ************************ RS COMPONENTS */}
                 <Grid container spacing={8}>
@@ -174,16 +181,8 @@ const home = ( props ) => {
                             <CompanyLogo img={rsLogo} name={'RS Components'} width={100} />
                         </ScaleIn>
                         <Display1>RS Components</Display1>
-                        <Typography variant="body1">I started this role as a web designer creating marketing pages for the multichannel team (Internationally). The role quickly evolved to supporting the UX design teams for mobile prototyping and development.</Typography >
-                        <Typography variant="body1">Whilst in that role I impressed the company by developing (in my own time) a web based 3d demo, using JavaScript, WebGL, and three.js. Which earned me a new position in innovation, working with new technologies to drive user experiences such as web based 3d product systems and augmented reality for mobile, which were fast becoming the most important future technology platforms for the business. </Typography >
+                        <Typography variant="body1">Interactive prodcut viewing system using Three.js </Typography >
 
-                        <Headline>Deliverables</Headline>
-                        <PageList columns={1} list={[
-                            'Earned a promotion from a pioneering 3d web prototype',
-                            'Supported the developement of an experimental AR product viewer',
-                            'Built marketing pages to support product launches of global brands',
-                            'Built a prototype mobile interface with UX team'
-                        ]} />
                     </Grid>
                 </Grid>
                 <ExampleImageHolder company='rs' />
@@ -212,7 +211,7 @@ const home = ( props ) => {
                 <ExampleImageHolder company='rhokett' />
 
                 {/* ************************ PRET */}
-                <Grid container spacing={8}>
+                {/* <Grid container spacing={8}>
                     <Grid item xs={1} md={2} />
                     <Grid item xs={10} md={8}>
                         <ScaleIn offset={50}>
@@ -222,12 +221,12 @@ const home = ( props ) => {
                 </Grid>
                 <ExampleImageHolder company='pret' />
 
-            </PageBlock>
+            </PageBlock> */}
 
-            <PageBlock icon={<RecommendationsIcon />} label={'Recommendations'} backgroundColor={theme.palette.grey.main}>
+            {/* <PageBlock icon={<RecommendationsIcon />} label={'Recommendations'} backgroundColor={theme.palette.grey.main}> */}
 
 
-                <Grid container spacing={8}>
+                {/* <Grid container spacing={8}>
                     <Grid item xs={1} md={2} />
                     <Grid item xs={10} md={8}>
                         <SlideIn partial={true}>
@@ -237,9 +236,9 @@ const home = ( props ) => {
                             <RecommendationsIcon style={{color: 'black', padding: '15px'}} className={classes.pageBlockIcon} />
                         </ScaleIn>
                     </Grid>
-                </Grid>
+                </Grid> */}
 
-                <ReferenceHolder />
+                {/* <ReferenceHolder /> */}
             </PageBlock>
         </Auxillery >
     )

@@ -6,82 +6,80 @@ import rsLogo from '../../assets/SVG/logos/companies/rsLogo.svg'
 import pretLogo from '../../assets/SVG/logos/companies/pretStar.svg'
 import rhokettLogo from '../../assets/SVG/logos/companies/rhokettStampLogo.svg'
 import rbsLogo from '../../assets/SVG/logos/companies/rbs.svg'
-
+import toptalLogo from '../../assets/SVG/logos/companies/toptal.svg'
+import verizonLogo from '../../assets/SVG/logos/companies/verizonMedia.svg'
+import kadtechLodo from '../../assets/SVG/logos/companies/kadtech.svg'
 
 const exampleImages = {
     logos: {
         rbs: rbsLogo,
         rs: rsLogo,
         pret: pretLogo,
-        rhokett: rhokettLogo
+        rhokett: rhokettLogo,
+        toptal: toptalLogo,
+        verizon: verizonLogo,
+        kadtech: kadtechLodo
+
+
     },
-    rbs: [
+    kadtech: [
         {
-            video: 'https://www.youtube.com/embed/HdYhE0fp7zg',
-            title: 'RBS Ring-fencing App',
+            url: 'http://kad.tech/examples/shot1a.jpg',
+            width: 1000,
+            height: 520
+
+        },
+        {
+            url: 'http://kad.tech/examples/shot2a.jpg',
+            width: 1000,
+            height: 520
+
+        },
+        {
+            url: 'http://kad.tech/examples/shot3a.jpg',
+            width: 1000,
+            height: 520
+
+        }
+
+    ],
+    verizon: [
+
+        {
+            video: 'https://www.youtube.com/embed/nkuMlVWGx90',
+            title: 'Retail Web Augmented Reality App',
             body:
                 <React.Fragment>
-                    <Typography variant={'body1'}>
-                        React based web app for educating the banking sector around new regualations.
-                    </Typography>
                     <Typography variant={'body2'}>Developed with:</Typography>
                     <PageList columns={2} list={[
-                        'React',
-                        'GSAP',
-                        'JS2015+',
-                        'Dynamic SVGs in React']} />
+                     '8th Wall AR platform',
+                     'Three.js ',
+                     'React - Hooks',
+                     'Javascript / Typescript']} />
+                </React.Fragment>,
+            width: 1920,
+            height: 1080
+        },
+        {
+            video: 'https://www.youtube.com/embed/1nso0Ru5RWk',
+            title: 'Vertex animation texture - GPU WebGL shader',
+            body:
+                <React.Fragment>
+                    <Typography variant={'body2'}>Developed with:</Typography>
+                    <PageList columns={2} list={[
+                        'Three.js ',
+                        'GLSL Shader Language',
+                        'Houdini'
+              ]} />
                 </React.Fragment>,
             width: 1920,
             height: 1080
         }
+
+
     ],
+
     rs: [
-        {
-            url: 'https://kye.tech/imgs/rs/mobile.jpg',
-            title: 'Mobile prototyping with UX',
-            body:
-                <React.Fragment>
-                    <Typography variant={'body1'}>
-                        I worked with UX to develop a mobile prototype interface for the product select. This was based on user research data, and was adopted as the interface method for the ecommerce platform.
-                    </Typography>
-                    <Typography variant={'body2'}>Developed with:</Typography>
-                    <PageList columns={2} list={[
-                        'Javascript',
-                        'Bootstrap',
-                        'Jquery',
-                        'CSS']} />
-                </React.Fragment>,
-            width: 1900,
-            height: 1188
-        },
-        {
-            url: 'https://kye.tech/imgs/rs/laptop.jpg',
-            title: 'Marketing development for global brands',
-            body:
-                <Typography variant={'body1'}>
-                    Supported global tech brands such as Siemens, Panasonic, TE, and Omron. With all channels of marketing for a number of European countries, new product releases and big campaign initiatives.'
-            </Typography>,
-            width: 1884,
-            height: 1055
-        },
-        {
-            url: 'https://kye.tech/imgs/rs/finder.jpg',
-            title: '2D product viewer',
-            body:
-                <React.Fragment>
-                    <Typography variant={'body1'}>
-                        In one of our innovation initiatives, I supported the development of an interactive product finder for a number of international markets, to aid in the discovery and purchase of automation and control components.
-                </Typography>
-                    <Typography variant={'body2'}>Developed with:</Typography>
-                    <PageList columns={2} list={[
-                        'Javascript',
-                        'GSAP',
-                        'CSS3',
-                        'HTML']} />
-                </React.Fragment>,
-            width: 1900,
-            height: 1597
-        },
         {
             url: 'https://kye.tech/imgs/rs/bench1.jpg',
             title: 'Web based 3D product viewer',
@@ -108,29 +106,8 @@ const exampleImages = {
         }
     ],
     rhokett: [
-        {
-            url: 'https://kye.tech/imgs/rhokett/app.jpg',
-            title: '2D / 3D mix site design',
-            body:
-                <React.Fragment>
-                    <Typography variant={'body1'}>
-                        This concept, produced for the client is another example of combining traditional web content with cutting edge 3D. (WebVR) </Typography>
-                    <Typography variant={'body2'}>Developed with:</Typography>
-                    <PageList columns={2} list={[
-                        'Javascript',
-                        'WebVR',
-                        'CSS3',
-                        'HTML']} />
-                </React.Fragment>,
-            width: 2400,
-            height: 1600
-        },
-        {
-            url: 'https://kye.tech/imgs/rhokett/macbook.jpg',
-            title: 'Desktop view of site',
-            width: 1920,
-            height: 1027
-        },
+
+
         {
             url: 'https://kye.tech/imgs/rhokett/3dback.jpg',
             title: 'WebVR prototype product viewer',
@@ -168,30 +145,9 @@ const exampleImages = {
             height: 986
 
         }
-    ],
-    pret: [
-        {
-            url: 'https://kye.tech/imgs/pret/mobile.jpg',
-            title: 'Front-end development',
-            width: 1900,
-            height: 1123
-
-        },
-        {
-            url: 'https://kye.tech/imgs/pret/product.jpg',
-            title: '3D product vis',
-            width: 1920,
-            height: 1147
-
-        },
-        {
-            url: 'https://kye.tech/imgs/pret/packaging.jpg',
-            title: 'Packaging design',
-            width: 1920,
-            height: 1256
-
-        }
     ]
+
 }
 
 export default exampleImages
+

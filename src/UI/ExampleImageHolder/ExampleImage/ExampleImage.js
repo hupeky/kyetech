@@ -70,12 +70,14 @@ class ReferenceItem extends Component {
                 height={500}
                 offset={40000}
                 placeholder={<Spinner />}>
-                <Card className={classes.card}>
+                 <Card className={classes.card}>
+
+                 {this.props.title > 0 &&
                     <CardHeader
                         className={classes.title}
                         avatar={<Avatar aria-label="Recipe" imgProps={imgProps} src={this.props.logo}></Avatar>}
                         title={this.props.title}
-                    />
+                    /> }
 
                     {this.props.url ? <div className={[myClasses.imgHolder, this.props.onScreen ? myClasses.onScreen : null].join( " " )}>
                         <div className={myClasses.img} style={{paddingTop: this.props.height, backgroundImage: `url(${this.props.url})`}} />
