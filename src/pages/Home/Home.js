@@ -28,6 +28,8 @@ import rsLogo from '../../assets/SVG/logos/companies/rsLogo.svg'
 import rhokettLogo from '../../assets/SVG/logos/companies/rhokettStampLogo.svg'
 import verizonLogo from '../../assets/SVG/logos/companies/verizonMedia.svg'
 import kadtechLogo from '../../assets/SVG/logos/companies/kadtech.svg'
+import leviLogo from '../../assets/SVG/logos/companies/levi.svg'
+import vodafoneLogo from '../../assets/SVG/logos/companies/vodafone.svg'
 
 import ExamplesIcon from '@material-ui/icons/Devices'
 import SkillsIcon from '@material-ui/icons/Settings'
@@ -159,6 +161,19 @@ const home = ( props ) => {
                 </Grid>
                 <ExampleImageHolder company='kadtech' />
 
+                {/* ************************ Levi */}
+                <Grid container spacing={8}>
+                    <Grid item xs={1} md={2} />
+                    <Grid item xs={10} md={8}>
+                        <ScaleIn offset={50}>
+                            <CompanyLogo img={leviLogo} name='Levi Strauss' />
+                        </ScaleIn>
+                        <Typography variant="body1">I was responsible for the RnD of 3d technology and techniques to support Levi’s vision of digital garment design and sales using immersive technology. I designed and developed a prototype web 3d garment configurator, I also built a layered clothing and configurator system for a social gaming platform. I led and mentored a small team, supporting their technical development through workshops and 1 to 1 sessions. I also led the jira / project management process.</Typography >
+
+                    </Grid>
+                </Grid>
+                <ExampleImageHolder company='levi' />
+
                 {/* ************************ Verizon Media */}
                 <Grid container spacing={8}>
                     <Grid item xs={1} md={2} />
@@ -171,6 +186,19 @@ const home = ( props ) => {
                     </Grid>
                 </Grid>
                 <ExampleImageHolder company='verizon' />
+
+                {/* ************************ vodafone */}
+                <Grid container spacing={8}>
+                    <Grid item xs={1} md={2} />
+                    <Grid item xs={10} md={8}>
+                        <ScaleIn offset={50}>
+                            <CompanyLogo img={vodafoneLogo} name='Vodafone' />
+                        </ScaleIn>
+                        <Typography variant="body1">I designed and developed a 2d / 3d data visualisation dashboard application.  Using Deck.GL with React, GraphQL, Mongo and D3. It was built to help senior leadership make predictive decisions to improve business efficiency.</Typography >
+
+                    </Grid>
+                </Grid>
+                <ExampleImageHolder company='vodafone' />
 
 
                 {/* ************************ RS COMPONENTS */}

@@ -9,6 +9,8 @@ import rbsLogo from '../../assets/SVG/logos/companies/rbs.svg'
 import toptalLogo from '../../assets/SVG/logos/companies/toptal.svg'
 import verizonLogo from '../../assets/SVG/logos/companies/verizonMedia.svg'
 import kadtechLodo from '../../assets/SVG/logos/companies/kadtech.svg'
+import leviLogo from '../../assets/SVG/logos/companies/levi.svg'
+import vodafoneLogo from '../../assets/SVG/logos/companies/vodafone.svg'
 
 const exampleImages = {
     logos: {
@@ -18,10 +20,37 @@ const exampleImages = {
         rhokett: rhokettLogo,
         toptal: toptalLogo,
         verizon: verizonLogo,
-        kadtech: kadtechLodo
+        kadtech: kadtechLodo,
+        vodafone: vodafoneLogo,
+        levi: leviLogo
 
 
     },
+
+    levi: [
+
+        {
+            video: 'https://www.youtube.com/embed/nzZ-ALsBizA',
+            title: 'Layered clothing pipeline for 3d web and Roblox',
+            body:
+                <React.Fragment>
+                    <Typography variant={'body2'}>Developed with:</Typography>
+                    <PageList columns={2} list={[
+                    'Babylon.js',
+                    'React / Hooks',
+                    'Typescript',
+                    'Zustand',
+
+                    'Roblox Studio',
+                    'Clo3d',
+                    'Luau',
+                    'Maya/Blender']} />
+                </React.Fragment>,
+            width: 1920,
+            height: 1080
+        }
+    ],
+
     kadtech: [
         {
             url: 'http://kad.tech/examples/shot1a.jpg',
@@ -75,9 +104,26 @@ const exampleImages = {
             width: 1920,
             height: 1080
         }
-
-
     ],
+    vodafone: [
+        {
+            video: 'https://www.youtube.com/embed/GSSukg4VaEQ',
+            title: 'Custom data dashboard',
+            body:
+                <React.Fragment>
+                    <Typography variant={'body2'}>Developed with:</Typography>
+                    <PageList columns={2} list={[
+                        'Javascript',
+                        'redux',
+                        'D3',
+                        'React',
+                        'Deck.GL']} />
+                </React.Fragment>,
+            width: 1920,
+            height: 1080
+        }
+    ],
+
 
     rs: [
         {
@@ -86,7 +132,6 @@ const exampleImages = {
             body:
                 <React.Fragment>
                     <Typography variant={'body1'}>
-                        I created a prototype 3d system built for exploring high end products using a mix of traditional web and 3d content that seamlessly interact with each other.  In building this, I elevated the reputation of the business as a company involved in innovating for our customers and the technology went on to be used by other areas of the business.
                     </Typography>
                     <Typography variant={'body2'}>Developed with:</Typography>
                     <PageList columns={2} list={[
@@ -106,16 +151,11 @@ const exampleImages = {
         }
     ],
     rhokett: [
-
-
         {
-            url: 'https://kye.tech/imgs/rhokett/3dback.jpg',
-            title: 'WebVR prototype product viewer',
+            video: 'https://www.youtube.com/embed/WS4Q0RZlfsI',
+            title: '3d Product Viewing System',
             body:
                 <React.Fragment>
-                    <Typography variant={'body1'}>
-                        This is an in web page shot of the product viewing system in action, with the camera panned around to the back of the product.
-                    </Typography>
                     <Typography variant={'body2'}>Developed with:</Typography>
                     <PageList columns={2} list={[
                         'Javascript',
@@ -123,28 +163,11 @@ const exampleImages = {
                         'CSS3',
                         'HTML']} />
                 </React.Fragment>,
-            width: 1894,
-            height: 1009
-        },
-        {
-            url: 'https://kye.tech/imgs/rhokett/3dfront.jpg',
-            title: 'Photorealism for web',
-            body:
-                <React.Fragment>
-                    <Typography variant={'body1'}>
-                        Using Reality Capture, I was able to capture, photorealstic 3d models combined with traditional 3D with fast efficient rendering.
-                    </Typography>
-                    <Typography variant={'body2'}>Developed with:</Typography>
-                    <PageList columns={2} list={[
-                        'WebVR',
-                        'AFrame',
-                        'JS2015+',
-                        'Reality Capture']} />
-                </React.Fragment>,
-            width: 1887,
-            height: 986
-
+            width: 1920,
+            height: 1080
         }
+
+
     ]
 
 }
